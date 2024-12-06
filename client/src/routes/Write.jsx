@@ -1,7 +1,7 @@
 import { useAuth, useUser } from "@clerk/clerk-react";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Upload from "../components/Upload";
@@ -13,7 +13,8 @@ const Write = () => {
   const [category, setCategory] = useState("");
   const [cover, setCover] = useState("");
   const [progress, setProgress] = useState(0);
-  const [remainingChars, setRemainingChars] = useState(150);
+  const [titleRemainingChars, setTitleRemainingChars] = useState(150);
+  const [descRemainingChars, setDescRemainingChars] = useState(10000);
   const [error, setError] = useState("");
 
   const navigate = useNavigate();
@@ -40,7 +41,13 @@ const Write = () => {
   const handleTitleChange = (e) => {
     const value = e.target.value.slice(0, 150);
     setTitle(value);
-    setRemainingChars(150 - value.length);
+    setTitleRemainingChars(150 - value.length);
+  };
+
+  const handleDescChange = (e) => {
+    const value = e.target.value.slice(0, 10000);
+    setDesc(value);
+    setDescRemainingChars(10000 - value.length);
   };
 
   const handleSubmit = (e) => {
@@ -117,7 +124,7 @@ const Write = () => {
           onChange={handleTitleChange}
           name="title"
         />
-        <span className="text-sm text-gray-500">{remainingChars} characters remaining</span>
+        <span className="text-sm text-gray-500">{titleRemainingChars} characters remaining</span>
         <div className="flex items-center gap-4">
           <label htmlFor="category" className="text-sm text-gray-700">
             Choose a category:
@@ -145,8 +152,9 @@ const Write = () => {
           name="desc"
           placeholder="A Short Description"
           value={desc}
-          onChange={(e) => setDesc(e.target.value.slice(0, 10000))}
+          onChange={handleDescChange}
         />
+        <span className="text-sm text-gray-500">{descRemainingChars} characters remaining</span>
         <button
           disabled={mutation.isPending || (progress > 0 && progress < 100)}
           className="bg-blue-800 text-white font-medium rounded-xl mt-4 p-2 w-36 disabled:bg-blue-400 disabled:cursor-not-allowed"
