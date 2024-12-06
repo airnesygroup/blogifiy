@@ -72,7 +72,6 @@ const SinglePostPage = () => {
               <Link className="text-blue-800">{data.user.username}</Link>
             </div>
             <p className="text-sm text-gray-500">
-              Lorem ipsum dolor sit amet consectetur
             </p>
             <div className="flex gap-2">
               <Link>

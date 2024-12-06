@@ -19,9 +19,12 @@ const postSchema = new Schema(
       type: String,
       required: true,
       unique: true,
+      
     },
     desc: {
       type: String,
+      required: true,
+
     },
     category: {
       type: String,
@@ -29,7 +32,7 @@ const postSchema = new Schema(
     },
     content: {
       type: String,
-      required: true,
+      required: false,
     },
     isFeatured: {
       type: Boolean,
