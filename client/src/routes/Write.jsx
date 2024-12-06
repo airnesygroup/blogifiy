@@ -1,6 +1,4 @@
 import { useAuth, useUser } from "@clerk/clerk-react";
-import "react-quill-new/dist/quill.snow.css";
-import ReactQuill from "react-quill-new";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -11,28 +9,14 @@ import Upload from "../components/Upload";
 const Write = () => {
   const { isLoaded, isSignedIn } = useUser();
   const [title, setTitle] = useState("");
+  const [desc, setDesc] = useState("");
   const [category, setCategory] = useState("");
-  const [description, setDescription] = useState("");
-  const [content, setContent] = useState("");
-  const [coverImage, setCoverImage] = useState(null);
+  const [cover, setCover] = useState("");
   const [progress, setProgress] = useState(0);
-  const [slug, setSlug] = useState("");
-  const maxTitleLength = 150;
-  const maxContentLength = 10000;
+  const [remainingChars, setRemainingChars] = useState(150);
 
   const navigate = useNavigate();
   const { getToken } = useAuth();
-
-  const stripHtml = (html) => {
-    const tempDiv = document.createElement("div");
-    tempDiv.innerHTML = html;
-    return tempDiv.textContent || tempDiv.innerText || "";
-  };
-
-  const generateSlug = (title) => {
-    const timestamp = Date.now();
-    return `${title.trim().replace(/\s+/g, "-").toLowerCase()}-${timestamp}`;
-  };
 
   const mutation = useMutation({
     mutationFn: async (newPost) => {
@@ -44,76 +28,77 @@ const Write = () => {
       });
     },
     onSuccess: (res) => {
-      toast.success("Post created successfully!");
+      toast.success("Post has been created");
       navigate(`/${res.data.slug}`);
     },
-    onError: () => {
-      toast.error("Failed to create the post.");
+    onError: (error) => {
+      toast.error(error.response?.data?.message || "An error occurred");
     },
   });
 
+  const handleTitleChange = (e) => {
+    const value = e.target.value.slice(0, 150);
+    setTitle(value);
+    setRemainingChars(150 - value.length);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!title && !description) {
-      toast.error("Please provide either a title or description.");
-      return;
-    }
-    if (!category) {
-      toast.error("Please select a category.");
-      return;
-    }
 
-    const cleanedContent = stripHtml(content);
-    if (cleanedContent.length > maxContentLength) {
-      toast.error("Content exceeds the maximum allowed length.");
-      return;
-    }
+    // Validation
+    if (!title) return toast.error("Title is required.");
+    if (!desc) return toast.error("Description is required.");
+    if (!category) return toast.error("Category is required.");
+    if (!cover) return toast.error("Cover image is required.");
 
-    const postData = {
+    // Slug generation
+    const timestamp = Date.now();
+    const slug = `${title.replace(/\s+/g, "-").toLowerCase()}-${timestamp}`;
+
+    const data = {
+      img: cover.filePath,
       title,
       category,
-      description,
-      content: cleanedContent,
-      coverImage: coverImage?.filePath || "",
-      slug: generateSlug(title || description),
+      desc,
+      slug,
     };
 
-    mutation.mutate(postData);
+    mutation.mutate(data);
   };
 
   if (!isLoaded) {
-    return <div>Loading...</div>;
+    return <div className="">Loading...</div>;
   }
 
   if (isLoaded && !isSignedIn) {
-    return <div>You must be signed in to create a post.</div>;
+    return <div className="">You should login!</div>;
   }
 
   return (
     <div className="h-[calc(100vh-64px)] md:h-[calc(100vh-80px)] flex flex-col gap-6">
       <h1 className="text-cl font-light">Create a New Post</h1>
       <form onSubmit={handleSubmit} className="flex flex-col gap-6 flex-1 mb-6">
-        <Upload type="image" setProgress={setProgress} setData={setCoverImage}>
+        <Upload type="image" setProgress={setProgress} setData={setCover}>
           <button
-            className="w-max p-2 shadow-md rounded-xl text-sm text-gray-500 bg-white"
             disabled={progress > 0 && progress < 100}
+            className="w-max p-2 shadow-md rounded-xl text-sm text-gray-500 bg-white"
           >
-            {progress > 0 && progress < 100 ? "Uploading..." : "Add a Cover Image"}
+            {progress > 0 && progress < 100 ? "Uploading..." : "Add a cover image"}
           </button>
         </Upload>
-        {coverImage && (
-          <div>
+        {cover && (
+          <div className="relative">
             <img
-              src={coverImage.url}
-              alt="Preview"
-              className="max-w-full rounded-xl mb-2"
+              src={cover.previewUrl}
+              alt="Cover preview"
+              className="w-24 h-24 object-cover rounded-md"
             />
             <button
               type="button"
-              onClick={() => setCoverImage(null)}
-              className="text-red-500 text-sm underline"
+              onClick={() => setCover("")}
+              className="absolute top-0 right-0 bg-red-500 text-white p-1 rounded-full text-xs"
             >
-              Remove Image
+              ✕
             </button>
           </div>
         )}
@@ -121,25 +106,26 @@ const Write = () => {
           className="text-4xl font-semibold bg-transparent outline-none"
           type="text"
           placeholder="My Awesome Story"
-          name="title"
           value={title}
-          onChange={(e) => setTitle(e.target.value.slice(0, maxTitleLength))}
+          onChange={handleTitleChange}
+          name="title"
         />
-        <div className="text-sm text-gray-500">
-          {maxTitleLength - title.length} characters remaining
-        </div>
+        <span className="text-sm text-gray-500">{remainingChars} characters remaining</span>
         <div className="flex items-center gap-4">
-          <label htmlFor="category" className="text-sm">
+          <label htmlFor="" className="text-sm">
             Choose a category:
           </label>
           <select
             name="category"
-            id="category"
-            className="p-2 rounded-xl bg-white shadow-md"
+            id=""
             value={category}
             onChange={(e) => setCategory(e.target.value)}
+            className="p-2 rounded-xl bg-white shadow-md"
           >
-            <option value="">Select a category</option>
+            <option value="" disabled>
+              Select a category
+            </option>
+            <option value="general">General</option>
             <option value="web-design">Web Design</option>
             <option value="development">Development</option>
             <option value="databases">Databases</option>
@@ -151,23 +137,16 @@ const Write = () => {
           className="p-4 rounded-xl bg-white shadow-md"
           name="desc"
           placeholder="A Short Description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
-        <ReactQuill
-          theme="bubble"
-          className="flex-1 rounded-xl bg-white shadow-md"
-          value={content}
-          onChange={setContent}
+          value={desc}
+          onChange={(e) => setDesc(e.target.value.slice(0, 10000))}
         />
         <button
-          disabled={
-            mutation.isLoading || progress > 0 && progress < 100
-          }
+          disabled={mutation.isPending || (progress > 0 && progress < 100)}
           className="bg-blue-800 text-white font-medium rounded-xl mt-4 p-2 w-36 disabled:bg-blue-400 disabled:cursor-not-allowed"
         >
-          {mutation.isLoading ? "Publishing..." : "Publish Post"}
+          {mutation.isPending ? "Publishing..." : "Publish Post"}
         </button>
+        {"Progress: " + progress}
       </form>
     </div>
   );
