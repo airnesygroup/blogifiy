@@ -1,7 +1,9 @@
 import { useAuth, useUser } from "@clerk/clerk-react";
+import "react-quill-new/dist/quill.snow.css";
+import ReactQuill from "react-quill-new";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Upload from "../components/Upload";
@@ -9,19 +11,27 @@ import Upload from "../components/Upload";
 const Write = () => {
   const { isLoaded, isSignedIn } = useUser();
   const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
-  const [cover, setCover] = useState("");
+  const [description, setDescription] = useState("");
+  const [content, setContent] = useState("");
+  const [coverImage, setCoverImage] = useState(null);
   const [progress, setProgress] = useState(0);
-  const [isPublishing, setIsPublishing] = useState(false);
+  const [slug, setSlug] = useState("");
+  const maxTitleLength = 150;
+  const maxContentLength = 10000;
 
   const navigate = useNavigate();
   const { getToken } = useAuth();
 
-  // Slug generation
-  const generateSlug = (text) => {
+  const stripHtml = (html) => {
+    const tempDiv = document.createElement("div");
+    tempDiv.innerHTML = html;
+    return tempDiv.textContent || tempDiv.innerText || "";
+  };
+
+  const generateSlug = (title) => {
     const timestamp = Date.now();
-    return `${text.replace(/\s+/g, "-").toLowerCase()}-${timestamp}`;
+    return `${title.trim().replace(/\s+/g, "-").toLowerCase()}-${timestamp}`;
   };
 
   const mutation = useMutation({
@@ -34,27 +44,18 @@ const Write = () => {
       });
     },
     onSuccess: (res) => {
-      toast.success("Post has been created");
+      toast.success("Post created successfully!");
       navigate(`/${res.data.slug}`);
+    },
+    onError: () => {
+      toast.error("Failed to create the post.");
     },
   });
 
-  if (!isLoaded) {
-    return <div>Loading...</div>;
-  }
-
-  if (isLoaded && !isSignedIn) {
-    return <div>You should login!</div>;
-  }
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!title) {
-      toast.error("Please provide a title.");
-      return;
-    }
-    if (!description) {
-      toast.error("Please provide a description.");
+    if (!title && !description) {
+      toast.error("Please provide either a title or description.");
       return;
     }
     if (!category) {
@@ -62,86 +63,111 @@ const Write = () => {
       return;
     }
 
-    setIsPublishing(true);
+    const cleanedContent = stripHtml(content);
+    if (cleanedContent.length > maxContentLength) {
+      toast.error("Content exceeds the maximum allowed length.");
+      return;
+    }
 
-    const data = {
+    const postData = {
       title,
-      slug: generateSlug(title),
       category,
       description,
-      img: cover.filePath || "",
+      content: cleanedContent,
+      coverImage: coverImage?.filePath || "",
+      slug: generateSlug(title || description),
     };
 
-    mutation.mutate(data, {
-      onSettled: () => setIsPublishing(false),
-    });
+    mutation.mutate(postData);
   };
 
+  if (!isLoaded) {
+    return <div>Loading...</div>;
+  }
+
+  if (isLoaded && !isSignedIn) {
+    return <div>You must be signed in to create a post.</div>;
+  }
+
   return (
-    <div className="h-[calc(100vh-64px)] flex flex-col gap-6">
+    <div className="h-[calc(100vh-64px)] md:h-[calc(100vh-80px)] flex flex-col gap-6">
       <h1 className="text-cl font-light">Create a New Post</h1>
-      <form onSubmit={handleSubmit} className="flex flex-col gap-6 flex-1">
-        <Upload type="image" setProgress={setProgress} setData={setCover}>
+      <form onSubmit={handleSubmit} className="flex flex-col gap-6 flex-1 mb-6">
+        <Upload type="image" setProgress={setProgress} setData={setCoverImage}>
           <button
+            className="w-max p-2 shadow-md rounded-xl text-sm text-gray-500 bg-white"
             disabled={progress > 0 && progress < 100}
-            className="p-2 shadow-md rounded-xl text-sm bg-white text-gray-500"
           >
-            {progress > 0 && progress < 100 ? "Uploading..." : "Add Cover Image"}
+            {progress > 0 && progress < 100 ? "Uploading..." : "Add a Cover Image"}
           </button>
         </Upload>
-        {cover && (
-          <div className="relative">
-            <img src={cover.url} alt="Cover preview" className="w-full h-40 rounded object-cover" />
+        {coverImage && (
+          <div>
+            <img
+              src={coverImage.url}
+              alt="Preview"
+              className="max-w-full rounded-xl mb-2"
+            />
             <button
               type="button"
-              onClick={() => setCover("")}
-              className="absolute top-2 right-2 bg-red-500 text-white p-1 rounded"
+              onClick={() => setCoverImage(null)}
+              className="text-red-500 text-sm underline"
             >
-              Delete
+              Remove Image
             </button>
           </div>
         )}
         <input
+          className="text-4xl font-semibold bg-transparent outline-none"
           type="text"
-          value={title}
-          onChange={(e) => setTitle(e.target.value.slice(0, 150))}
           placeholder="My Awesome Story"
           name="title"
-          className="text-4xl font-semibold bg-transparent outline-none"
+          value={title}
+          onChange={(e) => setTitle(e.target.value.slice(0, maxTitleLength))}
         />
-        <span className="text-sm text-gray-500">
-          {150 - title.length} characters remaining
-        </span>
+        <div className="text-sm text-gray-500">
+          {maxTitleLength - title.length} characters remaining
+        </div>
+        <div className="flex items-center gap-4">
+          <label htmlFor="category" className="text-sm">
+            Choose a category:
+          </label>
+          <select
+            name="category"
+            id="category"
+            className="p-2 rounded-xl bg-white shadow-md"
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+          >
+            <option value="">Select a category</option>
+            <option value="web-design">Web Design</option>
+            <option value="development">Development</option>
+            <option value="databases">Databases</option>
+            <option value="seo">Search Engines</option>
+            <option value="marketing">Marketing</option>
+          </select>
+        </div>
         <textarea
+          className="p-4 rounded-xl bg-white shadow-md"
+          name="desc"
+          placeholder="A Short Description"
           value={description}
-          onChange={(e) => setDescription(e.target.value.slice(0, 500))}
-          placeholder="Write a short description..."
-          className="p-2 rounded-xl bg-white shadow-md"
-          rows="4"
+          onChange={(e) => setDescription(e.target.value)}
         />
-        <span className="text-sm text-gray-500">
-          {500 - description.length} characters remaining
-        </span>
-        <select
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-          className="p-2 rounded-xl bg-white shadow-md"
-        >
-          <option value="">Select Category</option>
-          <option value="web-design">Web Design</option>
-          <option value="development">Development</option>
-          <option value="databases">Databases</option>
-          <option value="seo">Search Engines</option>
-          <option value="marketing">Marketing</option>
-        </select>
+        <ReactQuill
+          theme="bubble"
+          className="flex-1 rounded-xl bg-white shadow-md"
+          value={content}
+          onChange={setContent}
+        />
         <button
-          type="submit"
-          disabled={(progress > 0 && progress < 100) || isPublishing}
-          className="bg-blue-800 text-white font-medium rounded-xl mt-4 p-2 w-36 disabled:bg-blue-400"
+          disabled={
+            mutation.isLoading || progress > 0 && progress < 100
+          }
+          className="bg-blue-800 text-white font-medium rounded-xl mt-4 p-2 w-36 disabled:bg-blue-400 disabled:cursor-not-allowed"
         >
-          {isPublishing ? "Publishing..." : "Publish Post"}
+          {mutation.isLoading ? "Publishing..." : "Publish Post"}
         </button>
-        {progress > 0 && <span>Progress: {progress}%</span>}
       </form>
     </div>
   );
