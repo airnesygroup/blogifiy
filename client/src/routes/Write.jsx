@@ -1,9 +1,7 @@
 import { useAuth, useUser } from "@clerk/clerk-react";
-import "react-quill-new/dist/quill.bubble.css"; // Bubble theme
-import ReactQuill from "react-quill-new";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Upload from "../components/Upload";
@@ -11,7 +9,7 @@ import Upload from "../components/Upload";
 const Write = () => {
   const { isLoaded, isSignedIn } = useUser();
   const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
+  const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
   const [cover, setCover] = useState("");
   const [progress, setProgress] = useState(0);
@@ -19,13 +17,6 @@ const Write = () => {
 
   const navigate = useNavigate();
   const { getToken } = useAuth();
-
-  // Strip HTML styles and images
-  const stripHtml = (html) => {
-    const doc = new DOMParser().parseFromString(html, "text/html");
-    doc.querySelectorAll("style, img").forEach((el) => el.remove());
-    return doc.body.textContent || "";
-  };
 
   // Slug generation
   const generateSlug = (text) => {
@@ -58,18 +49,16 @@ const Write = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!title && !content) {
-      toast.error("Please provide a title or content.");
+    if (!title) {
+      toast.error("Please provide a title.");
+      return;
+    }
+    if (!description) {
+      toast.error("Please provide a description.");
       return;
     }
     if (!category) {
       toast.error("Please select a category.");
-      return;
-    }
-
-    const strippedContent = stripHtml(content);
-    if (strippedContent.length > 10000) {
-      toast.error("Content exceeds the 10,000-character limit.");
       return;
     }
 
@@ -79,7 +68,7 @@ const Write = () => {
       title,
       slug: generateSlug(title),
       category,
-      content: strippedContent,
+      description,
       img: cover.filePath || "",
     };
 
@@ -102,7 +91,7 @@ const Write = () => {
         </Upload>
         {cover && (
           <div className="relative">
-            <img src={cover.url} alt="Cover preview" className="w-full rounded" />
+            <img src={cover.url} alt="Cover preview" className="w-full h-40 rounded object-cover" />
             <button
               type="button"
               onClick={() => setCover("")}
@@ -123,21 +112,16 @@ const Write = () => {
         <span className="text-sm text-gray-500">
           {150 - title.length} characters remaining
         </span>
-        <ReactQuill
-          theme="bubble"
-          value={content}
-          onChange={setContent}
-          modules={{
-            toolbar: [
-              [{ header: [1, 2, false] }],
-              ["italic", "underline", "link"],
-              [{ list: "ordered" }, { list: "bullet" }],
-              ["clean"],
-            ],
-          }}
-          placeholder="Write your story here..."
-          className="bg-white shadow-md rounded-xl"
+        <textarea
+          value={description}
+          onChange={(e) => setDescription(e.target.value.slice(0, 500))}
+          placeholder="Write a short description..."
+          className="p-2 rounded-xl bg-white shadow-md"
+          rows="4"
         />
+        <span className="text-sm text-gray-500">
+          {500 - description.length} characters remaining
+        </span>
         <select
           value={category}
           onChange={(e) => setCategory(e.target.value)}
@@ -152,7 +136,7 @@ const Write = () => {
         </select>
         <button
           type="submit"
-          disabled={progress > 0 && progress < 100 || isPublishing}
+          disabled={(progress > 0 && progress < 100) || isPublishing}
           className="bg-blue-800 text-white font-medium rounded-xl mt-4 p-2 w-36 disabled:bg-blue-400"
         >
           {isPublishing ? "Publishing..." : "Publish Post"}
@@ -164,4 +148,3 @@ const Write = () => {
 };
 
 export default Write;
-  
