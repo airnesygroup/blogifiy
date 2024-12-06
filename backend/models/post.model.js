@@ -30,6 +30,7 @@ const postSchema = new Schema(
       type: String,
       default: "general",
     },
+    
   
     isFeatured: {
       type: Boolean,

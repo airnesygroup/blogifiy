@@ -38,6 +38,8 @@ const Write = () => {
     },
   });
 
+  const clearError = () => setError("");
+
   const handleTitleChange = (e) => {
     const value = e.target.value.slice(0, 150);
     setTitle(value);
@@ -52,7 +54,7 @@ const Write = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setError("");
+    clearError();
 
     // Validation
     if (!title) return setError("Please include a title for your post.");
@@ -94,6 +96,8 @@ const Write = () => {
       <form onSubmit={handleSubmit} className="flex flex-col gap-6 flex-1">
         <Upload type="image" setProgress={setProgress} setData={setCover}>
           <button
+            type="button"
+            onClick={clearError} // Clear errors when clicking "Upload Image"
             disabled={progress > 0 && progress < 100}
             className="w-max p-2 shadow-md rounded-xl text-sm text-gray-500 bg-white disabled:opacity-50"
           >
