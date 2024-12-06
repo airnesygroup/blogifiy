@@ -107,16 +107,16 @@ const Write = () => {
 
         {/* Image Preview Section */}
         {cover && cover.previewUrl && (
-          <div className="relative w-full max-w-[300px] h-[200px] mb-4">
+          <div className="relative w-full max-w-[250px] h-[150px] mb-4 mx-auto">
             <img
               src={cover.previewUrl}
               alt="Cover preview"
-              className="w-full h-full object-cover rounded-md shadow-md"
+              className="w-full h-full object-cover rounded-md shadow-lg"
             />
             <button
               type="button"
               onClick={() => setCover(null)}
-              className="absolute top-2 right-2 bg-red-500 text-white p-2 rounded-full text-xs"
+              className="absolute top-2 right-2 bg-red-500 text-white p-1 rounded-full text-xs"
             >
               ✕
             </button>
