@@ -14,6 +14,7 @@ const Write = () => {
   const [cover, setCover] = useState("");
   const [progress, setProgress] = useState(0);
   const [remainingChars, setRemainingChars] = useState(150);
+  const [error, setError] = useState("");
 
   const navigate = useNavigate();
   const { getToken } = useAuth();
@@ -44,12 +45,13 @@ const Write = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setError("");
 
     // Validation
-    if (!title) return toast.error("Title is required.");
-    if (!desc) return toast.error("Description is required.");
-    if (!category) return toast.error("Category is required.");
-    if (!cover) return toast.error("Cover image is required.");
+    if (!title) return setError("Please include a title for your post.");
+    if (!desc) return setError("Please include a description for your post.");
+    if (!category) return setError("Please select a category for your post.");
+    if (!cover) return setError("Please upload a cover image for your post.");
 
     // Slug generation
     const timestamp = Date.now();
@@ -67,43 +69,48 @@ const Write = () => {
   };
 
   if (!isLoaded) {
-    return <div className="">Loading...</div>;
+    return <div className="text-center mt-8">Loading...</div>;
   }
 
   if (isLoaded && !isSignedIn) {
-    return <div className="">You should login!</div>;
+    return <div className="text-center mt-8">You need to sign in to create a post!</div>;
   }
 
   return (
     <div className="h-[calc(100vh-64px)] md:h-[calc(100vh-80px)] flex flex-col gap-6">
-      <h1 className="text-cl font-light">Create a New Post</h1>
-      <form onSubmit={handleSubmit} className="flex flex-col gap-6 flex-1 mb-6">
+      <h1 className="text-2xl font-semibold text-gray-800">Create a New Post</h1>
+      {error && (
+        <div className="p-4 text-sm text-red-700 bg-red-100 rounded-lg shadow-md">
+          {error}
+        </div>
+      )}
+      <form onSubmit={handleSubmit} className="flex flex-col gap-6 flex-1">
         <Upload type="image" setProgress={setProgress} setData={setCover}>
           <button
             disabled={progress > 0 && progress < 100}
-            className="w-max p-2 shadow-md rounded-xl text-sm text-gray-500 bg-white"
+            className="w-max p-2 shadow-md rounded-xl text-sm text-gray-500 bg-white disabled:opacity-50"
           >
             {progress > 0 && progress < 100 ? "Uploading..." : "Add a cover image"}
           </button>
         </Upload>
         {cover && (
-          <div className="relative">
+          <div className="relative w-32 h-32">
             <img
               src={cover.previewUrl}
               alt="Cover preview"
-              className="w-24 h-24 object-cover rounded-md"
+              className="w-full h-full object-cover rounded-md shadow-md"
             />
             <button
               type="button"
               onClick={() => setCover("")}
-              className="absolute top-0 right-0 bg-red-500 text-white p-1 rounded-full text-xs"
+              className="absolute top-1 right-1 bg-red-500 text-white p-1 rounded-full text-xs"
             >
               ✕
             </button>
           </div>
         )}
         <input
-          className="text-4xl font-semibold bg-transparent outline-none"
+          className="text-xl font-semibold bg-transparent outline-none p-2 border-b border-gray-300"
           type="text"
           placeholder="My Awesome Story"
           value={title}
@@ -112,12 +119,12 @@ const Write = () => {
         />
         <span className="text-sm text-gray-500">{remainingChars} characters remaining</span>
         <div className="flex items-center gap-4">
-          <label htmlFor="" className="text-sm">
+          <label htmlFor="category" className="text-sm text-gray-700">
             Choose a category:
           </label>
           <select
             name="category"
-            id=""
+            id="category"
             value={category}
             onChange={(e) => setCategory(e.target.value)}
             className="p-2 rounded-xl bg-white shadow-md"
@@ -146,7 +153,7 @@ const Write = () => {
         >
           {mutation.isPending ? "Publishing..." : "Publish Post"}
         </button>
-        {"Progress: " + progress}
+        <span className="text-sm text-gray-500">{`Progress: ${progress}%`}</span>
       </form>
     </div>
   );
