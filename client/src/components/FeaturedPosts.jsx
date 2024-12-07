@@ -71,7 +71,7 @@ const FeaturedPosts = () => {
         <Link to={`/${post.slug}`} className="relative aspect-square">
           <Image
             src={post.img}
-            className="rounded-2xl object-cover w-full h-full"
+            className="rounded-2xl object-cover w-full h-250px"
             style={{ aspectRatio: '1 / 1' }}  
           />
           <div className="absolute inset-0 bg-black opacity-50 rounded-2xl" /> {/* Dark overlay */}
