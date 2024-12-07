@@ -62,48 +62,50 @@ const FeaturedPosts = () => {
         </Link>
       </div>
 
-      {/* Second post (two smaller posts + "over one billion read daily" text) */}
-      <div className="w-full lg:w-1/3 flex flex-col gap-3">
-        <div className="lg:h-1/2 flex gap-3">
-          {[posts[1], posts[2]].map(
-            (post, index) =>
-              post && (
-                <div key={index} className="w-1/2">
-                  <Link to={`/${post.slug}`} className="relative aspect-video">
-                    <Image
-                      src={post.img}
-                      className="rounded-2xl object-cover w-full h-full"
-                      w="298"
-                    />
-                    <div className="absolute inset-0 bg-black opacity-50 rounded-2xl" /> {/* Dark overlay */}
-                  </Link>
-                  <div className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm text-gray-500 mb-1">
-                    <h1 className="font-medium text-xs sm:text-sm text-gray-500">
-                      0{index + 2}.
-                    </h1>
+      {/* Second and third post (two smaller posts + "Over one billion people read daily" text) */}
+      <div className="w-full lg:w-2/3 flex flex-col gap-3">
+        <div className="lg:flex gap-3">
+          {[posts[1], posts[2]].map((post, index) => post && (
+            <div key={index} className="w-full lg:w-1/2 relative">
+              <Link to={`/${post.slug}`} className="relative aspect-video">
+                <Image
+                  src={post.img}
+                  className="rounded-2xl object-cover w-full h-full"
+                  w="298"
+                />
+                <div className="absolute inset-0 bg-black opacity-50 rounded-2xl" /> {/* Dark overlay */}
+                {/* Post title on top of the image */}
+                <div className="absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center">
+                  <div className="bg-black bg-opacity-50 text-white p-2 text-center rounded-2xl">
                     <Link
-                      to={`/posts?category=${post.category}`}
-                      className="text-blue-700"
+                      to={`/${post.slug}`}
+                      className="font-semibold leading-snug"
                     >
-                      {post.category}
+                      {truncateText(post.title, 50)}
                     </Link>
-                    <span className="text-xs sm:text-sm">
-                      {format(post.createdAt)}
-                    </span>
                   </div>
-                  <Link
-                    to={`/${post.slug}`}
-                    className="text-xs sm:text-sm font-medium leading-snug"
-                  >
-                    {window.innerWidth > 1024
-                      ? post.title
-                      : truncateText(post.title, 75)}
-                  </Link>
                 </div>
-              )
-          )}
+              </Link>
+              <div className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm text-gray-500 mb-1">
+                <h1 className="font-medium text-xs sm:text-sm text-gray-500">
+                  0{index + 2}.
+                </h1>
+                <Link
+                  to={`/posts?category=${post.category}`}
+                  className="text-blue-700"
+                >
+                  {post.category}
+                </Link>
+                <span className="text-xs sm:text-sm">
+                  {format(post.createdAt)}
+                </span>
+              </div>
+            </div>
+          ))}
         </div>
-        <div className="flex justify-end text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-orange-500">
+
+        {/* "Over one billion people read daily" text */}
+        <div className="flex justify-end text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-orange-500 mt-4">
           Over one billion people read daily
         </div>
       </div>
@@ -139,12 +141,12 @@ const FeaturedPosts = () => {
             {truncateText(posts[0].title, 75)}
           </Link>
         </div>
-        
+
         {/* "Over one billion people read daily" text */}
         <div className="flex justify-end text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-orange-500">
           Over one billion people read daily
         </div>
-        
+
         {/* Second post */}
         <div className="w-full flex gap-3">
           {[posts[1], posts[2]].map((post, index) => post && (
