@@ -110,17 +110,20 @@ const FeaturedPosts = () => {
   ))}
 </div>
 
+<div className="col-span-3 flex justify-end items-center text-xl font-semibold text-transparent bg-clip-text mt-4 relative">
+  {/* Border Container */}
+  <div className="absolute top-0 right-0 bottom-0 rounded-tr-2xl rounded-br-2xl bg-gradient-to-b from-green-600 via-yellow-400 to-orange-500" style={{ width: '5px' }}></div>
 
-<div className="col-span-3 flex justify-end items-center text-xl font-semibold text-transparent bg-clip-text mt-4">
-  <div className="text-right">
-    <p className="text-black " style={{ fontSize: '1rem' }}>
+  {/* Content */}
+  <div className="text-right ml-4"> {/* Added margin-left to push content away from border */}
+    <p className="text-black" style={{ fontSize: '1rem' }}>
       BY THE <br /><span className="underline">NUMBERS</span>
     </p>
     <p className="text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-green-600 via-yellow-400 to-orange-500">
-    <span style={{ fontSize: '1.2rem' }}>OVER</span> 100K+
+      <span style={{ fontSize: '1.2rem' }}>OVER</span> 100K+
     </p>
-    <p className=" text-black" style={{ fontSize: '1rem' }}>USERS READ THIS</p>
-    <p className=" text-black"style={{ fontSize: '1rem' }}>ARTICLES DAILY</p>
+    <p className="text-black" style={{ fontSize: '1rem' }}>USERS READ THIS</p>
+    <p className="text-black" style={{ fontSize: '1rem' }}>ARTICLES DAILY</p>
     <div className="flex items-center justify-end mt-2">
       <p className="text-xs text-black">READ MORE</p>
       <span className="ml-2 bg-black text-white rounded-full p-2">
@@ -129,6 +132,7 @@ const FeaturedPosts = () => {
     </div>
   </div>
 </div>
+
 
 
   </div>
