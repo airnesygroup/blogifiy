@@ -3,7 +3,7 @@ import Search from "./Search";
 
 const MainCategories = () => {
   return (
-    <div className="hidden md:flex bg-white rounded-3xl xl:rounded-full p-4 shadow-lg items-center justify-center gap-8">
+    <div className="hidden md:flex bg-white rounded-3xl xl:rounded-full p-4 shadow-lg items-center justify-center gap-4">
       {/* links */}
       <div className="flex-1 flex items-center justify-between flex-wrap">
         <Link
@@ -36,7 +36,12 @@ const MainCategories = () => {
         >
           Search Engines
         </Link>
-      
+        <Link
+          to="/posts?cat=marketing"
+          className="hover:bg-blue-50 rounded-full px-4 py-1"
+        >
+          Marketing
+        </Link>
       </div>
       <span className="text-xl font-medium">|</span>
       {/* search */}
