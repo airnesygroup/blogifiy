@@ -30,16 +30,16 @@ const FeaturedPosts = () => {
 
   return (
     <>{/* Layout for large screens only */}
-{/* Layout for large screens only */}
+ {/* Layout for large screens only */}
 <div className="hidden lg:grid grid-cols-3 gap-6 mt-4">
-  {/* First column: First post with flexible height */}
-  <div className="flex flex-col gap-3 col-span-2"> {/* First column with more width */}
+  {/* First column: First post (twice the size of others) */}
+  <div className="flex flex-col gap-3">
     {posts[0].img && (
       <Link to={`/${posts[0].slug}`} className="relative">
         <Image
           src={posts[0].img}
-          className="rounded-2xl object-cover w-full h-auto"  
-          style={{ height: 'auto', width: '100%', maxHeight: '500px' }}  
+          className="rounded-2xl object-cover w-full h-full"
+          style={{ aspectRatio: '1 / 1' }}  
         />
         <div className="absolute inset-0 bg-black opacity-50 rounded-2xl" /> {/* Dark overlay */}
       </Link>
@@ -68,11 +68,11 @@ const FeaturedPosts = () => {
   <div className="flex flex-col gap-3">
     {[posts[1], posts[2]].map((post, index) => post && (
       <div key={index} className="w-full relative">
-        <Link to={`/${post.slug}`} className="relative">
+        <Link to={`/${post.slug}`} className="relative aspect-square">
           <Image
             src={post.img}
             className="rounded-2xl object-cover w-full h-full"
-            style={{ aspectRatio: '1 / 1' }} 
+            style={{ aspectRatio: '1 / 1' }}  
           />
           <div className="absolute inset-0 bg-black opacity-50 rounded-2xl" /> {/* Dark overlay */}
           {/* Post title on top of the image */}
@@ -110,7 +110,6 @@ const FeaturedPosts = () => {
     </div>
   </div>
 </div>
-
 
     
 
