@@ -40,9 +40,9 @@ const FeaturedPosts = () => {
       <div className="relative w-full" style={{ paddingTop: '100%' }}> {/* Square container */}
         <Image
           src={posts[0].img}
-          className="absolute top-0 left-0 w-full h-full object-cover rounded-tl-lg rounded-bl-lg"
+          className="absolute top-0 left-0 w-full h-full object-cover rounded-tl-2xl rounded-bl-2xl"
         />
-        <div className="absolute inset-0 bg-black opacity-30" /> {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black opacity-30 rounded-tl-2xl rounded-bl-2xl"  /> {/* Dark overlay */}
         {/* Text content */}
         <div className="absolute bottom-0 left-0 p-4 sm:p-6 text-white">
           <div className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm">
