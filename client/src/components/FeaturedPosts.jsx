@@ -34,7 +34,7 @@ const FeaturedPosts = () => {
 <div className="hidden lg:grid grid-cols-12 gap-6 mt-4">
 
 {/* First column: First post (takes half the width, spans 6 out of 12) */}
-<div className="col-span-6 flex flex-col gap-3 relative">
+<div className="col-span-6 flex flex-col gap-3 relative rounded-tl-lg rounded-bl-lg">
   {posts[0].img && (
     <Link to={`/${posts[0].slug}`} className="relative">
       <div className="relative w-full" style={{ paddingTop: '100%' }}> {/* Square container */}
