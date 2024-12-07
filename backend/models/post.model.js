@@ -19,19 +19,15 @@ const postSchema = new Schema(
       type: String,
       required: true,
       unique: true,
-      
     },
     desc: {
       type: String,
       required: true,
-
     },
     category: {
       type: String,
       default: "general",
     },
-    
-  
     isFeatured: {
       type: Boolean,
       default: false,
@@ -39,6 +35,26 @@ const postSchema = new Schema(
     visit: {
       type: Number,
       default: 0,
+    },
+    location: {
+      type: String,
+      default: null, // Nullable field
+    },
+    timezone: {
+      type: String,
+      default: null, // Nullable field
+    },
+    city: {
+      type: String,
+      default: null, // Optional nullable field
+    },
+    country: {
+      type: String,
+      default: null, // Optional nullable field
+    },
+    continent: {
+      type: String,
+      default: null, // Optional nullable field
     },
   },
   { timestamps: true }

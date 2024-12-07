@@ -101,7 +101,20 @@ export const createPost = async (req, res) => {
   console.log("Looking for user with Clerk User ID:", clerkUserId);
 
   const user = await User.findOne({ clerkUserId });
+  const country = req.headers.get("x-vercel-ip-country");
+  const region = req.headers.get("x-vercel-ip-country-region");
+  const timezone = req.headers.get("x-vercel-ip-timezone");
 
+  // Add location and timezone data to the post
+  const post = await prisma.post.create({
+    data: {
+      ...body,
+      userEmail: session.user.email,
+      location: country ? `${country}, ${region}` : null, // Use the country/region or null if unavailable
+      timezone: timezone || null, // Use timezone or null if unavailable
+      createdAt: new Date().toISOString(),
+    },
+  });
   // Log if user is found or not
   if (!user) {
     console.log("User not found, returning 404.");
