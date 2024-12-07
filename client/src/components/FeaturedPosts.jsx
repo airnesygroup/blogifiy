@@ -44,7 +44,7 @@ const FeaturedPosts = () => {
         {/* title */}
         <Link
           to={posts[0].slug}
-          className="text-xl lg:text-xl font-semibold lg:font-bold"
+          className="text-md lg:text-md font-semibold lg:font-bold"
         >
           {posts[0].title}
         </Link>
@@ -97,7 +97,7 @@ const FeaturedPosts = () => {
             {/* title */}
             <Link
               to={posts[1].slug}
-              className="text-base sm:text-lg md:text-2xl lg:text-xl xl:text-2xl font-medium"
+              className="text-base sm:text-md md:text-md lg:text-xlmd xl:text-md font-medium"
             >
               {posts[2].title}
             </Link>
@@ -123,7 +123,7 @@ const FeaturedPosts = () => {
             {/* title */}
             <Link
               to={posts[3].slug}
-              className="text-base sm:text-lg md:text-2xl lg:text-xl xl:text-2xl font-medium"
+              className="text-base sm:text-md md:text-md lg:text-xlmd xl:text-md font-medium"
             >
               {posts[3].title}
             </Link>
