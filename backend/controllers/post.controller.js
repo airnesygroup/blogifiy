@@ -1,10 +1,13 @@
 import ImageKit from "imagekit";
 import Post from "../models/post.model.js";
 import User from "../models/user.model.js";
+import { PrismaClient } from '@prisma/client';
+
 
 export const getPosts = async (req, res) => {
   const page = parseInt(req.query.page) || 1;
   const limit = parseInt(req.query.limit) || 2;
+  const prisma = new PrismaClient();
 
   const query = {};
 
@@ -82,75 +85,64 @@ export const getPost = async (req, res) => {
   res.status(200).json(post);
 };
 
+
+
+
+
+
 export const createPost = async (req, res) => {
+  console.log("Request Headers:", req.headers);
+
+  const clerkUserId = req.auth?.userId;
+
+  if (!clerkUserId) {
+    console.log("Not authenticated, returning 401.");
+    return res.status(401).json("Not authenticated!");
+  }
+
+  console.log("Clerk User ID:", clerkUserId);
+
+  // Lookup user
+  const user = await User.findOne({ clerkUserId });
+  if (!user) {
+    console.log("User not found, returning 404.");
+    return res.status(404).json("User not found!");
+  }
+
+  let slug = req.body.title.replace(/ /g, "-").toLowerCase();
+  let existingPost = await Post.findOne({ slug });
+
+  let counter = 2;
+  while (existingPost) {
+    slug = `${slug}-${counter}`;
+    existingPost = await Post.findOne({ slug });
+    counter++;
+  }
+
+  console.log("Final unique slug to be used:", slug);
+
+  const country = req.headers['x-vercel-ip-country'];
+  const region = req.headers['x-vercel-ip-country-region'];
+  const timezone = req.headers['x-vercel-ip-timezone'];
+
   try {
-    // Log request headers for debugging
-    console.log("Request Headers:", req.headers);
-
-    // Validate user authentication
-    const clerkUserId = req.auth?.userId;
-    if (!clerkUserId) {
-      console.log("Not authenticated, returning 401.");
-      return res.status(401).json({ error: "Not authenticated!" });
-    }
-
-    console.log("Clerk User ID:", clerkUserId);
-
-    // Find user in the database using Prisma
-    const user = await prisma.user.findUnique({
-      where: { clerkUserId },
-    });
-
-    if (!user) {
-      console.log("User not found, returning 404.");
-      return res.status(404).json({ error: "User not found!" });
-    }
-
-    console.log("User found:", user);
-
-    // Generate slug
-    let slug = req.body.title.replace(/ /g, "-").toLowerCase();
-    console.log("Generated initial slug:", slug);
-
-    // Handle slug collision
-    let existingPost = await prisma.post.findUnique({ where: { slug } });
-    let counter = 2;
-    const originalSlug = slug;
-
-    while (existingPost) {
-      slug = `${originalSlug}-${counter}`;
-      existingPost = await prisma.post.findUnique({ where: { slug } });
-      counter++;
-      console.log("Updated slug:", slug);
-    }
-
-    console.log("Final unique slug to be used:", slug);
-
-    // Extract location and timezone data from headers
-    const country = req.headers["x-vercel-ip-country"];
-    const region = req.headers["x-vercel-ip-country-region"];
-    const timezone = req.headers["x-vercel-ip-timezone"];
-
-    // Create post in the database
     const post = await prisma.post.create({
       data: {
-        userId: user.id,
-        slug,
-        title: req.body.title,
-        content: req.body.content,
-        location: country && region ? `${country}, ${region}` : null,
+        ...req.body,
+        userEmail: user.email, // Adjust this based on your user model
+        location: country ? `${country}, ${region}` : null,
         timezone: timezone || null,
-        createdAt: new Date(),
+        createdAt: new Date().toISOString(),
+        slug,
+        userId: clerkUserId,
       },
     });
 
-    console.log("Post saved successfully:", post);
-
-    // Respond with the created post
+    console.log("Post created successfully:", post);
     res.status(200).json(post);
   } catch (error) {
     console.error("Error creating post:", error);
-    res.status(500).json({ error: "Internal server error!" });
+    res.status(500).json("Internal server error.");
   }
 };
 
