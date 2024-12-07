@@ -28,80 +28,82 @@ const FeaturedPosts = () => {
     return;
   }
 
-  return (
-    <div className="mt-4 flex flex-col lg:flex-row gap-6">
-      {/* First */}
-      <div className="w-full lg:w-1/2 flex flex-col gap-3">
-        {/* image */}
-        {posts[0].img && (
-          <Link to={`/${posts[0].slug}`}>
-            <Image
-              src={posts[0].img}
-              className="rounded-2xl object-cover"
-              w="895"
-            />
-          </Link>
-        )}
-        {/* details */}
-        <div className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm text-gray-500">
-          <h1 className="font-medium text-xs sm:text-sm">01.</h1>
-          <Link
-            to={`/posts?category=${posts[0].category}`}
-            className="text-blue-700"
-          >
-            {posts[0].category}
-          </Link>
-          <span>{format(posts[0].createdAt)}</span>
-        </div>
-        {/* title */}
-        <Link
-          to={`/${posts[0].slug}`}
-          className="text-sm sm:text-base font-semibold lg:font-bold leading-snug"
-        >
-          {truncateText(posts[0].title, 75)}
+  return (<div className="mt-4 flex flex-col lg:flex-row gap-6">
+    {/* First */}
+    <div className="w-full lg:w-1/2 flex flex-col gap-2">
+      {/* image */}
+      {posts[0].img && (
+        <Link to={`/${posts[0].slug}`}>
+          <Image
+            src={posts[0].img}
+            className="rounded-2xl object-cover"
+            w="895"
+          />
         </Link>
+      )}
+      {/* details */}
+      <div className="flex items-center gap-2 sm:gap-2 text-xs text-gray-500">
+        <h1 className="font-medium text-[10px] sm:text-[12px]">01.</h1>
+        <Link
+          to={`/posts?category=${posts[0].category}`}
+          className="text-blue-700 text-[10px] sm:text-[12px]"
+        >
+          {posts[0].category}
+        </Link>
+        <span className="text-[10px] sm:text-[12px]">{format(posts[0].createdAt)}</span>
       </div>
-      {/* Others */}
-      <div className="w-full lg:w-1/2 flex flex-col gap-3">
-        {[posts[1], posts[2], posts[3]].map(
-          (post, index) =>
-            post && (
-              <div key={index} className="lg:h-1/3 flex justify-between gap-3">
-                <Link to={`/${post.slug}`} className="w-1/3 aspect-video">
-                  <Image
-                    src={post.img}
-                    className="rounded-2xl object-cover w-full h-full"
-                    w="298"
-                  />
-                </Link>
-                {/* details and title */}
-                <div className="w-2/3">
-                  {/* details */}
-                  <div className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm text-gray-500 mb-2">
-                    <h1 className="font-medium text-xs sm:text-sm">
-                      0{index + 2}.
-                    </h1>
-                    <Link
-                      to={`/posts?category=${post.category}`}
-                      className="text-blue-700"
-                    >
-                      {post.category}
-                    </Link>
-                    <span>{format(post.createdAt)}</span>
-                  </div>
-                  {/* title */}
-                  <Link
-                    to={`/${post.slug}`}
-                    className="text-xs sm:text-sm font-medium leading-snug"
-                  >
-                    {truncateText(post.title, 75)}
-                  </Link>
-                </div>
-              </div>
-            )
-        )}
-      </div>
+      {/* title */}
+      <Link
+        to={`/${posts[0].slug}`}
+        className="text-sm sm:text-base font-semibold lg:font-bold leading-snug mt-1"
+      >
+        {truncateText(posts[0].title, 75)}
+      </Link>
     </div>
+    {/* Others */}
+    <div className="w-full lg:w-1/2 flex flex-col gap-2">
+      {[posts[1], posts[2], posts[3]].map(
+        (post, index) =>
+          post && (
+            <div key={index} className="lg:h-1/3 flex justify-between gap-2">
+              <Link to={`/${post.slug}`} className="w-1/3 aspect-video">
+                <Image
+                  src={post.img}
+                  className="rounded-2xl object-cover w-full h-full"
+                  w="298"
+                />
+              </Link>
+              {/* details and title */}
+              <div className="w-2/3">
+                {/* details */}
+                <div className="flex items-center gap-2 text-xs text-gray-500 mb-1">
+                  <h1 className="font-medium text-[10px] sm:text-[12px]">
+                    0{index + 2}.
+                  </h1>
+                  <Link
+                    to={`/posts?category=${post.category}`}
+                    className="text-blue-700 text-[10px] sm:text-[12px]"
+                  >
+                    {post.category}
+                  </Link>
+                  <span className="text-[10px] sm:text-[12px]">
+                    {format(post.createdAt)}
+                  </span>
+                </div>
+                {/* title */}
+                <Link
+                  to={`/${post.slug}`}
+                  className="text-xs sm:text-sm font-medium leading-snug"
+                >
+                  {truncateText(post.title, 75)}
+                </Link>
+              </div>
+            </div>
+          )
+      )}
+    </div>
+  </div>
+  
   );
 };
 
