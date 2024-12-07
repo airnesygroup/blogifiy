@@ -29,85 +29,171 @@ const FeaturedPosts = () => {
   }
 
   return (
-    <div className="mt-4 flex flex-col lg:hidden gap-6">
-      {/* First post */}
-      <div className="w-full">
-        {posts[0].img && (
-          <Link to={`/${posts[0].slug}`} className="relative">
-            <Image
-              src={posts[0].img}
-              className="rounded-2xl object-cover"
-              w="895"
-            />
-            <div className="absolute inset-0 bg-black opacity-50 rounded-2xl" /> {/* Dark overlay */}
-          </Link>
-        )}
-        <div className="absolute inset-0 flex justify-center items-center text-white p-4 text-center font-semibold">
-          <Link to={`/${posts[0].slug}`} className="leading-snug">
-            {truncateText(posts[0].title, 75)}
-          </Link>
-        </div>
-        <div className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm text-gray-500 mt-3">
-          <h1 className="font-medium text-xs sm:text-sm text-gray-500">01.</h1>
-          <Link
-            to={`/posts?category=${posts[0].category}`}
-            className="text-blue-700"
-          >
-            {posts[0].category}
-          </Link>
-          <span className="text-xs sm:text-sm">{format(posts[0].createdAt)}</span>
-        </div>
-      </div>
-
-      {/* "Over one billion people read daily" text */}
-      <div className="flex justify-center text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-orange-500 mt-4">
-        Over one billion people read daily
-      </div>
-
-      {/* Second and third post */}
-      <div className="w-full flex gap-3">
-        {[posts[1], posts[2]].map((post, index) => post && (
-          <div key={index} className="w-1/2">
-            <Link to={`/${post.slug}`} className="relative aspect-video">
+    <>
+      {/* Layout for large screens only */}
+      <div className="hidden lg:flex mt-4 gap-6">
+        {/* First post (big image) */}
+        <div className="w-full lg:w-1/3 flex flex-col gap-3">
+          {posts[0].img && (
+            <Link to={`/${posts[0].slug}`} className="relative">
               <Image
-                src={post.img}
-                className="rounded-2xl object-cover w-full h-full"
-                w="298"
+                src={posts[0].img}
+                className="rounded-2xl object-cover"
+                w="895"
               />
               <div className="absolute inset-0 bg-black opacity-50 rounded-2xl" /> {/* Dark overlay */}
             </Link>
-            <div className="absolute inset-0 flex justify-center items-center text-white p-2 text-center font-semibold">
+          )}
+          <div className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm text-gray-500">
+            <h1 className="font-medium text-xs sm:text-sm text-gray-500">01.</h1>
+            <Link
+              to={`/posts?category=${posts[0].category}`}
+              className="text-blue-700"
+            >
+              {posts[0].category}
+            </Link>
+            <span className="text-xs sm:text-sm">{format(posts[0].createdAt)}</span>
+          </div>
+          <Link
+            to={`/${posts[0].slug}`}
+            className="text-sm sm:text-base font-semibold lg:font-bold leading-snug"
+          >
+            {window.innerWidth > 1024
+              ? posts[0].title
+              : truncateText(posts[0].title, 75)}
+          </Link>
+        </div>
+
+        {/* Second and third post (two smaller posts, with third post below on large screens) */}
+        <div className="w-full lg:w-2/3 flex flex-col gap-3">
+          <div className="lg:flex gap-3">
+            {[posts[1], posts[2]].map((post, index) => post && (
+              <div key={index} className="w-full lg:w-1/2 relative">
+                <Link to={`/${post.slug}`} className="relative aspect-video">
+                  <Image
+                    src={post.img}
+                    className="rounded-2xl object-cover w-full h-full"
+                    w="298"
+                  />
+                  <div className="absolute inset-0 bg-black opacity-50 rounded-2xl" /> {/* Dark overlay */}
+                  {/* Post title on top of the image */}
+                  <div className="absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center">
+                    <div className="bg-black bg-opacity-50 text-white p-2 text-center rounded-2xl">
+                      <Link
+                        to={`/${post.slug}`}
+                        className="font-semibold leading-snug"
+                      >
+                        {truncateText(post.title, 50)}
+                      </Link>
+                    </div>
+                  </div>
+                </Link>
+                <div className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm text-gray-500 mb-1">
+                  <h1 className="font-medium text-xs sm:text-sm text-gray-500">
+                    0{index + 2}.
+                  </h1>
+                  <Link
+                    to={`/posts?category=${post.category}`}
+                    className="text-blue-700"
+                  >
+                    {post.category}
+                  </Link>
+                  <span className="text-xs sm:text-sm">{format(post.createdAt)}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* "Over one billion people read daily" text */}
+          <div className="flex justify-end text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-orange-500 mt-4">
+            Over one billion people read daily
+          </div>
+        </div>
+      </div>
+
+      {/* Layout for small screens only */}
+      <div className="lg:hidden flex flex-col gap-6">
+        <div className="w-full">
+          {/* First post */}
+          {posts[0].img && (
+            <Link to={`/${posts[0].slug}`} className="relative">
+              <Image
+                src={posts[0].img}
+                className="rounded-2xl object-cover"
+                w="895"
+              />
+              <div className="absolute inset-0 bg-black opacity-50 rounded-2xl" /> {/* Dark overlay */}
+            </Link>
+          )}
+          <div className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm text-gray-500">
+            <h1 className="font-medium text-xs sm:text-sm text-gray-500">01.</h1>
+            <Link
+              to={`/posts?category=${posts[0].category}`}
+              className="text-blue-700"
+            >
+              {posts[0].category}
+            </Link>
+            <span className="text-xs sm:text-sm">{format(posts[0].createdAt)}</span>
+          </div>
+          <Link
+            to={`/${posts[0].slug}`}
+            className="text-sm sm:text-base font-semibold lg:font-bold leading-snug"
+          >
+            {truncateText(posts[0].title, 75)}
+          </Link>
+        </div>
+
+        {/* "Over one billion people read daily" text (centered on small screens) */}
+        <div className="flex justify-center text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-orange-500 mt-4">
+          Over one billion people read daily
+        </div>
+
+        {/* Second and third post (titles on top of the images for small screens) */}
+        <div className="w-full flex gap-3">
+          {[posts[1], posts[2]].map((post, index) => post && (
+            <div key={index} className="w-1/2 relative">
+              <Link to={`/${post.slug}`} className="relative aspect-video">
+                <Image
+                  src={post.img}
+                  className="rounded-2xl object-cover w-full h-full"
+                  w="298"
+                />
+                <div className="absolute inset-0 bg-black opacity-50 rounded-2xl" /> {/* Dark overlay */}
+                {/* Post title on top of the image */}
+                <div className="absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center">
+                  <div className="bg-black bg-opacity-50 text-white p-2 text-center rounded-2xl">
+                    <Link
+                      to={`/${post.slug}`}
+                      className="font-semibold leading-snug"
+                    >
+                      {truncateText(post.title, 50)}
+                    </Link>
+                  </div>
+                </div>
+              </Link>
+              <div className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm text-gray-500 mb-1">
+                <h1 className="font-medium text-xs sm:text-sm text-gray-500">
+                  0{index + 2}.
+                </h1>
+                <Link
+                  to={`/posts?category=${post.category}`}
+                  className="text-blue-700"
+                >
+                  {post.category}
+                </Link>
+                <span className="text-xs sm:text-sm">{format(post.createdAt)}</span>
+              </div>
               <Link
                 to={`/${post.slug}`}
-                className="leading-snug"
+                className="text-xs sm:text-sm font-medium leading-snug"
               >
-                {truncateText(post.title, 50)}
+                {truncateText(post.title, 75)}
               </Link>
             </div>
-            <div className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm text-gray-500 mb-1">
-              <h1 className="font-medium text-xs sm:text-sm text-gray-500">
-                0{index + 2}.
-              </h1>
-              <Link
-                to={`/posts?category=${post.category}`}
-                className="text-blue-700"
-              >
-                {post.category}
-              </Link>
-              <span className="text-xs sm:text-sm">
-                {format(post.createdAt)}
-              </span>
-            </div>
-            <Link
-              to={`/${post.slug}`}
-              className="text-xs sm:text-sm font-medium leading-snug"
-            >
-              {truncateText(post.title, 75)}
-            </Link>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
