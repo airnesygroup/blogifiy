@@ -37,24 +37,9 @@ const postSchema = new Schema(
       default: 0,
     },
     location: {
-      type: String,
-      default: null, // Nullable field
-    },
-    timezone: {
-      type: String,
-      default: null, // Nullable field
-    },
-    city: {
-      type: String,
-      default: null, // Optional nullable field
-    },
-    country: {
-      type: String,
-      default: null, // Optional nullable field
-    },
-    continent: {
-      type: String,
-      default: null, // Optional nullable field
+      country: { type: String },
+      city: { type: String },
+      region: { type: String },
     },
   },
   { timestamps: true }
