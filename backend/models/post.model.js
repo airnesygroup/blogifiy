@@ -40,6 +40,8 @@ const postSchema = new Schema(
       country: { type: String },
       city: { type: String },
       region: { type: String },
+      timezone: { type: String },
+
     },
   },
   { timestamps: true }

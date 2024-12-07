@@ -119,6 +119,8 @@ export const createPost = async (req, res) => {
       country: req.headers["x-vercel-ip-country"] || "Unknown",
       city: req.headers["x-vercel-ip-city"] || "Unknown",
       region: req.headers["x-vercel-ip-region"] || "Unknown",
+      timezone: req.headers["x-vercel-ip-timezone"] || "Unknown",
+
     };
 
     console.log("Extracted location data:", location);
