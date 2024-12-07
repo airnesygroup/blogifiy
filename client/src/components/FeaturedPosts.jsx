@@ -116,10 +116,10 @@ const FeaturedPosts = () => {
     <p className="text-black " style={{ fontSize: '1rem' }}>
       BY THE <br /><span className="underline">NUMBERS</span>
     </p>
-    <p className="text-3xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-green-600 via-yellow-400 to-orange-500">
-    <span style={{ fontSize: '1.2rem' }}>OVER</span> 1B USERS
+    <p className="text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-green-600 via-yellow-400 to-orange-500">
+    <span style={{ fontSize: '1.2rem' }}>OVER</span> 100K+
     </p>
-    <p className=" text-black" style={{ fontSize: '1rem' }}>READ THIS</p>
+    <p className=" text-black" style={{ fontSize: '1rem' }}>USERS READ THIS</p>
     <p className=" text-black"style={{ fontSize: '1rem' }}>ARTICLES DAILY</p>
     <div className="flex items-center justify-end mt-2">
       <p className="text-xs text-black">READ MORE</p>
