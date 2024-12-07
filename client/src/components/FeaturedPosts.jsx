@@ -103,8 +103,8 @@ const FeaturedPosts = () => {
     ))}
   </div>
 
-  {/* Third column: "Over one billion people read daily" text */}
-  <div className="col-span-12 flex justify-end items-center text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-orange-500 mt-4">
+  {/* Third column: "Over one billion people read daily" text (spans 4 out of 12 to be next to second column) */}
+  <div className="col-span-4 flex justify-end items-center text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-orange-500 mt-4">
     <div className="text-right">
       Over one billion <br /> people read daily
     </div>
