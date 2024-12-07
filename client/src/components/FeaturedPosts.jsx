@@ -111,10 +111,10 @@ const FeaturedPosts = () => {
 </div>
 
 <div className="relative col-span-3 flex justify-end items-center t
-ext-xl font-semibold bg-gradient-to-r from-green-600 via-yellow-400 to-orange-500 rounded-tr-2xl rounded-br-2xlp-4">
+ext-xl font-semibold bg-gradient-to-r from-green-600 via-yellow-400 to-orange-500 rounded-tr-2xl rounded-br-2xl p-4">
   {/* White Overlay */}
   <div
-    className="absolute bg-[#e6e6ff] rounded-tl-2xl rounded-br-2xl"
+    className="absolute bg-[#e6e6ff] rounded-tr-2xl rounded-br-2xl"
     style={{
       top: '2px',
       right: '2px',
