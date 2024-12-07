@@ -11,6 +11,9 @@ const fetchPost = async () => {
   return res.data;
 };
 
+const truncateText = (text, length) =>
+  text.length > length ? text.substring(0, length) + "..." : text;
+
 const FeaturedPosts = () => {
   const { isPending, error, data } = useQuery({
     queryKey: ["featuredPosts"],
@@ -26,138 +29,76 @@ const FeaturedPosts = () => {
   }
 
   return (
-    <div className="mt-8 flex flex-col lg:flex-row gap-8">
+    <div className="mt-4 flex flex-col lg:flex-row gap-6">
       {/* First */}
-      <div className="w-full lg:w-1/2 flex flex-col gap-4">
+      <div className="w-full lg:w-1/2 flex flex-col gap-3">
         {/* image */}
         {posts[0].img && (
-          <Image
-            src={posts[0].img}
-            className="rounded-2xl object-cover"
-            w="895"
-          />
+          <Link to={`/${posts[0].slug}`}>
+            <Image
+              src={posts[0].img}
+              className="rounded-2xl object-cover"
+              w="895"
+            />
+          </Link>
         )}
         {/* details */}
-        <div className="flex items-center gap-2 sm:gap-4">
-          <h1 className="font-semibold text-sm sm:text-base lg:text-md">01.</h1>
-          <Link className="text-blue-800 text-xs sm:text-sm lg:text-md">
+        <div className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm text-gray-500">
+          <h1 className="font-medium text-xs sm:text-sm">01.</h1>
+          <Link
+            to={`/posts?category=${posts[0].category}`}
+            className="text-blue-700"
+          >
             {posts[0].category}
           </Link>
-          <span className="text-gray-500 text-xs sm:text-sm">
-            {format(posts[0].createdAt)}
-          </span>
+          <span>{format(posts[0].createdAt)}</span>
         </div>
         {/* title */}
         <Link
-          to={posts[0].slug}
-          className="text-sm sm:text-base font-semibold lg:font-bold"
+          to={`/${posts[0].slug}`}
+          className="text-sm sm:text-base font-semibold lg:font-bold leading-snug"
         >
-          {posts[0].title}
+          {truncateText(posts[0].title, 75)}
         </Link>
       </div>
       {/* Others */}
-      <div className="w-full lg:w-1/2 flex flex-col gap-4">
-        {/* Second */}
-        {posts[1] && (
-          <div className="lg:h-1/3 flex justify-between gap-4">
-            {posts[1].img && (
-              <div className="w-1/3 aspect-video">
-                <Image
-                  src={posts[1].img}
-                  className="rounded-2xl object-cover w-full h-full"
-                  w="298"
-                />
-              </div>
-            )}
-            {/* details and title */}
-            <div className="w-2/3">
-              {/* details */}
-              <div className="flex items-center gap-2 sm:gap-4 text-xs sm:text-sm lg:text-base mb-4">
-                <h1 className="font-semibold text-sm sm:text-base">02.</h1>
-                <Link className="text-blue-800 text-xs sm:text-sm">
-                  {posts[1].category}
+      <div className="w-full lg:w-1/2 flex flex-col gap-3">
+        {[posts[1], posts[2], posts[3]].map(
+          (post, index) =>
+            post && (
+              <div key={index} className="lg:h-1/3 flex justify-between gap-3">
+                <Link to={`/${post.slug}`} className="w-1/3 aspect-video">
+                  <Image
+                    src={post.img}
+                    className="rounded-2xl object-cover w-full h-full"
+                    w="298"
+                  />
                 </Link>
-                <span className="text-gray-500 text-xs sm:text-sm">
-                  {format(posts[1].createdAt)}
-                </span>
+                {/* details and title */}
+                <div className="w-2/3">
+                  {/* details */}
+                  <div className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm text-gray-500 mb-2">
+                    <h1 className="font-medium text-xs sm:text-sm">
+                      0{index + 2}.
+                    </h1>
+                    <Link
+                      to={`/posts?category=${post.category}`}
+                      className="text-blue-700"
+                    >
+                      {post.category}
+                    </Link>
+                    <span>{format(post.createdAt)}</span>
+                  </div>
+                  {/* title */}
+                  <Link
+                    to={`/${post.slug}`}
+                    className="text-xs sm:text-sm font-medium leading-snug"
+                  >
+                    {truncateText(post.title, 75)}
+                  </Link>
+                </div>
               </div>
-              {/* title */}
-              <Link
-                to={posts[1].slug}
-                className="text-sm sm:text-base font-medium"
-              >
-                {posts[1].title}
-              </Link>
-            </div>
-          </div>
-        )}
-        {/* Third */}
-        {posts[2] && (
-          <div className="lg:h-1/3 flex justify-between gap-4">
-            {posts[2].img && (
-              <div className="w-1/3 aspect-video">
-                <Image
-                  src={posts[2].img}
-                  className="rounded-2xl object-cover w-full h-full"
-                  w="298"
-                />
-              </div>
-            )}
-            {/* details and title */}
-            <div className="w-2/3">
-              {/* details */}
-              <div className="flex items-center gap-2 sm:gap-4 text-xs sm:text-sm lg:text-base mb-4">
-                <h1 className="font-semibold text-sm sm:text-base">03.</h1>
-                <Link className="text-blue-800 text-xs sm:text-sm">
-                  {posts[2].category}
-                </Link>
-                <span className="text-gray-500 text-xs sm:text-sm">
-                  {format(posts[2].createdAt)}
-                </span>
-              </div>
-              {/* title */}
-              <Link
-                to={posts[2].slug}
-                className="text-sm sm:text-base font-medium"
-              >
-                {posts[2].title}
-              </Link>
-            </div>
-          </div>
-        )}
-        {/* Fourth */}
-        {posts[3] && (
-          <div className="lg:h-1/3 flex justify-between gap-4">
-            {posts[3].img && (
-              <div className="w-1/3 aspect-video">
-                <Image
-                  src={posts[3].img}
-                  className="rounded-3xl object-cover w-full h-full"
-                  w="298"
-                />
-              </div>
-            )}
-            {/* details and title */}
-            <div className="w-2/3">
-              {/* details */}
-              <div className="flex items-center gap-2 sm:gap-4 text-xs sm:text-sm lg:text-base mb-4">
-                <h1 className="font-semibold text-sm sm:text-base">04.</h1>
-                <Link className="text-blue-800 text-xs sm:text-sm">
-                  {posts[3].category}
-                </Link>
-                <span className="text-gray-500 text-xs sm:text-sm">
-                  {format(posts[3].createdAt)}
-                </span>
-              </div>
-              {/* title */}
-              <Link
-                to={posts[3].slug}
-                className="text-sm sm:text-base font-medium"
-              >
-                {posts[3].title}
-              </Link>
-            </div>
-          </div>
+            )
         )}
       </div>
     </div>
