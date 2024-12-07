@@ -110,9 +110,18 @@ const FeaturedPosts = () => {
   ))}
 </div>
 
-<div className="relative col-span-3 flex justify-end items-center text-xl font-semibold text-transparent bg-clip-text mt-4">
-  <div className="absolute top-0 right-0 bottom-0 w-[4px] rounded-tr-2xl rounded-br-2xl bg-gradient-to-b from-green-600 via-yellow-400 to-orange-500"></div>
-  <div className="text-right z-10">
+<div className="relative col-span-3 flex justify-end items-center text-xl font-semibold text-transparent bg-clip-text mt-4 rounded-zxl bg-gradient-to-r from-green-600 via-yellow-400 to-orange-500 p-4">
+  {/* White Overlay */}
+  <div className="absolute inset-0 bg-white rounded-zxl" style={{ 
+    top: '2px', 
+    right: '2px', 
+    bottom: '2px', 
+    left: 0, 
+    zIndex: 1 
+  }}></div>
+  
+  {/* Original Content */}
+  <div className="relative text-right" style={{ zIndex: 2 }}>
     <p className="text-black" style={{ fontSize: '1rem' }}>
       BY THE <br /><span className="underline">NUMBERS</span>
     </p>
