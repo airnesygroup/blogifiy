@@ -36,12 +36,13 @@ const FeaturedPosts = () => {
   <div className="col-span-6 flex flex-col gap-3">
     {posts[0].img && (
       <Link to={`/${posts[0].slug}`} className="relative">
-        <Image
-          src={posts[0].img}
-          className="rounded-2xl object-cover w-full h-full"
-          style={{ aspectRatio: '1 / 1' }}  
-        />
-        <div className="absolute inset-0 bg-black opacity-50 rounded-2xl" /> {/* Dark overlay */}
+        <div className="relative w-full" style={{ paddingTop: '100%' }}> {/* Square container */}
+          <Image
+            src={posts[0].img}
+            className="absolute top-0 left-0 w-full h-full object-cover rounded-2xl"
+          />
+          <div className="absolute inset-0 bg-black opacity-50 rounded-2xl" /> {/* Dark overlay */}
+        </div>
       </Link>
     )}
     <div className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm text-gray-500">
@@ -68,24 +69,23 @@ const FeaturedPosts = () => {
   <div className="col-span-3 flex flex-col gap-3">
     {[posts[1], posts[2]].map((post, index) => post && (
       <div key={index} className="w-full relative">
-        <Link to={`/${post.slug}`} className="relative aspect-square">
-          <Image
-            src={post.img}
-            className="rounded-2xl object-cover  "
-            h="180%"
-            w="895"
-
-          />
-          <div className="absolute inset-0 bg-black opacity-50 rounded-2xl" /> {/* Dark overlay */}
-          {/* Post title on top of the image */}
-          <div className="absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center">
-            <div className="bg-black bg-opacity-50 text-white p-2 text-center rounded-1xl">
-              <Link
-                to={`/${post.slug}`}
-                className="font-semibold leading-snug"
-              >
-                {truncateText(post.title, 50)}
-              </Link>
+        <Link to={`/${post.slug}`} className="relative">
+          <div className="relative w-full" style={{ paddingTop: '100%' }}> {/* Square container */}
+            <Image
+              src={post.img}
+              className="absolute top-0 left-0 w-full h-full object-cover rounded-2xl"
+            />
+            <div className="absolute inset-0 bg-black opacity-50 rounded-2xl" /> {/* Dark overlay */}
+            {/* Post title on top of the image */}
+            <div className="absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center">
+              <div className="bg-black bg-opacity-50 text-white p-2 text-center rounded-1xl">
+                <Link
+                  to={`/${post.slug}`}
+                  className="font-semibold leading-snug"
+                >
+                  {truncateText(post.title, 50)}
+                </Link>
+              </div>
             </div>
           </div>
         </Link>
