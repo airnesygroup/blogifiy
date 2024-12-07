@@ -30,10 +30,10 @@ const FeaturedPosts = () => {
 
   return (
     <>{/* Layout for large screens only */}
- {/* Layout for large screens only */}
-<div className="hidden lg:grid grid-cols-3 gap-6 mt-4">
-  {/* First column: First post (twice the size of others) */}
-  <div className="flex flex-col gap-3">
+{/* Layout for large screens only */}
+<div className="hidden lg:grid grid-cols-12 gap-6 mt-4">
+  {/* First column: First post (larger size, spans 8 out of 12) */}
+  <div className="col-span-8 flex flex-col gap-3">
     {posts[0].img && (
       <Link to={`/${posts[0].slug}`} className="relative">
         <Image
@@ -64,8 +64,8 @@ const FeaturedPosts = () => {
     </Link>
   </div>
 
-  {/* Second column: Second and third post (stacked vertically) */}
-  <div className="flex flex-col gap-3">
+  {/* Second column: Second and third post (stacked vertically, spans 4 out of 12) */}
+  <div className="col-span-4 flex flex-col gap-3">
     {[posts[1], posts[2]].map((post, index) => post && (
       <div key={index} className="w-full relative">
         <Link to={`/${post.slug}`} className="relative aspect-square">
@@ -104,12 +104,13 @@ const FeaturedPosts = () => {
   </div>
 
   {/* Third column: "Over one billion people read daily" text */}
-  <div className="flex justify-end items-center text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-orange-500 mt-4">
+  <div className="col-span-12 flex justify-end items-center text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-orange-500 mt-4">
     <div className="text-right">
       Over one billion <br /> people read daily
     </div>
   </div>
 </div>
+
 
     
 
