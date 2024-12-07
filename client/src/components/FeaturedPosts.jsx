@@ -110,26 +110,34 @@ const FeaturedPosts = () => {
   ))}
 </div>
 
-<div className="relative col-span-3 flex justify-end items-center text-xl font-semibold text-transparent bg-clip-text mt-4 rounded-zxl bg-gradient-to-r from-green-600 via-yellow-400 to-orange-500 p-4">
+<div className="relative col-span-3 flex justify-end items-center text-xl font-semibold bg-gradient-to-r from-green-600 via-yellow-400 to-orange-500 rounded-zxl p-4">
   {/* White Overlay */}
-  <div className="absolute inset-0 bg-white rounded-zxl" style={{ 
-    top: '2px', 
-    right: '2px', 
-    bottom: '2px', 
-    left: 0, 
-    zIndex: 1 
-  }}></div>
-  
+  <div
+    className="absolute bg-white rounded-zxl"
+    style={{
+      top: '2px',
+      right: '2px',
+      bottom: '2px',
+      left: '0',
+      zIndex: 1,
+    }}
+  ></div>
+
   {/* Original Content */}
   <div className="relative text-right" style={{ zIndex: 2 }}>
     <p className="text-black" style={{ fontSize: '1rem' }}>
-      BY THE <br /><span className="underline">NUMBERS</span>
+      BY THE <br />
+      <span className="underline">NUMBERS</span>
     </p>
     <p className="text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-green-600 via-yellow-400 to-orange-500">
       <span style={{ fontSize: '1.2rem' }}>OVER</span> 100K+
     </p>
-    <p className="text-black" style={{ fontSize: '1rem' }}>USERS READ THIS</p>
-    <p className="text-black" style={{ fontSize: '1rem' }}>ARTICLES DAILY</p>
+    <p className="text-black" style={{ fontSize: '1rem' }}>
+      USERS READ THIS
+    </p>
+    <p className="text-black" style={{ fontSize: '1rem' }}>
+      ARTICLES DAILY
+    </p>
     <div className="flex items-center justify-end mt-2">
       <p className="text-xs text-black">READ MORE</p>
       <span className="ml-2 bg-black text-white rounded-full p-2">
