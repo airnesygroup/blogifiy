@@ -77,7 +77,7 @@ const FeaturedPosts = () => {
           <div className="absolute inset-0 bg-black opacity-50 rounded-2xl" /> {/* Dark overlay */}
           {/* Post title on top of the image */}
           <div className="absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center">
-            <div className="bg-black bg-opacity-50 text-white p-2 text-center rounded-2xl">
+            <div className="bg-black bg-opacity-50 text-white p-2 text-center rounded-1xl">
               <Link
                 to={`/${post.slug}`}
                 className="font-semibold leading-snug"
