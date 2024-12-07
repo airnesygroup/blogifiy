@@ -32,8 +32,8 @@ const FeaturedPosts = () => {
     <>{/* Layout for large screens only */}
 {/* Layout for large screens only */}
 <div className="hidden lg:grid grid-cols-12 gap-6 mt-4">
-  {/* First column: First post (larger size, spans 8 out of 12) */}
-  <div className="col-span-8 flex flex-col gap-3">
+  {/* First column: First post (larger size, spans 4 out of 12) */}
+  <div className="col-span-4 flex flex-col gap-3">
     {posts[0].img && (
       <Link to={`/${posts[0].slug}`} className="relative">
         <Image
@@ -103,7 +103,7 @@ const FeaturedPosts = () => {
     ))}
   </div>
 
-  {/* Third column: "Over one billion people read daily" text (spans 4 out of 12 to be next to second column) */}
+  {/* Third column: "Over one billion people read daily" text (spans 4 out of 12 to be on the right) */}
   <div className="col-span-4 flex justify-end items-center text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-orange-500 mt-4">
     <div className="text-right">
       Over one billion <br /> people read daily
