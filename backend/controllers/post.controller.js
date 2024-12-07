@@ -83,79 +83,77 @@ export const getPost = async (req, res) => {
 };
 
 export const createPost = async (req, res) => {
-  // Log request headers for debugging
-  console.log("Request Headers:", req.headers);
+  try {
+    // Log request headers for debugging
+    console.log("Request Headers:", req.headers);
 
-  const clerkUserId = req.auth.userId;
+    // Validate user authentication
+    const clerkUserId = req.auth?.userId;
+    if (!clerkUserId) {
+      console.log("Not authenticated, returning 401.");
+      return res.status(401).json({ error: "Not authenticated!" });
+    }
 
-  // Log the user ID to check if it's available
-  console.log("Clerk User ID:", clerkUserId);
+    console.log("Clerk User ID:", clerkUserId);
 
-  // Check if the user is authenticated
-  if (!clerkUserId) {
-    console.log("Not authenticated, returning 401.");
-    return res.status(401).json("Not authenticated!");
+    // Find user in the database using Prisma
+    const user = await prisma.user.findUnique({
+      where: { clerkUserId },
+    });
+
+    if (!user) {
+      console.log("User not found, returning 404.");
+      return res.status(404).json({ error: "User not found!" });
+    }
+
+    console.log("User found:", user);
+
+    // Generate slug
+    let slug = req.body.title.replace(/ /g, "-").toLowerCase();
+    console.log("Generated initial slug:", slug);
+
+    // Handle slug collision
+    let existingPost = await prisma.post.findUnique({ where: { slug } });
+    let counter = 2;
+    const originalSlug = slug;
+
+    while (existingPost) {
+      slug = `${originalSlug}-${counter}`;
+      existingPost = await prisma.post.findUnique({ where: { slug } });
+      counter++;
+      console.log("Updated slug:", slug);
+    }
+
+    console.log("Final unique slug to be used:", slug);
+
+    // Extract location and timezone data from headers
+    const country = req.headers["x-vercel-ip-country"];
+    const region = req.headers["x-vercel-ip-country-region"];
+    const timezone = req.headers["x-vercel-ip-timezone"];
+
+    // Create post in the database
+    const post = await prisma.post.create({
+      data: {
+        userId: user.id,
+        slug,
+        title: req.body.title,
+        content: req.body.content,
+        location: country && region ? `${country}, ${region}` : null,
+        timezone: timezone || null,
+        createdAt: new Date(),
+      },
+    });
+
+    console.log("Post saved successfully:", post);
+
+    // Respond with the created post
+    res.status(200).json(post);
+  } catch (error) {
+    console.error("Error creating post:", error);
+    res.status(500).json({ error: "Internal server error!" });
   }
-
-  // Log before querying the User model
-  console.log("Looking for user with Clerk User ID:", clerkUserId);
-
-  const user = await User.findOne({ clerkUserId });
-  const country = req.headers.get("x-vercel-ip-country");
-  const region = req.headers.get("x-vercel-ip-country-region");
-  const timezone = req.headers.get("x-vercel-ip-timezone");
-
-  // Add location and timezone data to the post
-  const post = await prisma.post.create({
-    data: {
-      ...body,
-      userEmail: session.user.email,
-      location: country ? `${country}, ${region}` : null, // Use the country/region or null if unavailable
-      timezone: timezone || null, // Use timezone or null if unavailable
-      createdAt: new Date().toISOString(),
-    },
-  });
-  // Log if user is found or not
-  if (!user) {
-    console.log("User not found, returning 404.");
-    return res.status(404).json("User not found!");
-  }
-
-  console.log("User found:", user);
-
-  // Generate slug from title
-  let slug = req.body.title.replace(/ /g, "-").toLowerCase();
-  console.log("Generated initial slug:", slug);
-
-  // Check if a post with the same slug already exists
-  let existingPost = await Post.findOne({ slug });
-  console.log("Checking if post with slug already exists:", existingPost);
-
-  let counter = 2;
-
-  // Handle slug collision by appending a counter
-  while (existingPost) {
-    console.log(`Slug collision detected. Appending counter: ${counter}`);
-    slug = `${slug}-${counter}`;
-    existingPost = await Post.findOne({ slug });
-    counter++;
-    console.log("Updated slug:", slug);
-  }
-
-  // Log the final slug to be used
-  console.log("Final unique slug to be used:", slug);
-
-  // Create a new post object with the validated data
-  const newPost = new Post({ user: user._id, slug, ...req.body });
-  console.log("New post object created:", newPost);
-
-  // Save the post to the database
-  const post = await newPost.save();
-  console.log("Post saved successfully:", post);
-
-  // Send the response with the created post
-  res.status(200).json(post);
 };
+
 
 
 export const deletePost = async (req, res) => {
