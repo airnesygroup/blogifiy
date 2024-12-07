@@ -30,105 +30,135 @@ const FeaturedPosts = () => {
       {/* First */}
       <div className="w-full lg:w-1/2 flex flex-col gap-4">
         {/* image */}
-        {posts[0].img && <Image
-          src={posts[0].img}
-          className="rounded-2xl object-cover"
-          w="895"
-        />}
+        {posts[0].img && (
+          <Image
+            src={posts[0].img}
+            className="rounded-2xl object-cover"
+            w="895"
+          />
+        )}
         {/* details */}
-        <div className="flex items-center gap-4">
-          <h1 className="font-semibold lg:text-md">01.</h1>
-          <Link className="text-blue-800 lg:text-md">{posts[0].category}</Link>
-          <span className="text-gray-500">{format(posts[0].createdAt)}</span>
+        <div className="flex items-center gap-2 sm:gap-4">
+          <h1 className="font-semibold text-sm sm:text-base lg:text-md">01.</h1>
+          <Link className="text-blue-800 text-xs sm:text-sm lg:text-md">
+            {posts[0].category}
+          </Link>
+          <span className="text-gray-500 text-xs sm:text-sm">
+            {format(posts[0].createdAt)}
+          </span>
         </div>
         {/* title */}
         <Link
           to={posts[0].slug}
-          className="text-md lg:text-md font-semibold lg:font-bold"
+          className="text-sm sm:text-base font-semibold lg:font-bold"
         >
           {posts[0].title}
         </Link>
       </div>
       {/* Others */}
       <div className="w-full lg:w-1/2 flex flex-col gap-4">
-        {/* second */}
-        {posts[1] && <div className="lg:h-1/3 flex justify-between gap-4">
-          {posts[1].img && <div className="w-1/3 aspect-video">
-            <Image
-              src={posts[1].img}
-              className="rounded-2xl object-cover w-full h-full"
-              w="298"
-            />
-          </div>}
-          {/* details and title */}
-          <div className="w-2/3">
-            {/* details */}
-            <div className="flex items-center gap-4 text-sm lg:text-base mb-4">
-              <h1 className="font-semibold">02.</h1>
-              <Link className="text-blue-800">{posts[1].category}</Link>
-              <span className="text-gray-500 text-sm">{format(posts[1].createdAt)}</span>
+        {/* Second */}
+        {posts[1] && (
+          <div className="lg:h-1/3 flex justify-between gap-4">
+            {posts[1].img && (
+              <div className="w-1/3 aspect-video">
+                <Image
+                  src={posts[1].img}
+                  className="rounded-2xl object-cover w-full h-full"
+                  w="298"
+                />
+              </div>
+            )}
+            {/* details and title */}
+            <div className="w-2/3">
+              {/* details */}
+              <div className="flex items-center gap-2 sm:gap-4 text-xs sm:text-sm lg:text-base mb-4">
+                <h1 className="font-semibold text-sm sm:text-base">02.</h1>
+                <Link className="text-blue-800 text-xs sm:text-sm">
+                  {posts[1].category}
+                </Link>
+                <span className="text-gray-500 text-xs sm:text-sm">
+                  {format(posts[1].createdAt)}
+                </span>
+              </div>
+              {/* title */}
+              <Link
+                to={posts[1].slug}
+                className="text-sm sm:text-base font-medium"
+              >
+                {posts[1].title}
+              </Link>
             </div>
-            {/* title */}
-            <Link
-              to={posts[1].slug}
-              className="text-base sm:text-md md:text-md lg:text-xlmd xl:text-md font-medium"
-            >
-              {posts[1].title}
-            </Link>
           </div>
-        </div>}
-        {/* third */}
-        {posts[2] && <div className="lg:h-1/3 flex justify-between gap-4">
-          {posts[2].img && <div className="w-1/3 aspect-video">
-            <Image
-              src={posts[2].img}
-              className="rounded-2xl object-cover w-full h-full"
-              w="298"
-            />
-          </div>}
-          {/* details and title */}
-          <div className="w-2/3">
-            {/* details */}
-            <div className="flex items-center gap-4 text-sm lg:text-base mb-4">
-              <h1 className="font-semibold">02.</h1>
-              <Link className="text-blue-800">{posts[2].category}</Link>
-              <span className="text-gray-500 text-sm">{format(posts[2].createdAt)}</span>
+        )}
+        {/* Third */}
+        {posts[2] && (
+          <div className="lg:h-1/3 flex justify-between gap-4">
+            {posts[2].img && (
+              <div className="w-1/3 aspect-video">
+                <Image
+                  src={posts[2].img}
+                  className="rounded-2xl object-cover w-full h-full"
+                  w="298"
+                />
+              </div>
+            )}
+            {/* details and title */}
+            <div className="w-2/3">
+              {/* details */}
+              <div className="flex items-center gap-2 sm:gap-4 text-xs sm:text-sm lg:text-base mb-4">
+                <h1 className="font-semibold text-sm sm:text-base">03.</h1>
+                <Link className="text-blue-800 text-xs sm:text-sm">
+                  {posts[2].category}
+                </Link>
+                <span className="text-gray-500 text-xs sm:text-sm">
+                  {format(posts[2].createdAt)}
+                </span>
+              </div>
+              {/* title */}
+              <Link
+                to={posts[2].slug}
+                className="text-sm sm:text-base font-medium"
+              >
+                {posts[2].title}
+              </Link>
             </div>
-            {/* title */}
-            <Link
-              to={posts[1].slug}
-              className="text-base sm:text-md md:text-md lg:text-xlmd xl:text-md font-medium"
-            >
-              {posts[2].title}
-            </Link>
           </div>
-        </div>}
-        {/* fourth */}
-        {posts[3] && <div className="lg:h-1/3 flex justify-between gap-4">
-          {posts[3].img && <div className="w-1/3 aspect-video">
-            <Image
-              src={posts[3].img}
-              className="rounded-3xl object-cover w-full h-full"
-              w="298"
-            />
-          </div>}
-          {/* details and title */}
-          <div className="w-2/3">
-            {/* details */}
-            <div className="flex items-center gap-4 text-sm lg:text-base mb-4">
-              <h1 className="font-semibold">02.</h1>
-              <Link className="text-blue-800">{posts[3].category}</Link>
-              <span className="text-gray-500 text-sm">{format(posts[3].createdAt)}</span>
+        )}
+        {/* Fourth */}
+        {posts[3] && (
+          <div className="lg:h-1/3 flex justify-between gap-4">
+            {posts[3].img && (
+              <div className="w-1/3 aspect-video">
+                <Image
+                  src={posts[3].img}
+                  className="rounded-3xl object-cover w-full h-full"
+                  w="298"
+                />
+              </div>
+            )}
+            {/* details and title */}
+            <div className="w-2/3">
+              {/* details */}
+              <div className="flex items-center gap-2 sm:gap-4 text-xs sm:text-sm lg:text-base mb-4">
+                <h1 className="font-semibold text-sm sm:text-base">04.</h1>
+                <Link className="text-blue-800 text-xs sm:text-sm">
+                  {posts[3].category}
+                </Link>
+                <span className="text-gray-500 text-xs sm:text-sm">
+                  {format(posts[3].createdAt)}
+                </span>
+              </div>
+              {/* title */}
+              <Link
+                to={posts[3].slug}
+                className="text-sm sm:text-base font-medium"
+              >
+                {posts[3].title}
+              </Link>
             </div>
-            {/* title */}
-            <Link
-              to={posts[3].slug}
-              className="text-base sm:text-md md:text-md lg:text-xlmd xl:text-md font-medium"
-            >
-              {posts[3].title}
-            </Link>
           </div>
-        </div>}
+        )}
       </div>
     </div>
   );
