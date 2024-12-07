@@ -40,7 +40,7 @@ const FeaturedPosts = () => {
       <div className="relative w-full" style={{ paddingTop: '100%' }}> {/* Square container */}
         <Image
           src={posts[0].img}
-          className="absolute top-0 left-0 w-full h-full object-cover"
+          className="absolute top-0 left-0 w-full h-full object-cover rounded-tl-lg rounded-bl-lg"
         />
         <div className="absolute inset-0 bg-black opacity-30" /> {/* Dark overlay */}
         {/* Text content */}
