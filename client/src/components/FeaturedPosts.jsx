@@ -39,7 +39,7 @@ const FeaturedPosts = () => {
         <Image
           src={posts[0].img}
           className="rounded-2xl object-cover w-full h-full"
-          style={{ aspectRatio: '1 / 1' }}  
+          style={{ aspectRatio: '3 / 1' }}  
         />
         <div className="absolute inset-0 bg-black opacity-50 rounded-2xl" /> {/* Dark overlay */}
       </Link>
@@ -72,7 +72,7 @@ const FeaturedPosts = () => {
           <Image
             src={post.img}
             className="rounded-2xl object-cover w-full h-full"
-            style={{ aspectRatio: '1 / 1' }}  
+            style={{ aspectRatio: '1 / 3' }}  
           />
           <div className="absolute inset-0 bg-black opacity-50 rounded-2xl" /> {/* Dark overlay */}
           {/* Post title on top of the image */}
