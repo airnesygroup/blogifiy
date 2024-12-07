@@ -110,27 +110,77 @@ const FeaturedPosts = () => {
   ))}
 </div>
 
-<div className="col-span-3 flex justify-end items-center text-xl font-semibold text-transparent bg-clip-text mt-4 relative">
-  {/* Border Container */}
-  <div className="absolute top-0 right-0 bottom-0 rounded-tr-2xl rounded-br-2xl bg-gradient-to-b from-green-600 via-yellow-400 to-orange-500" style={{ width: '5px' }}></div>
+<div 
+  className="col-span-3 flex justify-end items-center text-xl font-semibold text-transparent bg-clip-text mt-4 relative"
+  style={{
+    position: 'relative',
+    borderRadius: '2rem',
+    padding: '1rem',
+    overflow: 'hidden',
+  }}
+>
+  {/* Gradient Border */}
+  <div
+    style={{
+      position: 'absolute',
+      top: 0,
+      right: 0,
+      bottom: 0,
+      left: 0,
+      borderTopRightRadius: '2rem',
+      borderBottomRightRadius: '2rem',
+      background: 'linear-gradient(90deg, green, yellow, orange)',
+      zIndex: 1,
+      animation: 'gradient-motion 3s infinite linear',
+      clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%, 0% 80%, 0 20%)',
+    }}
+  ></div>
 
   {/* Content */}
-  <div className="text-right ml-4"> {/* Added margin-left to push content away from border */}
+  <div style={{ position: 'relative', zIndex: 2, background: 'white' }}>
     <p className="text-black" style={{ fontSize: '1rem' }}>
       BY THE <br /><span className="underline">NUMBERS</span>
     </p>
-    <p className="text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-green-600 via-yellow-400 to-orange-500">
+    <p
+      className="text-5xl font-extrabold bg-clip-text text-transparent"
+      style={{
+        fontSize: '3rem',
+        backgroundImage: 'linear-gradient(to right, green, yellow, orange)',
+      }}
+    >
       <span style={{ fontSize: '1.2rem' }}>OVER</span> 100K+
     </p>
     <p className="text-black" style={{ fontSize: '1rem' }}>USERS READ THIS</p>
     <p className="text-black" style={{ fontSize: '1rem' }}>ARTICLES DAILY</p>
     <div className="flex items-center justify-end mt-2">
       <p className="text-xs text-black">READ MORE</p>
-      <span className="ml-2 bg-black text-white rounded-full p-2">
+      <span
+        className="ml-2"
+        style={{
+          background: 'black',
+          color: 'white',
+          borderRadius: '50%',
+          padding: '0.5rem',
+        }}
+      >
         <i className="fa fa-arrow-right"></i>
       </span>
     </div>
   </div>
+
+  {/* Keyframes for Animation */}
+  <style>
+    {`
+      @keyframes gradient-motion {
+        0% {
+          background-position: 0% 50%;
+        }
+        100% {
+          background-position: 100% 50%;
+        }
+      }
+    `}
+  </style>
 </div>
 
 
