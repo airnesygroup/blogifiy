@@ -10,7 +10,7 @@ const Homepage = () => {
   <div className="flex items-center justify-center">
   {/* Titles */}
   <h1 className="text-gray-800 mb-9 mt-9 text-2xl md:text-3xl lg:text-8xl font-bold text-center">
-     <span className="text-transparent bg-clip-text bg-gradient-to-r from-black via-green-400  to-orange-400">THE VERGE</span>
+     <span className="text-transparent bg-clip-text bg-gradient-to-r from-black   to-green-400">THE VERGE</span>
   </h1>
 </div>
 
