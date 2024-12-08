@@ -31,7 +31,7 @@ const FeaturedPosts = () => {
   return (
     <>{/* Layout for large screens only */}
 {/* Layout for large screens only */}
-<div className="hidden lg:grid grid-cols-12 gap-6 mt-4">
+<div className=" lg:grid grid-cols-12 gap-6 mt-4">
 
 {/* First column: First post (takes half the width, spans 6 out of 12) */}
 <div className="col-span-6 flex flex-col gap-3 relative rounded-tl-lg rounded-bl-lg">
