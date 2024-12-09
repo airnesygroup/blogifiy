@@ -7,13 +7,12 @@ body {
   width: 100vw;
   overflow-x: hidden;
   font-family: "Montserrat", sans-serif;
-  margin: 0;
-  height: 200vh; /* To allow scrolling */
+  margin: 0; /* Prevent any default margin from affecting layout */
 }
 
 body::before {
   content: "";
-  position: fixed; /* Fix the gradient to the viewport */
+  position: absolute; /* Changed to absolute by default */
   top: 0;
   left: 0;
   width: 100%;
@@ -21,27 +20,18 @@ body::before {
   background: linear-gradient(to top, transparent, black);
   pointer-events: none; /* Ensure it doesn't interfere with clicks or interactions */
   z-index: 9999; /* Ensure it stays above other elements */
-  opacity: 1; /* Initial opacity */
-  transition: opacity 0.3s ease; /* Smooth fade-in/out effect */
 }
 
-body.scrolled::before {
-  position: absolute; /* Make the gradient scrollable */
-  top: 100vh; /* Start it from after the first screen height */
-  opacity: 0.8; /* Slight transparency */
-}
-
-
-.animatedButton{
+.animatedButton {
   animation-duration: 10000ms;
 }
 
-.ql-container{
+.ql-container {
   border: none !important;
 }
-.ql-toolbar{
+.ql-toolbar {
   border: none !important;
 }
-.ql-editor{
+.ql-editor {
   border: none !important;
 }
