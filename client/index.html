@@ -10,7 +10,7 @@
       rel="stylesheet"
     />
   </head>
-  <body>
+  <body class="show-gradient"> <!-- Start with the gradient visible -->
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
     <script>
@@ -31,6 +31,11 @@
           document.body.classList.remove('show-gradient');
         }
       });
+
+      // Ensure gradient is visible on page load without any scroll
+      if (window.scrollY === 0) {
+        document.body.classList.add('show-gradient');
+      }
     </script>
   </body>
 </html>
