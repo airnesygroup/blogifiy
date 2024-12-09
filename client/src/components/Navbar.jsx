@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Image from "./Image";
+
 import { Link } from "react-router-dom";
 import { SignedIn, SignedOut, UserButton } from "@clerk/clerk-react";
 
@@ -10,7 +10,7 @@ const Navbar = () => {
     <div className="w-full h-16 md:h-20 flex items-center justify-between">
       {/* LOGO */}
       <Link to="/" className="flex items-center gap-4 text-2xl font-bold">
-        <Image src="../logo.png" alt=" Logo" w={32} h={32} />
+      <img src="/logo.png" alt="Logo" style={{ width: '32px', height: '32px' }} />
         <span>Hoolicon</span>
       </Link>
       {/* MOBILE MENU */}
@@ -65,7 +65,7 @@ const Navbar = () => {
         <Link to="/">About</Link>
         <SignedOut>
           <Link to="/login">
-            <button className="py-2 px-4 rounded-3xl bg-gradient-to-r from-[#484e4f] to-[#1DA1F2]] text-white">
+            <button className="py-2 px-4 rounded-3xl bg-gradient-to-r from-[#484e4f] to-[#bbdaed] text-white">
               Login 👋
             </button>
           </Link>

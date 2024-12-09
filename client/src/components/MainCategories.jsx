@@ -8,7 +8,7 @@ const MainCategories = () => {
       <div className="flex-1 flex items-center justify-between flex-wrap">
         <Link
           to="/posts"
-          className="bg-gradient-to-r from-[#484e4f] to-[#1DA1F2]] text-white rounded-full px-4 py-1"
+          className="bg-gradient-to-r from-[#484e4f] to-[#bbdaed] text-white rounded-full px-4 py-1"
           >
           All Posts
         </Link>
