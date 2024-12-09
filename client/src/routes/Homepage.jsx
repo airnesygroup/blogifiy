@@ -24,28 +24,23 @@ const Homepage = () => {
             EXPLORE BY CATEGORY
           </span>
         </h1>
-        
         <div className="flex items-center justify-center pl-3 gap-4 relative">
   {/* Arrow Image */}
   <img
     src="/arrow.png" // Replace with the actual path to your arrow image
     alt="Arrow"
-    className="w-36 h-12"
-    style={{
-      width: "100px",
-      height: "50px",
-    }} // Adjust size of the arrow as needed
+    className="w-25 h-5 sm:w-25 sm:h-5 md:w-28 md:h-10" // Adjust size for small and medium screens
   />
+
   {/* White Line */}
   <div
     style={{
       height: "0.4px",
       width: "calc(100vw - 100px)", // Full viewport width minus the width of the arrow
       position: "absolute", // Position it absolutely to overflow
-      left: "calc(100px + 30px)", // Start after the arrow and add extra spacing (20px here)
       top: "50%", // Center it vertically relative to the parent container
     }}
-    className="bg-white"
+    className=" left-[calc(100px-50px)] bg-white sm:left-[calc(100px+40px)]" // Adjust the left position for small screens
   />
 </div>
 
