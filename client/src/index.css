@@ -23,7 +23,6 @@ body::before {
   height: 200px; /* Gradient height */
   background: linear-gradient(to top, transparent, rgb(201, 201, 209)); /* Black gradient instead of whitish */
   pointer-events: none; /* Ensure it doesn't interfere with clicks */
-  z-index: 9999; /* Stay above other elements */
   opacity: 1; /* Fully visible initially */
   transition: position 0.3s ease, opacity 0.3s ease; /* Smooth transition */
 }
