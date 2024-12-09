@@ -17,14 +17,14 @@
       window.addEventListener('scroll', () => {
         const scrollPosition = window.scrollY; // Current scroll position
         
-        // When scroll position exceeds 1000px
+        // After scrolling down 1000px, the gradient disappears and is set to absolute
         if (scrollPosition > 1000) {
           document.body.classList.add('scroll-past-1000');
         } else {
           document.body.classList.remove('scroll-past-1000');
         }
 
-        // When scrolling back up and within 100px from top
+        // When scrolling back up and within 100px from the top, show the gradient
         if (scrollPosition < 1000 && !document.body.classList.contains('scroll-past-1000')) {
           document.body.classList.add('show-gradient');
         } else {

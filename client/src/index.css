@@ -24,18 +24,20 @@ body::before {
   transition: position 0.3s ease, opacity 0.3s ease; /* Smooth transition */
 }
 
+/* After scrolling past 1000px, the gradient becomes absolute and disappears */
 body.scroll-past-1000::before {
-  position: absolute; /* Change to absolute after scrolling 1000px */
-  opacity: 0; /* Hide gradient after scrolling 1000px down */
+  position: absolute; /* Change to absolute */
+  opacity: 0; /* Hide gradient */
 }
 
+/* When within 100px of the top, gradient reappears and is fixed */
 body.show-gradient::before {
-  position: fixed; /* Gradient becomes fixed again when within 100px of top */
+  position: fixed; /* Gradient becomes fixed again */
   opacity: 1; /* Show gradient */
 }
 
 body:not(.show-gradient)::before {
-  opacity: 0; /* Hide gradient when not in range */
+  opacity: 0; /* Hide gradient when not within 100px of the top */
 }
 
 .animatedButton {
