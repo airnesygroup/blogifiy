@@ -3,8 +3,13 @@
 @tailwind utilities;
 
 body {
-  background: linear-gradient(to bottom, black 0px, black 1000px, #e6e6ff 1000px); /* First 1000px black */
-  width: 100vw;
+  background: linear-gradient(
+    to bottom,
+    black 0px,
+    black 1000px, /* Black ends here */
+    #8c8ca1 1050px, /* Transitional gray starts at 1000px and ends at 1050px */
+    #e6e6ff 1050px /* Whitish original background starts */
+  );   width: 100vw;
   overflow-x: hidden;
   font-family: "Montserrat", sans-serif;
   margin: 0; /* Prevent any default margin from affecting layout */
