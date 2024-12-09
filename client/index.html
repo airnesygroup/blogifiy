@@ -23,7 +23,7 @@
   const scrollRemaining = documentHeight - windowHeight - scrollPosition;
 
   // Apply logic for showing or hiding the gradient
-  if (scrollPosition > 100 && scrollRemaining > 1000) {
+  if (scrollPosition > 100 && scrollRemaining > 200) {
     document.body.classList.add('scroll-gradient');
   } else {
     document.body.classList.remove('scroll-gradient');
