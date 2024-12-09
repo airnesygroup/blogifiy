@@ -7,7 +7,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="w-full h-16 md:h-20 flex items-center justify-between">
+    <div className="w-full h-14 md:h-14 bg-black flex items-center justify-between">
       {/* LOGO */}
       <Link to="/" className="flex items-center gap-4 text-2xl font-bold">
       <img src="/logo.png" alt="Logo" style={{ width: '32px', height: '32px' }} />
