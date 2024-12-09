@@ -114,7 +114,7 @@ const FeaturedPosts = () => {
 ext-xl font-semibold bg-gradient-to-r bg-gradient-to-r bg-gradient-to-r from-black to-[#1DA1F2] rounded-tr-2xl rounded-br-2xl p-4">
   {/* White Overlay */}
   <div
-    className="absolute bg-[#e6e6ff] rounded-tr-2xl rounded-br-2xl"
+    className="absolute bg-black rounded-tr-2xl rounded-br-2xl"
     style={{
       top: '2px',
       right: '2px',
