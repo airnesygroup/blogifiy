@@ -111,7 +111,7 @@ const FeaturedPosts = () => {
 </div>
 
 <div className="relative col-span-3 flex justify-end items-center t
-ext-xl font-semibold bg-gradient-to-r bg-gradient-to-r bg-gradient-to-r from-white to-[#1DA1F2] rounded-tr-2xl rounded-br-2xl p-4">
+ext-xl font-semibold bg-gradient-to-r bg-gradient-to-r bg-gradient-to-r bg-gradient-to-r from-green-500 via-yellow-500 to-orange-500 rounded-tr-2xl rounded-br-2xl p-4">
   {/* White Overlay */}
   <div
     className="absolute bg-black rounded-tr-2xl rounded-br-2xl"
@@ -130,14 +130,14 @@ ext-xl font-semibold bg-gradient-to-r bg-gradient-to-r bg-gradient-to-r from-whi
       BY THE <br />
       <span className="underline">NUMBERS</span>
     </p>
-    <p className="text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r bg-gradient-to-r from-white to-[#1DA1F2]">
+    <p className="text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r bg-gradient-to-r from-green-500 via-yellow-500 to-orange-500">
       <span style={{ fontSize: '1.2rem' }}>OVER</span> 100K+
     </p>
     <p className="text-white" style={{ fontSize: '1rem' }}>
       USERS READ THIS
     </p>
     <p className="text-white" style={{ fontSize: '1rem' }}>
-      ARTICLES DAILY
+      ARTICLES EVERYDAY 
     </p>
     <div className="flex items-center justify-end mt-2">
       <p className="text-xs text-white">READ MORE</p>
