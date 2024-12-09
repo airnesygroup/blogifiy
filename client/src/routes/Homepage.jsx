@@ -11,8 +11,8 @@ const Homepage = () => {
   
   <div className="flex items-center justify-center">
   {/* Titles */}
-  <h1 className="text-gray-800 mb-9 mt-9 text-4xl md:text-5xl lg:text-8xl font-bold text-center">
-     <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-[#1DA1F2]">The Hooli</span>
+  <h1 className="text-gray-800 mb-9 mt-9 text-4xl md:text-4xl lg:text-5xl font-bold text-center">
+     <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-[#1DA1F2]">EXPLORE BY CATEGORY</span>
   </h1>
 </div>
 
