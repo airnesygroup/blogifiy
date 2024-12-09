@@ -15,9 +15,7 @@ const Homepage = () => {
 </div>
 
       {/* CATEGORIES */}
-      <MainCategories />
       {/* FEATURED POSTS */}
-      <FeaturedPosts />
       {/* POST LIST */}
       <div className="">
         <h1 className="my-8 text-2xl text-gray-600">Recent Posts</h1>
