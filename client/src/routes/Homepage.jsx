@@ -9,11 +9,12 @@ const Homepage = () => {
   
   <div className="flex items-center justify-center">
   {/* Titles */}
- 
+
 </div>
 
       {/* CATEGORIES */}
       {/* FEATURED POSTS */}
+      <FeaturedPosts />
       {/* POST LIST */}
       <div className="">
         <h1 className="my-8 text-2xl text-gray-600">Recent Posts</h1>
