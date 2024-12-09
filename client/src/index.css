@@ -7,7 +7,8 @@ body {
   width: 100vw;
   overflow-x: hidden;
   font-family: "Montserrat", sans-serif;
-  margin: 0; /* Prevent any default margin from affecting layout */
+  margin: 0;
+  height: 200vh; /* To allow scrolling */
 }
 
 body::before {
@@ -20,6 +21,14 @@ body::before {
   background: linear-gradient(to top, transparent, black);
   pointer-events: none; /* Ensure it doesn't interfere with clicks or interactions */
   z-index: 9999; /* Ensure it stays above other elements */
+  opacity: 1; /* Initial opacity */
+  transition: opacity 0.3s ease; /* Smooth fade-in/out effect */
+}
+
+body.scrolled::before {
+  position: absolute; /* Make the gradient scrollable */
+  top: 100vh; /* Start it from after the first screen height */
+  opacity: 0.8; /* Slight transparency */
 }
 
 
