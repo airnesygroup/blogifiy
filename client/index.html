@@ -16,9 +16,16 @@
     <script>
       window.addEventListener('scroll', () => {
         const scrollPosition = window.scrollY; // Current scroll position
-        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
         
-        if (scrollPosition > 1000 && scrollPosition < maxScroll - 1000) {
+        // When scroll position exceeds 1000px
+        if (scrollPosition > 1000) {
+          document.body.classList.add('scroll-past-1000');
+        } else {
+          document.body.classList.remove('scroll-past-1000');
+        }
+
+        // When scrolling back up and within 100px from top
+        if (scrollPosition < 100 && !document.body.classList.contains('scroll-past-1000')) {
           document.body.classList.add('show-gradient');
         } else {
           document.body.classList.remove('show-gradient');
