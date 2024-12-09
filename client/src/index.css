@@ -6,15 +6,14 @@ body {
   background: linear-gradient(
     to bottom,
     black 0px,
-    black 1000px, /* Black ends here */
-    #8c8ca1 1050px, /* Transitional gray starts at 1000px and ends at 1050px */
-    #e6e6ff 1050px /* Whitish original background starts */
-  );   width: 100vw;
+    black 1000px, /* Solid black up to 1000px */
+    #e6e6ff 1050px /* Gradual transition from black to #e6e6ff between 1000px and 1050px */
+  ); 
+   width: 100vw;
   overflow-x: hidden;
   font-family: "Montserrat", sans-serif;
   margin: 0; /* Prevent any default margin from affecting layout */
 }
-
 body::before {
   content: "";
   position: fixed; /* Gradient is fixed initially */
@@ -22,18 +21,14 @@ body::before {
   left: 0;
   width: 100%;
   height: 200px; /* Gradient height */
-  background: linear-gradient(to top, transparent, rgb(255, 255, 255)); /* Black gradient instead of whitish */
+  background: linear-gradient(to top, transparent, rgb(192, 193, 204)); /* Black gradient instead of whitish */
   pointer-events: none; /* Ensure it doesn't interfere with clicks */
   z-index: 9999; /* Stay above other elements */
   opacity: 1; /* Fully visible initially */
   transition: position 0.3s ease, opacity 0.3s ease; /* Smooth transition */
 }
 
-/* After scrolling past 1000px, the gradient becomes absolute and disappears */
-body.scroll-past-1000::before {
-  position: absolute; /* Change to absolute */
-  opacity: 0; /* Hide gradient */
-}
+
 
 
 /* When within 100px of the top, gradient reappears and is fixed */
