@@ -9,16 +9,22 @@ const Homepage = () => {
     
     <div className=" mb-9 flex flex-col gap-0">
   
-  <div className="flex items-center justify-center">
+  <div className="flex items-center z-10000 justify-center">
   {/* Titles */}
-  <h1 className="text-gray-800 mb-9 mt-9 text-4xl md:text-4xl lg:text-5xl font-bold text-center">
-     <span className=" mb-9 text-transparent bg-clip-text bg-white ">EXPLORE BY CATEGORY</span>
-  </h1>
+
+  <h1 
+  className="text-white  mb-9 mt-9 text-4xl md:text-4xl lg:text-5xl font-bold text-center relative z-10000"
+>
+  <span 
+    className="mb-9 text-transparent bg-clip-text bg-white font-extrabold"
+  >
+    EXPLORE BY CATEGORY
+  </span>
+</h1>
 </div>
 
 
       {/* CATEGORIES */}
-      <MainCategories />
       {/* FEATURED POSTS */}
       <FeaturedPosts />
       {/* POST LIST */}
