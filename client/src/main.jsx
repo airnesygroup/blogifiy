@@ -1,4 +1,4 @@
-import { StrictMode, useEffect } from "react";
+import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -17,47 +17,48 @@ import "react-toastify/dist/ReactToastify.css";
 const queryClient = new QueryClient();
 
 // Hardcoded Clerk publishable key
-const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
+// Import your publishable key
+const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
 
 if (!PUBLISHABLE_KEY) {
-  throw new Error('Add your Clerk publishable key to the .env.local file');
+  throw new Error('Add your Clerk publishable key to the .env.local file')
 }
-
 const router = createBrowserRouter([
   {
     element: <MainLayout />,
     children: [
-      { path: "/", element: <Homepage /> },
-      { path: "/posts", element: <PostListPage /> },
-      { path: "/:slug", element: <SinglePostPage /> },
-      { path: "/write", element: <Write /> },
-      { path: "/login", element: <LoginPage /> },
-      { path: "/register", element: <RegisterPage /> },
+      {
+        path: "/",
+        element: <Homepage />,
+      },
+      {
+        path: "/posts",
+        element: <PostListPage />,
+      },
+      {
+        path: "/:slug",
+        element: <SinglePostPage />,
+      },
+      {
+        path: "/write",
+        element: <Write />,
+      },
+      {
+        path: "/login",
+        element: <LoginPage />,
+      },
+      {
+        path: "/register",
+        element: <RegisterPage />,
+      },
     ],
   },
 ]);
 
-// Add scroll event listener to toggle gradient
-const handleScroll = () => {
-  const gradientElement = document.body;
-  if (window.scrollY >= 1000) {
-    gradientElement.classList.add("show-gradient");
-  } else {
-    gradientElement.classList.remove("show-gradient");
-  }
-};
-
-useEffect(() => {
-  window.addEventListener("scroll", handleScroll);
-
-  // Clean up the event listener when the component unmounts
-  return () => window.removeEventListener("scroll", handleScroll);
-}, []);
-
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
-      <QueryClientProvider client={queryClient}>
+<ClerkProvider publishableKey={PUBLISHABLE_KEY}>
+        <QueryClientProvider client={queryClient}>
         <RouterProvider router={router} />
         <ToastContainer position="bottom-right" />
       </QueryClientProvider>

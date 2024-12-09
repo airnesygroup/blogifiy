@@ -13,5 +13,16 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script>
+      window.addEventListener('scroll', () => {
+        const scrollPosition = window.scrollY; // Current scroll position
+  
+        if (scrollPosition > 1000) {
+          document.body.classList.add('scroll-gradient');
+        } else {
+          document.body.classList.remove('scroll-gradient');
+        }
+      });
+    </script>
   </body>
 </html>
