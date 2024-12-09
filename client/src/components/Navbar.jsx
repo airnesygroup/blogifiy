@@ -51,7 +51,7 @@ const Navbar = () => {
           <Link to="/posts?sort=popular" onClick={()=>setOpen(false)}>Most Popular</Link>
           <Link to="/" onClick={()=>setOpen(false)}>About</Link>
           <Link to="/login" onClick={()=>setOpen(false)}>
-            <button className="py-2 px-4 rounded-3xl bg-blue-800 text-white">
+            <button className="py-2 px-4 rounded-3xl bg-[#1DA1F2]   text-white">
               Login 👋
             </button>
           </Link>
@@ -65,7 +65,7 @@ const Navbar = () => {
         <Link to="/">About</Link>
         <SignedOut>
           <Link to="/login">
-            <button className="py-2 px-4 rounded-3xl bg-blue-800 text-white">
+            <button className="py-2 px-4 rounded-3xl bg-gradient-to-r from-[#484e4f] to-[#1DA1F2]] text-white">
               Login 👋
             </button>
           </Link>
