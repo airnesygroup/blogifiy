@@ -7,10 +7,10 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="w-full h-14 md:h-14 bg-black fixed top-0 left-0 z-50 flex items-center justify-between">
-      {/* LOGO */}
+<div style={{ background: '#151515' }} className="w-full h-14 md:h-14  fixed pl-5 pr-5 top-0 left-0 z-50 flex items-center justify-between">
+{/* LOGO */}
       <Link to="/" className="flex items-center gap-4 text-2xl font-bold">
-      <img src="/logo.png" alt="Logo" style={{ width: '32px', height: '32px' }} />
+      <img src="/logo.png" alt="Logo" style={{  height: '32px' }} />
         <span>Hoolicon</span>
       </Link>
       {/* MOBILE MENU */}

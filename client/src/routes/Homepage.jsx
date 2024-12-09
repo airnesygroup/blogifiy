@@ -11,13 +11,13 @@ const Homepage = () => {
   
   <div 
   className="text-white relative z-[10000]" 
-  style={{ position: "relative", zIndex: 10000 }}
+  style={{ position: "relative", paddingTop:"5%", zIndex: 10000 }}
 >
   <div className="flex items-center z-10000 justify-center">
   {/* Titles */}
 
   <h1 
-  className="text-[#e6e6ff]  mb-9 mt-9 text-4xl md:text-4xl lg:text-5xl font-bold text-center relative z-10000"
+  className="text-[#e6e6ff]  mb-9 mt-9 text-2xl md:text-4xl lg:text-5xl font-bold text-center relative z-10000"
 >
   <span 
     className="mb-9 text-transparent bg-clip-text bg-white font-extrabold"
