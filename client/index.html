@@ -14,22 +14,16 @@
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
     <script>
-     window.addEventListener('scroll', () => {
-  const scrollPosition = window.scrollY; // Current scroll position
-  const documentHeight = document.documentElement.scrollHeight; // Total document height
-  const windowHeight = window.innerHeight; // Height of the viewport
-
-  // Calculate the distance from the top to the bottom of the document
-  const scrollRemaining = documentHeight - windowHeight - scrollPosition;
-
-  // Apply logic for showing or hiding the gradient
-  if (scrollPosition > 100 && scrollRemaining > 200) {
-    document.body.classList.add('scroll-gradient');
-  } else {
-    document.body.classList.remove('scroll-gradient');
-  }
-});
-
+      window.addEventListener('scroll', () => {
+        const scrollPosition = window.scrollY; // Current scroll position
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        
+        if (scrollPosition > 1000 && scrollPosition < maxScroll - 1000) {
+          document.body.classList.add('show-gradient');
+        } else {
+          document.body.classList.remove('show-gradient');
+        }
+      });
     </script>
   </body>
 </html>
