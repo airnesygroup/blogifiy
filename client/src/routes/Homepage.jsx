@@ -35,7 +35,7 @@ const Homepage = () => {
   {/* White Line */}
   <div
     style={{
-      height: "0.4px",
+      height: "0.3px",
       width: "calc(100vw - 100px)", // Full viewport width minus the width of the arrow
       position: "absolute", // Position it absolutely to overflow
       top: "50%", // Center it vertically relative to the parent container
