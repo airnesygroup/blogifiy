@@ -151,8 +151,12 @@ const Homepage = () => {
           zIndex: 10000,
         }}
       >
+
+<Link to="/posts?search=">
+
         <div className="flex items-center pl-[2%] relative">
           {/* Titles */}
+
           <h1 className="text-[#e6e6ff] mb-9 mt-9 text-xl md:text-4xl lg:text-5xl font-bold text-center relative z-10000">
             <span className="mb-9 text-transparent bg-clip-text bg-white font-extrabold">
               EXPLORE BY CATEGORY
@@ -178,6 +182,8 @@ const Homepage = () => {
             />
           </div>
         </div>
+        </Link>
+
       </div>
 
       {/* Featured Posts */}
