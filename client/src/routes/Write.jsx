@@ -86,7 +86,7 @@ const Write = () => {
   }
 
   return (
-    <div className="h-[calc(100vh-64px)] md:h-[calc(100vh-80px)] flex flex-col pt-150  gap-6 px-4 py-6">
+    <div className="h-[calc(100vh-64px)] md:h-[calc(100vh-80px)] flex flex-col pt-350  gap-6 px-4 py-6">
       <h1 className="text-3xl font-semibold text-gray-800">Create a New Post</h1>
       {error && (
         <div className="p-4 text-sm text-red-700 bg-red-100 rounded-lg shadow-md">
