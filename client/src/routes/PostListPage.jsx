@@ -7,7 +7,7 @@ const PostListPage = () => {
 
   return (
     <div className="">
-      <h1 className="mb-8  mt-200  text-2xl">Developmnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn <br /><br /><br /><br /><br /><br /><br />ent Blog</h1>
+      <h1 className="mb-8  mt-[200px]  text-2xl">Developmnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn <br /><br /><br /><br /><br /><br /><br />ent Blog</h1>
       <button
         onClick={() => setOpen((prev) => !prev)}
         className="bg-blue-800 text-sm text-white px-4 py-2 rounded-2xl mb-4 md:hidden"
