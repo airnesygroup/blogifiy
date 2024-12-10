@@ -146,7 +146,7 @@ ext-xl font-semibold bg-gradient-to-r bg-gradient-to-r bg-gradient-to-r bg-gradi
         <img 
              src="/arrow.png"
               alt="Arrow"
-              className="w-15 h-4 sm:w-15 sm:h-4 md:w-15 md:h-4"
+              className="w-5 h-5 sm:w-5 sm:h-5 md:w-5 md:h-5"
             />
       </span>
     </div>
