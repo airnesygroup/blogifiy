@@ -20,7 +20,7 @@ body::before {
   top: 55px;
   left: 0;
   width: 100%;
-  height: 160px; /* Gradient height */
+  height: 180px; /* Gradient height */
   background: linear-gradient(to top, transparent, rgb(168, 168, 175)); /* Black gradient instead of whitish */
   pointer-events: none; /* Ensure it doesn't interfere with clicks */
   z-index: 9999; /* Stay above other elements */
