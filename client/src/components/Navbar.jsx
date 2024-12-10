@@ -59,10 +59,6 @@ const Navbar = () => {
       </div>
       {/* DESKTOP MENU */}
       <div className="hidden md:flex items-center gap-8 xl:gap-12 font-medium">
-        <Link to="/">Home</Link>
-        <Link to="/posts?sort=trending">Trending</Link>
-        <Link to="/posts?sort=popular">Most Popular</Link>
-        <Link to="/">About</Link>
         <SignedOut>
           <Link to="/login">
             <button className="py-2 px-4 rounded-3xl bg-gradient-to-r from-[#484e4f] to-[#bbdaed] text-white">

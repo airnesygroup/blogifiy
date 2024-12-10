@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import FeaturedPosts from "../components/FeaturedPosts";
 import PostList from "../components/PostList";
+import { Link } from "react-router-dom";
+import Search from "../components/Search";
 
 const Homepage = () => {
   const [isVisible, setIsVisible] = useState(true);
@@ -32,16 +34,23 @@ const Homepage = () => {
 >
   {/* Left: Share Icon and Text */}
   <div className="flex items-center gap-3">
+     {/* when i click on this hare icon i need a pop up with the following icons  linking, youtube, insta, twitter, linkedin. black round bg */}
     <img
       src="/share.png" // Replace with the actual path to your share icon
       alt="Share Icon"
       className="w-6 h-6 md:w-5 md:h-5" // Smaller size for small screens
     />
-    <span className="text-black font-semibold text-sm md:text-xs">
-      UNDER 30 DIRECTORY
+  
+  </div>
+  <div>
+  <span className="text-black font-semibold text-sm md:text-xs">
+  <Link to="/posts?sort=trending" > TOP TRENDING </Link>
+
     </span>
   </div>
 
+
+  <Link to="/" >
   {/* Center: Logo and Text */}
   <div className="flex flex-col items-center">
     <img
@@ -50,18 +59,34 @@ const Homepage = () => {
       className="w-25 h-25 md:w-40 md:h-30" // Adjusted size for small screens
     />
   </div>
+  </Link>
+
+  <div>
+  <span className="text-black font-semibold text-sm md:text-xs">
+  <Link to="/posts?sort=popular" >  MOST POPULAR </Link>    
+    
+    </span>
+  </div>
 
   {/* Right: Search Icon */}
+  <Link to="/" >
   <div className="flex items-center gap-2">
-    <span className="text-black font-semibold text-lg md:text-sm">
-      VIDEO COLLECTION
-    </span>
-    <img
+
+
+  <Search/>
+     {/*  this search component should only be visible after the user clicks on the search icon below.
+    it hould pop up on top the other things and when someone clicks outside it. it should close */}
+
+
+     <img
       src="/search.png" // Replace with the actual path to your search icon
       alt="Search Icon"
-      className="w-6 h-6 md:w-5 md:h-5" // Smaller size for small screens
+      className="w-6 h-6 mr-2 md:w-5 md:h-5" // Smaller size for small screens
     />
+   
   </div>
+  </Link>    
+
 </div>
 
 
