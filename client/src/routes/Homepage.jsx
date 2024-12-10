@@ -193,7 +193,10 @@ const Homepage = () => {
       {/* Recent Posts */}
       <div>
       <h1 className="my-8 text-2xl ml-2 mb-12 mt-28 text-black font-bold">Recent Posts</h1>
+      <div className="mb-10">
       <Maincategories />
+
+      </div>
 
       <PostList />
       </div>
