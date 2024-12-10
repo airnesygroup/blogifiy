@@ -3,17 +3,21 @@
 @tailwind utilities;
 
 body {
+  width: 100vw;
+  overflow-x: hidden;
+  font-family: "Montserrat", sans-serif;
+  margin: 0; /* Prevent any default margin from affecting layout */
+}
+
+.homepage-bg {
   background: linear-gradient(
     to bottom,
     black 0px,
     black 1000px, /* Solid black up to 1000px */
     #e6e6ff 1050px /* Gradual transition from black to #e6e6ff between 1000px and 1050px */
-  ); 
-   width: 100vw;
-  overflow-x: hidden;
-  font-family: "Montserrat", sans-serif;
-  margin: 0; /* Prevent any default margin from affecting layout */
+  );
 }
+
 body::before {
   content: "";
   position: fixed; /* Gradient is fixed initially */
@@ -31,15 +35,9 @@ body::before {
 
 
 
-/* When within 100px of the top, gradient reappears and is fixed */
-body.show-gradient::before {
-  position: fixed; /* Gradient becomes fixed again */
-  opacity: 1; /* Show gradient */
-}
 
-body:not(.show-gradient)::before {
-  opacity: 0; /* Hide gradient when not within 100px of the top */
-}
+
+
 
 .animatedButton {
   animation-duration: 10000ms;
