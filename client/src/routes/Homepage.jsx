@@ -191,8 +191,8 @@ const Homepage = () => {
 
       {/* Recent Posts */}
       <div>
-        <h1 className="my-8 text-2xl mb-12 mt-28 text-extrabold text-white">Recent Posts</h1>
-        <PostList />
+      <h1 className="my-8 text-2xl mb-12 mt-28 text-black font-extrabold">Recent Posts</h1>
+      <PostList />
       </div>
     </div>
   );
