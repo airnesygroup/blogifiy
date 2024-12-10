@@ -1,17 +1,14 @@
 import { useState } from "react";
-import { useRouter } from "next/router"; // Import useRouter
+import { useLocation } from "react-router-dom"; // Import useLocation from react-router-dom
 import PostList from "../components/PostList";
 import SideMenu from "../components/SideMenu";
 
 const PostListPage = () => {
   const [open, setOpen] = useState(false);
-  const router = useRouter(); // Initialize router
+  const location = useLocation(); // Get the current location object
 
-  // Get the current search query parameters
-  const { query } = router;
-  
-  // You can format the query object to display a more readable value
-  const searchParam = query.search || "All Posts"; // Default to "All Posts" if no search parameter exists
+  // Extract the search parameter from the URL
+  const searchParam = new URLSearchParams(location.search).get("search") || "All Posts";
 
   return (
     <div className="">
