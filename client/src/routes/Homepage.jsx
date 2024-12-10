@@ -8,7 +8,7 @@ const Homepage = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      setIsVisible(scrollY <= 1000 || scrollY >= 2000);
+      setIsVisible(scrollY <= 1000 );
     };
 
     window.addEventListener("scroll", handleScroll);
