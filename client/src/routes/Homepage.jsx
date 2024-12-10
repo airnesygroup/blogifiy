@@ -3,6 +3,7 @@ import FeaturedPosts from "../components/FeaturedPosts";
 import PostList from "../components/PostList";
 import { Link } from "react-router-dom";
 import Search from "../components/Search";
+import Maincategories from "../components/MainCategories";
 
 const Homepage = () => {
   const [isVisible, setIsVisible] = useState(true);
@@ -188,6 +189,7 @@ const Homepage = () => {
 
       {/* Featured Posts */}
       <FeaturedPosts />
+      <Maincategories />
 
       {/* Recent Posts */}
       <div>
