@@ -10,18 +10,18 @@ const PostListPage = () => {
   // Use URLSearchParams to extract query parameters from the URL
   const params = new URLSearchParams(location.search);
 
-  // Extract the 'category', 'sort', 'author', and 'search' parameters (if available)
-  const category = params.get("category");
+  // Extract the 'category', 'sort', 'author', 'search', and 'cat' parameters (if available)
   const sort = params.get("sort");
   const author = params.get("author");
   const search = params.get("search");
+  const cat = params.get("cat"); // Extract 'cat' parameter
 
   // Build the display string based on available parameters
   const displayText = [
     search ? `Search: ${search}` : "",
-    category ? `Category: ${category}` : "",
     sort ? `Sort: ${sort}` : "",
     author ? `Author: ${author}` : "",
+    cat ? `Category: ${cat}` : "", // Display 'cat' if present
   ]
     .filter(Boolean) // Remove empty strings
     .join(" | ") || "All Posts"; // Default to "All Posts" if no filters are applied
@@ -29,7 +29,7 @@ const PostListPage = () => {
   return (
     <div className="">
       <h1 style={{ paddingTop: "100px" }} className="mb-8 font-bold text-2xl">
-        {`Development Blog - ${displayText}`}
+        {`Blog - ${displayText}`}
       </h1>
       <button
         onClick={() => setOpen((prev) => !prev)}
