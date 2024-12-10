@@ -139,6 +139,8 @@ ext-xl font-semibold bg-gradient-to-r bg-gradient-to-r bg-gradient-to-r bg-gradi
     <p className="text-white" style={{ fontSize: '1rem' }}>
       ARTICLES EVERYDAY 
     </p>
+    <Link to="/about" >
+
     <div className="flex items-center justify-end mt-2">
       <p className="text-xs text-white">READ MORE</p>
       <span className="ml-2 bg-black text-white rounded-full p-2 border border-white">
@@ -146,10 +148,11 @@ ext-xl font-semibold bg-gradient-to-r bg-gradient-to-r bg-gradient-to-r bg-gradi
         <img 
              src="/arrow.png"
               alt="Arrow"
-              className="w-5 h-5 sm:w-5 sm:h-5 md:w-5 md:h-5"
+              className="w-4 h-4 sm:w-4 sm:h-4 md:w-4 md:h-4"
             />
       </span>
     </div>
+    </Link>
   </div>
 </div>
 

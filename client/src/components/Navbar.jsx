@@ -7,7 +7,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-<div style={{ background: '#151515',zIndex: 100002, }} className="w-full h-14 md:h-14  fixed pl-5 pr-7 top-0 left-0 z-50 flex items-center justify-between">
+<div style={{ background: '#151515',zIndex: 100002, }} className="w-full h-14 md:h-14  fixed pl-4 pr-5 top-0 left-0 z-50 flex items-center justify-between">
 {/* LOGO */} 
       <Link to="/" className="flex items-center gap-4 text-2xl font-bold">
       <img src="/logo.png" alt="Logo" style={{ height: '32px' }} />
