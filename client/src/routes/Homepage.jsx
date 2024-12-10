@@ -15,7 +15,7 @@ const Homepage = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      setIsVisible(scrollY <=650);
+      setIsVisible(scrollY <=600);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -191,7 +191,7 @@ const Homepage = () => {
 
       {/* Recent Posts */}
       <div>
-        <h1 className="my-8 text-2xl mb-10 text-white">Recent Posts</h1>
+        <h1 className="my-8 text-2xl mb-20 mt-20 text-white">Recent Posts</h1>
         <PostList />
       </div>
     </div>
