@@ -159,7 +159,7 @@ const Homepage = () => {
           {/* Titles */}
 
           <h1 className="text-[#e6e6ff] mb-9 mt-9 text-xl md:text-4xl lg:text-5xl font-bold text-center relative z-10000">
-            <span className="mb-9 text-transparent bg-clip-text bg-white font-extrabold">
+            <span className="mb-9 text-transparent bg-clip-text  bg-gradient-to-r from-black  to-[#1DA1F2] font-extrabold">
               EXPLORE BY CATEGORY
             </span>
           </h1>
