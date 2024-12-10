@@ -16,6 +16,7 @@ body {
   background: linear-gradient(
     to bottom,
     black 0px,
+    black 900px, /* Solid black up to 1000px */
 
     #e6e6ff 1100px /* Gradual transition from black to #e6e6ff between 1000px and 1050px */
   ); 
