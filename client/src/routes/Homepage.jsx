@@ -189,11 +189,12 @@ const Homepage = () => {
 
       {/* Featured Posts */}
       <FeaturedPosts />
-      <Maincategories />
 
       {/* Recent Posts */}
       <div>
       <h1 className="my-8 text-2xl ml-2 mb-12 mt-28 text-black font-bold">Recent Posts</h1>
+      <Maincategories />
+
       <PostList />
       </div>
     </div>
