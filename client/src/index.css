@@ -7,14 +7,17 @@ body {
   overflow-x: hidden;
   font-family: "Montserrat", sans-serif;
   margin: 0; /* Prevent any default margin from affecting layout */
+  background: none; /* Reset background for other routes */
 }
 
+/* Apply the black background to the first 1000px of the homepage */
 .homepage-bg {
   background: linear-gradient(
     to bottom,
-    black 0px,
-    black 1000px, /* Solid black up to 1000px */
-    #e6e6ff 1050px /* Gradual transition from black to #e6e6ff between 1000px and 1050px */
+    black 0px, /* Solid black at the top */
+    black 1000px, /* Up to 1000px */
+    transparent 1000px, /* After 1000px, make it transparent */
+    transparent 100% /* Ensure the rest is transparent */
   );
 }
 
