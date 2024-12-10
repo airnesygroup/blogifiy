@@ -111,7 +111,7 @@ const FeaturedPosts = () => {
 </div>
 
 <div className="relative col-span-3 flex justify-end items-center t
-ext-xl font-semibold bg-gradient-to-r bg-gradient-to-r bg-gradient-to-r bg-gradient-to-r from-green-500 via-yellow-500 to-orange-500 rounded-tr-2xl rounded-br-2xl p-4">
+ext-xl font-semibold bg-gradient-to-r bg-gradient-to-r bg-gradient-to-r bg-gradient-to-r from-white via-gray-500 to-gray-700 rounded-tr-2xl rounded-br-2xl p-4">
   {/* White Overlay */}
   <div
     className="absolute bg-black rounded-tr-2xl rounded-br-2xl"
