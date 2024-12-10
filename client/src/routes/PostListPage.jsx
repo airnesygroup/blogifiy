@@ -7,13 +7,25 @@ const PostListPage = () => {
   const [open, setOpen] = useState(false);
   const location = useLocation(); // Get the current location object
 
-  // Extract the search parameter from the URL
-  const searchParam = new URLSearchParams(location.search).get("search") || "All Posts";
+  // Use URLSearchParams to extract query parameters from the URL
+  const params = new URLSearchParams(location.search);
+
+  // Extract the 'category' and 'sort' parameters (if available)
+  const category = params.get("category");
+  const sort = params.get("sort");
+
+  // Build the display string based on available parameters
+  const displayText = [
+    category ? `Category: ${category}` : "",
+    sort ? `Sort: ${sort}` : "",
+  ]
+    .filter(Boolean) // Remove empty strings
+    .join(" | ") || "All Posts"; // Default to "All Posts" if no filters are applied
 
   return (
     <div className="">
       <h1 style={{ paddingTop: "100px" }} className="mb-8 font-bold text-2xl">
-        {`Development Blog - Search Results for: "${searchParam}"`}
+        {`Development Blog - ${displayText}`}
       </h1>
       <button
         onClick={() => setOpen((prev) => !prev)}
