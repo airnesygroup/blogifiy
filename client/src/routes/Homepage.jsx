@@ -130,7 +130,7 @@ const Homepage = () => {
           <img
             src="/search.png"
             alt="Search Icon"
-            className="w-6 h-6 mr-2 md:w-5 md:h-5 cursor-pointer"
+            className="w-6 h-6 mr-4 md:w-5 md:h-5 cursor-pointer"
             onClick={() => setShowSearch((prev) => !prev)}
           />
           {showSearch && (

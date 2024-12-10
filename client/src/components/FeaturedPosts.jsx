@@ -141,11 +141,12 @@ ext-xl font-semibold bg-gradient-to-r bg-gradient-to-r bg-gradient-to-r bg-gradi
     </p>
     <div className="flex items-center justify-end mt-2">
       <p className="text-xs text-white">READ MORE</p>
-      <span className="ml-2 bg-black text-white rounded-full p-2">
+      <span className="ml-2 bg-black text-white rounded-full p-2 border border-white">
+  {/* Content */}
         <img 
              src="/arrow.png"
               alt="Arrow"
-              className="w-15 h-4 sm:w-5 sm:h-1 md:w-5 md:h-1"
+              className="w-15 h-4 sm:w-15 sm:h-4 md:w-15 md:h-4"
             />
       </span>
     </div>
