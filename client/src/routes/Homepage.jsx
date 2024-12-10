@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import FeaturedPosts from "../components/FeaturedPosts";
 import PostList from "../components/PostList";
 import { Link } from "react-router-dom";
@@ -6,11 +6,16 @@ import Search from "../components/Search";
 
 const Homepage = () => {
   const [isVisible, setIsVisible] = useState(true);
+  const [showSearch, setShowSearch] = useState(false);
+  const [showShare, setShowShare] = useState(false);
+
+  const searchRef = useRef(null);
+  const shareRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      setIsVisible(scrollY <= 1000 );
+      setIsVisible(scrollY <= 1000);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -19,77 +24,122 @@ const Homepage = () => {
     };
   }, []);
 
+  // Close popups when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        searchRef.current &&
+        !searchRef.current.contains(event.target) &&
+        showSearch
+      ) {
+        setShowSearch(false);
+      }
+      if (
+        shareRef.current &&
+        !shareRef.current.contains(event.target) &&
+        showShare
+      ) {
+        setShowShare(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [showSearch, showShare]);
+
   return (
     <div className="mb-9 flex flex-col gap-0">
       {/* Floating Section */}
-    {/* Floating Section */}
-    <div
-  className={`fixed top-[45px]  left-0 w-screen z-[10000] flex items-center justify-between px-5 py-3 transition-opacity duration-300 ${
-    isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
-  }`}
-  style={{
-    zIndex: 100001,
-    background: "transparent", // Set background to transparent
-  }}
->
-  {/* Left: Share Icon and Text */}
-  <div className="flex items-center gap-3">
-     {/* when i click on this hare icon i need a pop up with the following icons  linking, youtube, insta, twitter, linkedin. black round bg */}
-    <img
-      src="/share.png" // Replace with the actual path to your share icon
-      alt="Share Icon"
-      className="w-6 h-6 md:w-5 md:h-5" // Smaller size for small screens
-    />
-  
-  </div>
-  <div>
-  <span className="text-black font-semibold text-sm md:text-xs">
-  <Link to="/posts?sort=trending" > TOP TRENDING </Link>
+      <div
+        className={`fixed top-[45px] left-0 w-screen z-[10000] flex items-center justify-between px-5 py-3 transition-opacity duration-300 ${
+          isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
+        style={{
+          zIndex: 100001,
+          background: "transparent",
+        }}
+      >
+        {/* Left: Share Icon and Text */}
+        <div className="flex items-center gap-3" ref={shareRef}>
+          <img
+            src="/share.png"
+            alt="Share Icon"
+            className="w-6 h-6 md:w-5 md:h-5 cursor-pointer"
+            onClick={() => setShowShare((prev) => !prev)}
+          />
+          {showShare && (
+            <div className="absolute top-10 left-0 flex-col gap-3 bg-transparent p-3 pl-5 pt-8 rounded-md">
+              <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+                <img
+                  src="/linkedin.png"
+                  alt="LinkedIn"
+                  className="w-6 h-6 mb-2 rounded-full"
+                />
+              </a>
+              <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
+                <img
+                  src="/youtube.png"
+                  alt="YouTube"
+                  className="w-6 h-6 mb-2 rounded-full"
+                />
+              </a>
+              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                <img
+                  src="/instagram.png"
+                  alt="Instagram"
+                  className="w-6 h-6 mb-2 rounded-full"
+                />
+              </a>
+              <a href="https://www.xr.com" target="_blank" rel="noopener noreferrer">
+                <img
+                  src="/x.com.png"
+                  alt="Twitter"
+                  className="w-6 h-6 mb-2 rounded-full"
+                />
+              </a>
+            </div>
+          )}
+        </div>
+        <div>
+          <span className="text-black font-semibold text-sm md:text-xs">
+            <Link to="/posts?sort=trending"> TOP TRENDING </Link>
+          </span>
+        </div>
 
-    </span>
-  </div>
+        <Link to="/">
+          {/* Center: Logo and Text */}
+          <div className="flex flex-col items-center">
+            <img
+              src="/under.png"
+              alt="Logo"
+              className="w-25 h-25 md:w-40 md:h-30"
+            />
+          </div>
+        </Link>
 
+        <div>
+          <span className="text-black font-semibold text-sm md:text-xs">
+            <Link to="/posts?sort=popular"> MOST POPULAR </Link>
+          </span>
+        </div>
 
-  <Link to="/" >
-  {/* Center: Logo and Text */}
-  <div className="flex flex-col items-center">
-    <img
-      src="/under.png" // Replace with the actual path to your center logo
-      alt="Logo"
-      className="w-25 h-25 md:w-40 md:h-30" // Adjusted size for small screens
-    />
-  </div>
-  </Link>
-
-  <div>
-  <span className="text-black font-semibold text-sm md:text-xs">
-  <Link to="/posts?sort=popular" >  MOST POPULAR </Link>    
-    
-    </span>
-  </div>
-
-  {/* Right: Search Icon */}
-  <Link to="/" >
-  <div className="flex items-center gap-2">
-
-
-  <Search/>
-     {/*  this search component should only be visible after the user clicks on the search icon below.
-    it hould pop up on top the other things and when someone clicks outside it. it should close */}
-
-
-     <img
-      src="/search.png" // Replace with the actual path to your search icon
-      alt="Search Icon"
-      className="w-6 h-6 mr-2 md:w-5 md:h-5" // Smaller size for small screens
-    />
-   
-  </div>
-  </Link>    
-
-</div>
-
-
+        {/* Right: Search Icon */}
+        <div className="flex items-center gap-2" ref={searchRef}>
+          <img
+            src="/search.png"
+            alt="Search Icon"
+            className="w-6 h-6 mr-1 md:w-5 md:h-5 cursor-pointer"
+            onClick={() => setShowSearch((prev) => !prev)}
+          />
+          {showSearch && (
+            <div className="absolute top-10 right-0 mr-4 bg-gradient-to-r from-white via-gray-500 to-gray-700 p-5 shadow-md rounded-lg z-[20000]">
+              <Search />
+            </div>
+          )}
+        </div>
+      </div>
 
       {/* Main Content */}
       <div
