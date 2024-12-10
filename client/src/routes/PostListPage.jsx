@@ -10,14 +10,18 @@ const PostListPage = () => {
   // Use URLSearchParams to extract query parameters from the URL
   const params = new URLSearchParams(location.search);
 
-  // Extract the 'category' and 'sort' parameters (if available)
+  // Extract the 'category', 'sort', 'author', and 'search' parameters (if available)
   const category = params.get("category");
   const sort = params.get("sort");
+  const author = params.get("author");
+  const search = params.get("search");
 
   // Build the display string based on available parameters
   const displayText = [
+    search ? `Search: ${search}` : "",
     category ? `Category: ${category}` : "",
     sort ? `Sort: ${sort}` : "",
+    author ? `Author: ${author}` : "",
   ]
     .filter(Boolean) // Remove empty strings
     .join(" | ") || "All Posts"; // Default to "All Posts" if no filters are applied
