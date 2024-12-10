@@ -15,8 +15,10 @@ body {
 .homepage-bg {
   background: linear-gradient(
     to bottom,
+    black 0px,
+    black 20px, /* Solid black up to 1000px */
 
-    #e6e6ff 0 /* Gradual transition from black to #e6e6ff between 1000px and 1050px */
+    #e6e6ff 400px /* Gradual transition from black to #e6e6ff between 1000px and 1050px */
   ); 
    width: 100vw;
   overflow-x: hidden;
