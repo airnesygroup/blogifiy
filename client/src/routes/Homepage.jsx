@@ -189,7 +189,7 @@ const Homepage = () => {
 
       {/* Featured Posts */}
       <FeaturedPosts />
-      <div className="mt-15">
+      <div className="mt-25">
       <Maincategories />
 
       </div>
