@@ -130,7 +130,7 @@ ext-xl font-semibold bg-gradient-to-r bg-gradient-to-r bg-gradient-to-r bg-gradi
       BY THE <br />
       <span className="underline">NUMBERS</span>
     </p>
-    <p className="text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r bg-gradient-to-r from-green-500 via-yellow-500 to-orange-500">
+    <p className="text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r bg-gradient-to-r from-white via-gray-500 to-gray-700">
       <span style={{ fontSize: '1.2rem' }}>OVER</span> 100K+
     </p>
     <p className="text-white" style={{ fontSize: '1rem' }}>
