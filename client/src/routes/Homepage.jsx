@@ -157,7 +157,7 @@ const Homepage = () => {
         <div className="flex items-center pl-[2%] relative">
           {/* Titles */}
 
-          <h1 className="text-[#e6e6ff] mb-5 mt-9 text-lg md:text-3xl lg:text-4xl font-bold text-center relative z-10000">
+          <h1 className="text-[#e6e6ff] mb-9 mt-9 text-xl md:text-4xl lg:text-5xl font-bold text-center relative z-10000">
             <span className="mb-9 text-transparent bg-clip-text bg-white font-extrabold">
               EXPLORE BY CATEGORY
             </span>
