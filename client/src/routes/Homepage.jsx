@@ -201,7 +201,7 @@ const Homepage = () => {
       <h1 className="my-8 text-2xl ml-2 mb-12 mt-15 text-black font-bold">Recent Posts</h1>
     
       
-      <div className="flex flex-row gap-8 justify-between">
+      <div className="flex flex-row  justify-between">
     <div className="w-3/4">
         <PostList />
     </div>

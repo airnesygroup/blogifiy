@@ -40,7 +40,7 @@ const PostListPage = () => {
 
 
 
-      <div className="flex flex-row gap-8 justify-between">
+      <div className="flex flex-row  justify-between">
     <div className="w-3/4">
         <PostList />
     </div>
