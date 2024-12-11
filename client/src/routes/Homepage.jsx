@@ -204,7 +204,7 @@ const Homepage = () => {
 
       <div className="my-8 mb-12 mt-20">
         {/* Maincategories sticky */}
-        <div className="sticky top-[80px] z-[10000]">
+        <div className="sticky top-[180px] z-[10006]">
           <Maincategories />
         </div>
       </div>
