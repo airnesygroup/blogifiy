@@ -45,7 +45,7 @@ body::before {
 @media (max-width: 768px) {
   .sticki {
     position: -webkit-sticky;
-    position: sticky;
+    position: fixed;
     top: 80px;
     z-index: 100000;
   }
