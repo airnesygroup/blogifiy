@@ -193,7 +193,7 @@ const Homepage = () => {
       <FeaturedPosts />
 
       <div style={{ position: 'relative' }}>
-  <div className="sticki my-8 mb-12 mt-20">
+  <div className=" my-8 mb-12 mt-20">
     <Maincategories />
   </div>
 </div>
