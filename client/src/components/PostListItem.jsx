@@ -28,8 +28,8 @@ const PostListItem = ({ post }) => {
       )}
       {/* Details */}
       <div className="flex flex-col justify-between">
-        <h3 className="text-md sm:text-xs lg:text-md font-semibold group-hover:underline">
-          {truncatedTitle}
+      <h3 className="text-[16px] sm:text-[12px] lg:text-[16px] font-semibold group-hover:underline">
+      {truncatedTitle}
         </h3>
         <div className="flex flex-wrap items-center gap-1 sm:gap-2 text-gray-400 text-xs sm:text-sm">
           <span>Written by</span>
