@@ -3,42 +3,33 @@ import Image from "./Image";
 import { format } from "timeago.js";
 
 const PostListItem = ({ post }) => {
-  // Truncate description if it's longer than 150 characters
-  const truncatedDesc = post.desc.length > 150 
-    ? `${post.desc.substring(0, 150)}...` 
-    : post.desc;
+  // Truncate title if it's too long to keep text within image height
+  const truncatedTitle = post.title.length > 150 
+    ? `${post.title.substring(0, 150)}...` 
+    : post.title;
 
   return (
     <Link
       to={`/${post.slug}`}
-      className="flex flex-col xl:flex-row gap-6 sm:gap-8 mb-8 sm:mb-12 group"
+      className="flex flex-row gap-6 sm:gap-8 mb-8 sm:mb-12 group"
     >
       {/* Image */}
       {post.img && (
-        <div className="md:hidden xl:block xl:w-1/3 xl:h-auto xl:max-h-[300px] relative">
-          <Image 
-            src={post.img} 
-            className="rounded-2xl object-cover w-full h-full" 
-            w="735" 
-            style={{objectFit: 'cover'}} 
+        <div
+          className="flex-shrink-0 w-24 h-24 sm:w-48 sm:h-32 overflow-hidden rounded-lg"
+          style={{ flexBasis: "auto" }}
+        >
+          <Image
+            src={post.img}
+            className="object-cover w-full h-full"
+            w="735"
           />
         </div>
       )}
-      {post.img && (
-        <div className="md:block xl:hidden w-full h-[250px] relative">
-          <Image 
-            src={post.img} 
-            className="rounded-2xl object-cover w-full h-full" 
-            w="735" 
-            style={{objectFit: 'cover'}} 
-          />
-        </div>
-      )}
-
       {/* Details */}
-      <div className="flex flex-col gap-3 sm:gap-4 xl:w-2/3">
-        <h3 className="text-md sm:text-lg lg:text-xl font-semibold group-hover:underline truncate">
-          {post.title}
+      <div className="flex flex-col justify-between">
+        <h3 className="text-md sm:text-md lg:text-lg font-semibold group-hover:underline">
+          {truncatedTitle}
         </h3>
         <div className="flex flex-wrap items-center gap-1 sm:gap-2 text-gray-400 text-xs sm:text-sm">
           <span>Written by</span>
@@ -59,9 +50,6 @@ const PostListItem = ({ post }) => {
           </Link>
           <span>{format(post.createdAt)}</span>
         </div>
-        <p className="text-sm sm:text-base text-gray-700 hidden">
-          {truncatedDesc}
-        </p>
       </div>
     </Link>
   );
