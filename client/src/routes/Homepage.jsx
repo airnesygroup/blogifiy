@@ -201,14 +201,17 @@ const Homepage = () => {
       <h1 className="my-8 text-2xl ml-2 mb-12 mt-15 text-black font-bold">Recent Posts</h1>
     
       
-      <div className="flex flex-col-reverse gap-8 md:flex-row justify-between">
-        <div className="">
-          <PostList />
-        </div>
-        <div className={`${open ? "block" : "hidden"} md:block`}>
-          <SideMenu />
-        </div>
-      </div>
+      <div className="max-w-[1000px] mx-auto">
+  <div className="flex flex-col-reverse gap-8 md:flex-row justify-between">
+    <div className="">
+      <PostList />
+    </div>
+    <div className={`${open ? "block" : "hidden"} md:block`}>
+      <SideMenu />
+    </div>
+  </div>
+</div>
+
     
       </div>
     </div>
