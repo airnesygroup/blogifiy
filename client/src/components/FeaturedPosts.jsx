@@ -71,16 +71,16 @@ const FeaturedPosts = () => {
 
           <br />
           <Link
-    className="text-md text-gray-200 font-base "
+    className="text-md text-gray-250 font-base "
     to={`/posts?author=${posts[0].user.username}`}
     onClick={(e) => e.stopPropagation()}
   >
     { posts[0].user.username}
   </Link>
-  <span     className="text-md p-1 text-gray-200 font-base "
+  <span     className="text-md p-1 text-gray-250 font-base "
   >-</span>
  
-  <span     className="text-md text-gray-200 font-base "
+  <span     className="text-md text-gray-250 font-base "
   >{format( posts[0].createdAt)}</span>
         </div>
       </div>
@@ -120,18 +120,18 @@ const FeaturedPosts = () => {
               >
                 {truncateText(post.title, 75)}
               </Link>
-<br className="mt-2" /> 
+<br className="mt-3" /> 
               <Link
-    className="text-md text-gray-200 font-base"
+    className="text-md text-gray-250 font-base"
     to={`/posts?author=${post.user.username}`}
     onClick={(e) => e.stopPropagation()}
   >
     { post.user.username}
   </Link>
-  <span     className="text-md p-1 text-gray-200 font-base "
+  <span     className="text-md p-1 text-gray-250 font-base "
   >-</span>
  
-  <span     className="text-md text-gray-200 font-base "
+  <span     className="text-md text-gray-250 font-base "
   >{format( post.createdAt)}</span>
              
             </div>
@@ -161,7 +161,7 @@ rounded-none lg:rounded-tr-2xl lg:rounded-br-2xl p-4">
   ></div>
 
   {/* Original Content */}
-  <div className="relative  lg:text-right" style={{ zIndex: 2 }}>
+  <div className="relative  text-right" style={{ zIndex: 2 }}>
   <p className="text-white" style={{ fontSize: '1rem' }}>
       BY THE <br />
       <span className="underline">NUMBERS</span>
@@ -177,7 +177,7 @@ rounded-none lg:rounded-tr-2xl lg:rounded-br-2xl p-4">
     </p>
     <Link to="/about" >
 
-    <div className="flex items-center lg:justify-end mt-2">
+    <div className="flex items-center justify-end mt-2">
       <p className="text-xs text-white">READ MORE</p>
       <span className="ml-2 bg-black text-white rounded-full p-2 border border-white">
   {/* Content */}
