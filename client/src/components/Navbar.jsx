@@ -7,7 +7,8 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-<div style={{ background: '#151515',zIndex: 100002, }} className="w-full h-14 md:h-14  fixed pl-4 pr-6 top-0 left-0  text-[#e6e6ff] z-50 flex items-center justify-between">
+<div style={{ background: '#151515',zIndex: 100002, }} className="w-full h-14 md:h-14 
+ fixed pl-4 pr-6 top-0 left-0  text-[#e6e6ff] z-50 flex items-center justify-between">
 {/* LOGO */} 
       <Link to="/" className="flex items-center gap-4 text-2xl font-bold">
         <span> {/* LOGO TEXT  */} HooliCon</span>
@@ -16,7 +17,7 @@ const Navbar = () => {
       <div className="md:hidden">
         {/* MOBILE BUTTON */}
         <div
-          className="cursor-pointer text-4xl"
+          className="cursor-pointer text-[#e6e6ff] text-4xl"
           onClick={() => setOpen((prev) => !prev)}
         >
           {/* Change Hamburger Icon */}
@@ -41,7 +42,8 @@ const Navbar = () => {
         </div>
         {/* MOBILE LINK LIST */}
         <div
-          className={`w-full h-screen bg-[#e6e6ff] flex flex-col items-center justify-center gap-8 font-medium text-lg absolute top-16 transition-all ease-in-out ${
+          className={`w-full h-screen bg-[#e6e6ff] flex flex-col items-center justify-center text-black gap-8 font-medium 
+            text-lg absolute top-16 transition-all ease-in-out ${
             open ? "-right-0" : "-right-[100%]"
           }`}
         >

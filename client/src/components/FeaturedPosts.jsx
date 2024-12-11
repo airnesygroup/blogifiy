@@ -34,7 +34,7 @@ const FeaturedPosts = () => {
 <div className=" lg:grid grid-cols-12 gap-6 mt-4">
 
 {/* First column: First post (takes half the width, spans 6 out of 12) */}
-<div className="col-span-6 flex flex-col gap-3 lg:mb-[15px] mb-[50px] relative rounded-none sm:rounded-tl-lg sm:rounded-bl-lg">
+<div className="col-span-6 flex flex-col gap-6 lg:gap-[3] lg:mb-[15px] mb-[25px] relative rounded-none sm:rounded-tl-lg sm:rounded-bl-lg">
   {posts[0].img && (
     <Link to={`/${posts[0].slug}`} className="relative">
       <div className="relative w-full" style={{ paddingTop: '100%' }}> {/* Square container */}
@@ -69,7 +69,23 @@ const FeaturedPosts = () => {
           </Link>
         </div>
       </div>
+
+
+      <Link
+    className="text-sm font-semibold "
+    to={`/posts?author=${post.user.username}`}
+    onClick={(e) => e.stopPropagation()}
+  >
+    { posts[0].user.username}
+  </Link>
+  <span     className="text-sm font-semibold "
+  >-</span>
+ 
+  <span     className="text-sm font-semibold "
+  >{format( posts[0].createdAt)}</span>
     </Link>
+
+
   )}
 </div>
 
@@ -77,7 +93,7 @@ const FeaturedPosts = () => {
 
 
 {/* Second column: Second and third post (stacked vertically, takes half the width, spans 3 out of 12) */}
-<div className="col-span-3 flex mb-[50px] lg:mb-[0px] flex-col gap-3">
+<div className="col-span-3 flex mb-[25px] lg:mb-[0px] flex-col gap-3">
   {[posts[1], posts[2]].map((post, index) => post && (
     <div key={index} className="w-full relative">
       <Link to={`/${post.slug}`} className="relative">
@@ -103,6 +119,19 @@ const FeaturedPosts = () => {
               >
                 {truncateText(post.title, 75)}
               </Link>
+
+              <Link
+    className="text-sm font-semibold "
+    to={`/posts?author=${post.user.username}`}
+    onClick={(e) => e.stopPropagation()}
+  >
+    { posts.user.username}
+  </Link>
+  <span     className="text-sm font-semibold "
+  >-</span>
+ 
+  <span     className="text-sm font-semibold "
+  >{format( posts.createdAt)}</span>
              
             </div>
           </div>
