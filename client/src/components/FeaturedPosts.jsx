@@ -120,7 +120,7 @@ const FeaturedPosts = () => {
               >
                 {truncateText(post.title, 75)}
               </Link>
-<br /> 
+<br className="mt-1" /> 
               <Link
     className="text-md text-gray-300 font-base"
     to={`/posts?author=${post.user.username}`}
@@ -150,7 +150,7 @@ ext-xl font-semibold bg-gradient-to-r bg-gradient-to-r  from-white via-gray-500 
 rounded-none lg:rounded-tr-2xl lg:rounded-br-2xl p-4">
   {/* White Overlay */}
   <div
-    className="absolute bg-[#e6e6ff ] lg:bg-black rounded-none  lg:rounded-tr-2xl lg:rounded-br-2xl"
+    className="absolute bg-[#e6e6ff] lg:bg-black rounded-none  lg:rounded-tr-2xl lg:rounded-br-2xl"
     style={{
       top: '2px',
       right: '2px',
@@ -161,7 +161,7 @@ rounded-none lg:rounded-tr-2xl lg:rounded-br-2xl p-4">
   ></div>
 
   {/* Original Content */}
-  <div className="relative text-left lg:text-right" style={{ zIndex: 2 }}>
+  <div className="relative  lg:text-right" style={{ zIndex: 2 }}>
   <p className="text-white" style={{ fontSize: '1rem' }}>
       BY THE <br />
       <span className="underline">NUMBERS</span>
@@ -177,7 +177,7 @@ rounded-none lg:rounded-tr-2xl lg:rounded-br-2xl p-4">
     </p>
     <Link to="/about" >
 
-    <div className="flex items-center justify-end mt-2">
+    <div className="flex items-center lg:justify-end mt-2">
       <p className="text-xs text-white">READ MORE</p>
       <span className="ml-2 bg-black text-white rounded-full p-2 border border-white">
   {/* Content */}
