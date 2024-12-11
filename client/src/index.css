@@ -48,6 +48,8 @@ body::before {
     position: fixed;
     top: 80px;
     z-index: 100000;
+    transform: translateZ(0);
+
   }
 }
 
