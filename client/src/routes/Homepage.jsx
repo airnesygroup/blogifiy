@@ -68,7 +68,7 @@ const Homepage = () => {
           <img
             src="/share.png"
             alt="Share Icon"
-            className="w-6 h-6 md:w-5 md:h-5 cursor-pointer"
+            className="w-[18px] h-[18px]  mr-[24px] md:w-[20px] md:h-[20px] sm:w-[1px] sm:h-[1px] cursor-pointer"
             onClick={() => setShowShare((prev) => !prev)}
           />
           {showShare && (
@@ -105,8 +105,8 @@ const Homepage = () => {
           )}
         </div>
         <div>
-          <span className="text-black font-semibold text-sm md:text-xs">
-            <Link to="/posts?sort=trending"> TOP TRENDING </Link>
+        <span className="text-black font-semibold text-[7px] sm:text-[10px] md:text-[12px] lg:text-[14px]">
+        <Link to="/posts?sort=trending"> TOP TRENDING </Link>
           </span>
         </div>
 
@@ -116,14 +116,15 @@ const Homepage = () => {
             <img
               src="/under.png"
               alt="Logo"
-              className="w-25 h-25 md:w-40 md:h-30"
+              className="w-[60px] h-[40px] sm:w-[50px] sm:h-[30px] md:w-[80px] md:h-[60px] lg:w-[110px] lg:h-[90px]"
+
             />
           </div>
         </Link>
 
         <div>
-          <span className="text-black font-semibold text-sm md:text-xs">
-            <Link to="/posts?sort=popular"> MOST POPULAR </Link>
+        <span className="text-black font-semibold text-[7px] sm:text-[10px] md:text-[12px] lg:text-[14px]">
+        <Link to="/posts?sort=popular"> MOST POPULAR </Link>
           </span>
         </div>
 
@@ -132,7 +133,7 @@ const Homepage = () => {
           <img
             src="/search.png"
             alt="Search Icon"
-            className="w-6 h-6 mr-6 md:w-5 md:h-5 cursor-pointer"
+            className="w-[18px] h-[18px]  mr-[24px] md:w-[20px] md:h-[20px] sm:w-[1px] sm:h-[1px] cursor-pointer"
             onClick={() => setShowSearch((prev) => !prev)}
           />
           {showSearch && (
@@ -156,10 +157,10 @@ const Homepage = () => {
 
 <Link to="/posts?search=">
 
-        <div className="flex items-center pl-[2%] relative">
+<div className="flex items-center pl-[2%] relative -mt-[40px] sm:-mt-[10px] md:-mt-[10px] lg:-mt-[0px]">
           {/* Titles */}
 
-          <h1 className="text-[#e6e6ff] mb-9 mt-9 text-xl md:text-4xl lg:text-5xl font-bold text-center relative z-10000">
+          <h1 className="text-[#e6e6ff] mb-9 mt-9 sm:text-[15px]  text-[20px] sm:text-[15px] md:text-[35px] lg:text-[45px] font-bold text-center relative z-10000">
             <span className="mb-9 text-transparent bg-clip-text  bg-gradient-to-r from-white  to-[#1DA1F2] font-extrabold">
               EXPLORE BY CATEGORY
             </span>
@@ -192,10 +193,11 @@ const Homepage = () => {
    
       <FeaturedPosts />
 
-      <div className=" sticki my-8 mb-6  ">
-      <Maincategories />
+      <div className="s my-8 mb-6 hidden sm:block">
+  <Maincategories />
+</div>
 
-      </div>
+
       {/* Recent Posts */}
       <div>
       <h1 className="my-8 text-2xl ml-2 mb-10 mt-5 text-black font-bold">Recent Posts</h1>

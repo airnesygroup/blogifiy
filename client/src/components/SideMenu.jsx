@@ -12,71 +12,63 @@ const SideMenu = () => {
       });
     }
   };
+
   const handleCategoryChange = (category) => {
     if (searchParams.get("cat") !== category) {
       setSearchParams({
         ...Object.fromEntries(searchParams.entries()),
-        cat:category,
+        cat: category,
       });
     }
   };
 
-
   return (
-    <div className="px-4 h-max sticky top-8">
-      <h1 className="mb-4 text-sm font-medium">Search</h1>
+    <div className="px-6 py-4 bg-gray-50 rounded-lg shadow-md sticky top-8">
+      <h1 className="mb-6 text-lg font-semibold text-gray-700">Search</h1>
       <Search />
-      <h1 className="mt-8 mb-4 text-sm font-medium">Filter</h1>
-      <div className="flex flex-col gap-2 text-sm">
-        <label htmlFor="" className="flex items-center gap-2 cursor-pointer">
-          <input
-            type="radio"
-            name="sort"
-            onChange={handleFilterChange}
-            value="newest"
-            className="appearance-none w-4 h-4 border-[1.5px] border-blue-800 cursor-pointer rounded-sm bg-white checked:bg-blue-800"
-          />
-          Newest
-        </label>
-        <label htmlFor="" className="flex items-center gap-2 cursor-pointer">
-          <input
-            type="radio"
-            name="sort"
-            onChange={handleFilterChange}
-            value="popular"
-            className="appearance-none w-4 h-4 border-[1.5px] border-blue-800 cursor-pointer rounded-sm bg-white checked:bg-blue-800"
-          />
-          Most Popular
-        </label>
-        <label htmlFor="" className="flex items-center gap-2 cursor-pointer">
-          <input
-            type="radio"
-            name="sort"
-            onChange={handleFilterChange}
-            value="trending"
-            className="appearance-none w-4 h-4 border-[1.5px] border-blue-800 cursor-pointer rounded-sm bg-white checked:bg-blue-800"
-          />
-          Trending
-        </label>
-        <label htmlFor="" className="flex items-center gap-2 cursor-pointer">
-          <input
-            type="radio"
-            name="sort"
-            onChange={handleFilterChange}
-            value="oldest"
-            className="appearance-none w-4 h-4 border-[1.5px] border-blue-800 cursor-pointer rounded-sm bg-white checked:bg-blue-800"
-          />
-          Oldest
-        </label>
+
+      <h1 className="mt-8 mb-4 text-lg font-semibold text-gray-700">Filter</h1>
+      <div className="flex flex-col gap-3 text-sm">
+        {[
+          { label: "Newest", value: "newest" },
+          { label: "Most Popular", value: "popular" },
+          { label: "Trending", value: "trending" },
+          { label: "Oldest", value: "oldest" },
+        ].map((filter) => (
+          <label
+            key={filter.value}
+            className="flex items-center gap-2 cursor-pointer hover:text-blue-800"
+          >
+            <input
+              type="radio"
+              name="sort"
+              value={filter.value}
+              onChange={handleFilterChange}
+              className="appearance-none w-4 h-4 border-2 border-blue-500 cursor-pointer rounded-sm bg-white checked:bg-blue-500 checked:border-blue-500 focus:ring-2 focus:ring-blue-300"
+            />
+            {filter.label}
+          </label>
+        ))}
       </div>
-      <h1 className="mt-8 mb-4 text-sm font-medium">Categories</h1>
-      <div className="flex flex-col gap-2 text-sm">
-        <span className="underline cursor-pointer" onClick={()=>handleCategoryChange("general")}>All</span>
-        <span className="underline cursor-pointer" onClick={()=>handleCategoryChange("web-design")}>Web Design</span>
-        <span className="underline cursor-pointer" onClick={()=>handleCategoryChange("development")}>Development</span>
-        <span className="underline cursor-pointer" onClick={()=>handleCategoryChange("databases")}>Databases</span>
-        <span className="underline cursor-pointer" onClick={()=>handleCategoryChange("seo")}>Search Engines</span>
-        <span className="underline cursor-pointer" onClick={()=>handleCategoryChange("marketing")}>Marketing</span>
+
+      <h1 className="mt-8 mb-4 text-lg font-semibold text-gray-700">Categories</h1>
+      <div className="flex flex-col gap-3 text-sm">
+        {[
+          { label: "All Posts", category: "general" },
+          { label: "Web Design", category: "web-design" },
+          { label: "Development", category: "development" },
+          { label: "Databases", category: "databases" },
+          { label: "Search Engines", category: "seo" },
+          { label: "Marketing", category: "marketing" },
+        ].map((cat) => (
+          <span
+            key={cat.category}
+            className="underline cursor-pointer text-gray-600 hover:text-blue-800"
+            onClick={() => handleCategoryChange(cat.category)}
+          >
+            {cat.label}
+          </span>
+        ))}
       </div>
     </div>
   );
