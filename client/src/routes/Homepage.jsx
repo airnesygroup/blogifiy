@@ -192,7 +192,7 @@ const Homepage = () => {
    
       <FeaturedPosts />
 
-      <div className="my-8 mb-10  md:sticky md:top-8 sm:sticky sm:top-8 mt-20 ">
+      <div className="my-8 mb-12 mt-20 ">
       <Maincategories />
 
       </div>

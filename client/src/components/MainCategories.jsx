@@ -13,13 +13,9 @@ const MainCategories = () => {
 
     <div>
 
-   
-
-<div className="flex flex-wrap items-center justify-between mt-[120px] p-4 bg-gradient-to-b from-gray-500 to-white rounded-3xl 
-xl:rounded-full shadow-lg md:sticky md:top-8 sm:sticky sm:top-8">
-  {/* links */}
-  <div className="flex-1 flex items-center justify-between flex-nowrap overflow-x-auto overflow-y-hidden whitespace-nowrap ">
-
+<div className="flex flex-wrap items-center justify-between mt-[120px] p-4 bg-gradient-to-b from-gray-500 to-white rounded-3xl xl:rounded-full shadow-lg sticky top-[80px] z-10">
+  {/* Links */}
+  <div className="flex-1 flex items-center justify-between flex-nowrap overflow-x-auto overflow-y-hidden whitespace-nowrap">
     <Link
       to="/posts"
       className="bg-gradient-to-r from-[#484e4f] to-[#bbdaed] text-white rounded-full px-4 py-1"
@@ -56,13 +52,11 @@ xl:rounded-full shadow-lg md:sticky md:top-8 sm:sticky sm:top-8">
     >
       Marketing
     </Link>
-
     <span className="text-xl p-2 font-medium">|</span>
-
   </div>
-  <div className="mt-[-2px]">
-  <Search />
 
+  <div className="mt-[-2px]">
+    <Search />
   </div>
 </div>
 
@@ -73,8 +67,15 @@ xl:rounded-full shadow-lg md:sticky md:top-8 sm:sticky sm:top-8">
       display: block;
       overflow-y-auto;
     }
+
+    .sticky {
+      position: sticky;
+      top: 80px;
+      z-index: 10;
+    }
   }
 `}</style>
+
 
 
     
