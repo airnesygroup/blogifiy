@@ -205,8 +205,8 @@ const Homepage = () => {
     <div className="w-3/4 pr-4">
         <PostList />
     </div>
-    <div className={`${open ? "block" : "hidden"} md:block w-1/4`}>
-        <SideMenu />
+    <div className="hidden md:block  lg:block  w-1/4">
+    <SideMenu />
     </div>
 </div>
 
