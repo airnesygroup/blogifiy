@@ -38,7 +38,7 @@ const PostListItem = ({ post }) => {
   <span className="hidden md:inline">{post.title}</span>
 </h3>
 
-<div className="flex flex-wrap items-center gap-1 sm:gap-2 text-gray-400 text-[10px] sm:text-[10px] md:text-[12px] lg:text-[14px] lg:relative lg:top-[-10px]">
+<div className="flex flex-wrap items-center gap-1 sm:gap-2 text-gray-400 text-[10px] sm:text-[10px] md:text-[12px] lg:text-[14px] md:top-[-10px] lg:relative lg:top-[-25px]">
   <span> By</span>
   <Link
     className="text-[#1DA1F2] text-[11px] sm:text-[11px] md:[12px] lg:text-[13px]"
