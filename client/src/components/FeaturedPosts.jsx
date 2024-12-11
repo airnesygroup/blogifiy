@@ -34,7 +34,7 @@ const FeaturedPosts = () => {
 <div className=" lg:grid grid-cols-12 gap-6 mt-4">
 
 {/* First column: First post (takes half the width, spans 6 out of 12) */}
-<div className="col-span-6 flex flex-col gap-3 mb-[15px] relative rounded-none sm:rounded-tl-lg sm:rounded-bl-lg">
+<div className="col-span-6 flex flex-col gap-3 sm:mb-[100px] mb-[15px] relative rounded-none sm:rounded-tl-lg sm:rounded-bl-lg">
   {posts[0].img && (
     <Link to={`/${posts[0].slug}`} className="relative">
       <div className="relative w-full" style={{ paddingTop: '100%' }}> {/* Square container */}
@@ -60,11 +60,11 @@ const FeaturedPosts = () => {
           </div>
           <Link
             to={`/${posts[0].slug}`}
-            className="text-sm sm:text-base font-semibold lg:font-bold leading-snug mt-2 block"
+            className="text-lg  font-extrabold leading-snug mt-2 block"
           >
             {window.innerWidth > 1024
               ? posts[0].title
-              : truncateText(posts[0].title, 75)}
+              : truncateText(posts[0].title, 150)}
           </Link>
         </div>
       </div>
@@ -76,7 +76,7 @@ const FeaturedPosts = () => {
 
 
 {/* Second column: Second and third post (stacked vertically, takes half the width, spans 3 out of 12) */}
-<div className="col-span-3 flex sm:mb-[15px] flex-col gap-3">
+<div className="col-span-3 flex sm:mb-[100px] flex-col gap-3">
   {[posts[1], posts[2]].map((post, index) => post && (
     <div key={index} className="w-full relative">
       <Link to={`/${post.slug}`} className="relative">
@@ -113,8 +113,7 @@ const FeaturedPosts = () => {
   ))}
 </div>
 
-<div className="relative col-span-3 flex justify-end items-center t
-ext-xl font-semibold bg-gradient-to-r bg-gradient-to-r bg-gradient-to-r bg-gradient-to-r from-white via-gray-500 to-gray-700 sm:rounded-none md:rounded-none rounded-tr-2xl rounded-br-2xl p-4">
+<div className="text-xl font-semibold bg-gradient-to-r from-white via-gray-500 to-gray-700 rounded-none sm:rounded-tr-2xl sm:rounded-br-2xl p-4">
   {/* White Overlay */}
   <div
     className="absolute bg-black rounded-tr-2xl rounded-br-2xl"
