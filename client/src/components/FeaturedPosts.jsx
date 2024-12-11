@@ -67,22 +67,23 @@ const FeaturedPosts = () => {
               ? posts[0].title
               : truncateText(posts[0].title, 130)}
           </Link>
-        </div>
-      </div>
 
 
-      <Link
-    className="text-sm text-gray-500 font-semibold "
+          <br />
+          <Link
+    className="text-md text-gray-100 font-semibold "
     to={`/posts?author=${posts[0].user.username}`}
     onClick={(e) => e.stopPropagation()}
   >
     { posts[0].user.username}
   </Link>
-  <span     className="text-sm text-gray-500 font-semibold "
+  <span     className="text-md gap-1 text-gray-100 font-semibold "
   >-</span>
  
-  <span     className="text-sm text-gray-500 font-semibold "
+  <span     className="text-md text-gray-100 font-semibold "
   >{format( posts[0].createdAt)}</span>
+        </div>
+      </div>
     </Link>
 
 
@@ -119,18 +120,18 @@ const FeaturedPosts = () => {
               >
                 {truncateText(post.title, 75)}
               </Link>
-
+<br />
               <Link
-    className="text-sm text-gray-500 font-semibold "
+    className="text-md text-gray-100 font-semibold "
     to={`/posts?author=${post.user.username}`}
     onClick={(e) => e.stopPropagation()}
   >
     { post.user.username}
   </Link>
-  <span     className="text-sm text-gray-500 font-semibold "
+  <span     className="text-md gap-1 text-gray-100 font-semibold "
   >-</span>
  
-  <span     className="text-sm text-gray-500 font-semibold "
+  <span     className="text-md text-gray-100 font-semibold "
   >{format( post.createdAt)}</span>
              
             </div>
