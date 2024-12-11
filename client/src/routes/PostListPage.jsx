@@ -41,7 +41,7 @@ const PostListPage = () => {
 
 
       <div className="flex flex-row  justify-between">
-    <div className="w-3/4">
+    <div className="w-3/4 pr-4">
         <PostList />
     </div>
     <div className={`${open ? "block" : "hidden"} md:block w-1/4`}>
