@@ -16,9 +16,9 @@ body {
   background: linear-gradient(
     to bottom,
     black 0px,
-    black 930px, /* Solid black up to 1000px */
+    black 940px, /* Solid black up to 1000px */
 
-    #e6e6ff 1170px /* Gradual transition from black to #e6e6ff between 1000px and 1050px */
+    #e6e6ff 1150px /* Gradual transition from black to #e6e6ff between 1000px and 1050px */
   ); 
    width: 100vw;
   overflow-x: hidden;
