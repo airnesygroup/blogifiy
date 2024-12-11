@@ -34,7 +34,7 @@ const FeaturedPosts = () => {
 <div className=" lg:grid grid-cols-12 gap-6 mt-4">
 
 {/* First column: First post (takes half the width, spans 6 out of 12) */}
-<div className="col-span-6 flex flex-col gap-3 sm:mb-[100px] mb-[15px] relative rounded-none sm:rounded-tl-lg sm:rounded-bl-lg">
+<div className="col-span-6 flex flex-col gap-3 lg:mb-[15px] mb-[50px] relative rounded-none sm:rounded-tl-lg sm:rounded-bl-lg">
   {posts[0].img && (
     <Link to={`/${posts[0].slug}`} className="relative">
       <div className="relative w-full" style={{ paddingTop: '100%' }}> {/* Square container */}
@@ -63,7 +63,7 @@ const FeaturedPosts = () => {
           </div>
           <Link
             to={`/${posts[0].slug}`}
-            className="text-xl lg:text-3xl font-bold leading-snug mt-2 block"
+            className="text-2xl lg:text-4xl font-semibold leading-snug mt-2 block"
           >
             {window.innerWidth > 1024
               ? posts[0].title
@@ -79,7 +79,7 @@ const FeaturedPosts = () => {
 
 
 {/* Second column: Second and third post (stacked vertically, takes half the width, spans 3 out of 12) */}
-<div className="col-span-3 flex sm:mb-[100px] flex-col gap-3">
+<div className="col-span-3 flex mb-[50px] lg:mb-[0px] flex-col gap-3">
   {[posts[1], posts[2]].map((post, index) => post && (
     <div key={index} className="w-full relative">
       <Link to={`/${post.slug}`} className="relative">
