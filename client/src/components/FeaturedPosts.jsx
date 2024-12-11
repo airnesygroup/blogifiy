@@ -71,16 +71,16 @@ const FeaturedPosts = () => {
 
           <br />
           <Link
-    className="text-md text-gray-250 font-base "
+    className="text-md text-gray-300 font-base "
     to={`/posts?author=${posts[0].user.username}`}
     onClick={(e) => e.stopPropagation()}
   >
     { posts[0].user.username}
   </Link>
-  <span     className="text-md p-1 text-gray-250 font-base "
+  <span     className="text-md p-1 text-gray-300 font-base "
   >-</span>
  
-  <span     className="text-md text-gray-250 font-base "
+  <span     className="text-md text-gray-300 font-base "
   >{format( posts[0].createdAt)}</span>
         </div>
       </div>
@@ -120,18 +120,18 @@ const FeaturedPosts = () => {
               >
                 {truncateText(post.title, 75)}
               </Link>
-<br className="mt-3" /> 
+<br className="mt-5" /> 
               <Link
-    className="text-md text-gray-250 font-base"
+    className="text-md text-gray-300 font-base"
     to={`/posts?author=${post.user.username}`}
     onClick={(e) => e.stopPropagation()}
   >
     { post.user.username}
   </Link>
-  <span     className="text-md p-1 text-gray-250 font-base "
+  <span     className="text-md p-1 text-gray-300 font-base "
   >-</span>
  
-  <span     className="text-md text-gray-250 font-base "
+  <span     className="text-md text-gray-300 font-base "
   >{format( post.createdAt)}</span>
              
             </div>
