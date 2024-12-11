@@ -4,6 +4,7 @@ import PostList from "../components/PostList";
 import { Link } from "react-router-dom";
 import Search from "../components/Search";
 import Maincategories from "../components/MainCategories";
+import SideMenu from "../components/SideMenu";
 
 const Homepage = () => {
   const [isVisible, setIsVisible] = useState(true);
@@ -199,8 +200,16 @@ const Homepage = () => {
       <div>
       <h1 className="my-8 text-2xl ml-2 mb-12 mt-15 text-black font-bold">Recent Posts</h1>
     
-
-      <PostList />
+      
+      <div className="flex flex-col-reverse gap-8 md:flex-row justify-between">
+        <div className="">
+          <PostList />
+        </div>
+        <div className={`${open ? "block" : "hidden"} md:block`}>
+          <SideMenu />
+        </div>
+      </div>
+    
       </div>
     </div>
   );
