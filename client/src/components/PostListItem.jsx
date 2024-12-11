@@ -32,11 +32,12 @@ const PostListItem = ({ post }) => {
       )}
       {/* Details */}
       <div className="flex flex-col justify-between">
-        <h3 className="text-[14px] sm:text-[14px] md:[15px] lg:text-[16px] font-semibold ">
-          <span className="sm:hidden">{truncatedTitle}</span>
-          <span className="hidden sm:inline md:hidden">{truncatedTitleLarge}</span>
-          <span className="hidden md:inline lg:hidden">{post.title}</span>
-        </h3>
+      <h3 className="text-[13.5px] sm:text-[13.5px] md:[15px] lg:text-[16px] font-semibold ">
+  <span className="sm:hidden">{truncatedTitle}</span>
+  <span className="hidden sm:inline md:hidden">{truncatedTitleLarge}</span>
+  <span className="hidden md:inline">{post.title}</span>
+</h3>
+
         <div className="flex flex-wrap items-center gap-1 sm:gap-2 text-gray-400 text-[10px] sm:text-[10px] md:[12px] lg:text-[14px]">
           <span> By</span>
           <Link
