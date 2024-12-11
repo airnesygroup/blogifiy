@@ -37,15 +37,21 @@ const PostListPage = () => {
       >
         {open ? "Close" : "Filter or Search"}
       </button>
-      <div className="flex flex-col-reverse gap-8 md:flex-row justify-between">
-        <div className="">
-          <PostList />
-        </div>
-        <div className={`${open ? "block" : "hidden"} md:block`}>
-          <SideMenu />
-        </div>
-      </div>
+
+
+
+      <div className="flex flex-row gap-8 justify-between">
+    <div className="w-3/4">
+        <PostList />
     </div>
+    <div className={`${open ? "block" : "hidden"} md:block w-1/4`}>
+        <SideMenu />
+    </div>
+</div>
+
+
+
+ </div>
   );
 };
 
