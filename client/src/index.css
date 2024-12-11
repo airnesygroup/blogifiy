@@ -6,6 +6,7 @@
 body {
   width: 100vw;
   overflow-x: hidden;
+  max-width: 1200px;
   font-family: "Montserrat", sans-serif;
   margin: 0; /* Prevent any default margin from affecting layout */
   background: none; /* Reset background for other routes */
