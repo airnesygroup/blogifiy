@@ -201,14 +201,15 @@ const Homepage = () => {
       <h1 className="my-8 text-2xl ml-2 mb-12 mt-15 text-black font-bold">Recent Posts</h1>
     
       
-         <div className="flex flex-row  justify-between">
-    <div className="w-3/4 pr-4">
-        <PostList />
-    </div>
-    <div className="hidden md:block  lg:block  w-1/4">
+      <div className="flex flex-row justify-between">
+  <div className="w-full md:w-3/4 pr-10">
+    <PostList />
+  </div>
+  <div className="hidden md:block w-1/4">
     <SideMenu />
-    </div>
+  </div>
 </div>
+
 
 
     
