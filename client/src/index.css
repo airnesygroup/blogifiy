@@ -12,6 +12,12 @@ body {
   background: none; /* Reset background for other routes */
 }
 
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px; /* Optional padding for spacing */
+}
+
 /* Apply the black background to the first 1000px of the homepage */
 .homepage-bg {
   background: linear-gradient(

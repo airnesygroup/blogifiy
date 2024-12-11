@@ -201,7 +201,7 @@ const Homepage = () => {
       <h1 className="my-8 text-2xl ml-2 mb-12 mt-15 text-black font-bold">Recent Posts</h1>
     
       
-      <div className="flex flex-col-reverse gap-8 md:flex-row justify-between">
+      <div className="container flex flex-col-reverse gap-8 md:flex-row justify-between">
   <div className="flex-1">
     <PostList />
   </div>
@@ -209,6 +209,7 @@ const Homepage = () => {
     <SideMenu />
   </div>
 </div>
+
 
 
     
