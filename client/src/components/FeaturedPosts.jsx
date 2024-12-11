@@ -40,13 +40,16 @@ const FeaturedPosts = () => {
       <div className="relative w-full" style={{ paddingTop: '100%' }}> {/* Square container */}
         <Image
           src={posts[0].img}
-   className="absolute top-0 left-0 w-full h-full object-cover rounded-none sm:rounded-tl-2xl sm:rounded-bl-2xl" 
-/>
-<div 
-   className="absolute inset-0 bg-black opacity-30 rounded-none sm:rounded-tl-2xl sm:rounded-bl-2xl" 
-/>
- {/* Dark overlay */}
-        {/* Text content */}
+
+          
+          className="absolute top-0 left-0 w-full h-full object-cover rounded-none sm:rounded-tl-2xl sm:rounded-bl-2xl" 
+       />
+       <div 
+          className="absolute inset-0 bg-black opacity-30 rounded-none sm:rounded-tl-2xl sm:rounded-bl-2xl" 
+       />
+       
+
+
         <div className="absolute bottom-0 left-0 p-4 sm:p-6 text-white">
           <div className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm">
             <h1 className="font-medium text-xs sm:text-sm">01.</h1>
@@ -60,7 +63,7 @@ const FeaturedPosts = () => {
           </div>
           <Link
             to={`/${posts[0].slug}`}
-            className="text-lg  font-extrabold leading-snug mt-2 block"
+            className="text-xl sm:text-lg font-extrabold leading-snug mt-2 block"
           >
             {window.innerWidth > 1024
               ? posts[0].title
@@ -113,7 +116,8 @@ const FeaturedPosts = () => {
   ))}
 </div>
 
-<div className="text-xl font-semibold bg-gradient-to-r from-white via-gray-500 to-gray-700 rounded-none sm:rounded-tr-2xl sm:rounded-br-2xl p-4">
+<div className="relative col-span-3 flex justify-end items-center t
+ext-xl font-semibold bg-gradient-to-r bg-gradient-to-r bg-gradient-to-r bg-gradient-to-r from-white via-gray-500 to-gray-700 rounded-tr-2xl rounded-br-2xl p-4">
   {/* White Overlay */}
   <div
     className="absolute bg-black rounded-tr-2xl rounded-br-2xl"
