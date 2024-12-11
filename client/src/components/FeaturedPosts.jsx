@@ -63,7 +63,7 @@ const FeaturedPosts = () => {
           </div>
           <Link
             to={`/${posts[0].slug}`}
-            className="text-4xl sm:text-xl font-extrabold leading-snug mt-2 block"
+            className="text-xl lg:text-4xl font-extrabold leading-snug mt-2 block"
           >
             {window.innerWidth > 1024
               ? posts[0].title
@@ -94,7 +94,7 @@ const FeaturedPosts = () => {
             <div className="text-white text-left">
               <Link
                 to={`/${post.slug}`}
-                className=" text-2xl sm:text-lg font-semibold leading-snug"
+                className=" text-lg lg:text-2xl font-semibold leading-snug"
               >
                 {truncateText(post.title, 75)}
               </Link>
