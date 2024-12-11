@@ -52,7 +52,7 @@ const Homepage = () => {
   }, [showSearch, showShare]);
 
   return (
-    <div className="mb-9 flex flex-col gap-0">
+    <div className="mb-9  container flex flex-col gap-0">
       {/* Floating Section */}
       <div
         className={`fixed top-[45px] left-0 w-screen z-[10000] flex items-center justify-between px-5 py-3 transition-opacity duration-300 ${
@@ -201,7 +201,7 @@ const Homepage = () => {
       <h1 className="my-8 text-2xl ml-2 mb-12 mt-15 text-black font-bold">Recent Posts</h1>
     
       
-      <div className="container flex flex-col-reverse gap-8 md:flex-row justify-between">
+      <div className="flex flex-col-reverse gap-8 md:flex-row justify-between">
   <div className="flex-1">
     <PostList />
   </div>
