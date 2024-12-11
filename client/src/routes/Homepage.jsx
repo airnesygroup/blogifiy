@@ -204,8 +204,7 @@ const Homepage = () => {
       <div className="flex flex-col-reverse gap-8 md:flex-row justify-between">
   <div className="flex-1">
     <PostList />
-  </div>
-  <div className={`flex-shrink-0 ${open ? "block" : "hidden"} md:block`}>
+ 
     <SideMenu />
   </div>
 </div>
