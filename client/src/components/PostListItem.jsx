@@ -3,9 +3,13 @@ import Image from "./Image";
 import { format } from "timeago.js";
 
 const PostListItem = ({ post }) => {
-  // Truncate title if it's too long to keep text within image height
+  // Truncate title based on screen size
   const truncatedTitle = post.title.length > 100 
     ? `${post.title.substring(0, 100)}...` 
+    : post.title;
+
+  const truncatedTitleLarge = post.title.length > 150 
+    ? `${post.title.substring(0, 150)}...` 
     : post.title;
 
   return (
@@ -28,13 +32,15 @@ const PostListItem = ({ post }) => {
       )}
       {/* Details */}
       <div className="flex flex-col justify-between">
-      <h3 className="text-[13px] sm:text-[13px] md-[14px] lg:text-[16px] font-semibold ">
-      {truncatedTitle}
+        <h3 className="text-[14px] sm:text-[14px] md:[15px] lg:text-[16px] font-semibold ">
+          <span className="sm:hidden">{truncatedTitle}</span>
+          <span className="hidden sm:inline md:hidden">{truncatedTitleLarge}</span>
+          <span className="hidden md:inline lg:hidden">{post.title}</span>
         </h3>
-        <div className="flex flex-wrap items-center gap-1 sm:gap-2 text-gray-400 text-[10px] sm:text-[10px] md-[12px] lg:text-[14px]">
+        <div className="flex flex-wrap items-center gap-1 sm:gap-2 text-gray-400 text-[10px] sm:text-[10px] md:[12px] lg:text-[14px]">
           <span> By</span>
           <Link
-            className="text-blue-800  text-gray-400 text-[10px] sm:text-[10px] md-[12px] lg:text-[14px]"
+            className="text-[#1DA1F2] text-[10px] sm:text-[10px] md:[12px] lg:text-[14px]"
             to={`/posts?author=${post.user.username}`}
             onClick={(e) => e.stopPropagation()}
           >
@@ -42,7 +48,7 @@ const PostListItem = ({ post }) => {
           </Link>
           <span>on</span>
           <Link
-            className="text-blue-800  text-gray-400 text-[10px] sm:text-[10px] md-[12px] lg:text-[14px]"
+            className="text-[#1DA1F2] text-[10px] sm:text-[10px] md:[12px] lg:text-[14px]"
             to={`/posts?category=${post.category}`}
             onClick={(e) => e.stopPropagation()}
           >
