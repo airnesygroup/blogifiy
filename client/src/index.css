@@ -42,9 +42,13 @@ body::before {
 
 
 
+@media (max-width: 768px) {
 
-
-
+.sticki {
+  position: sticky;
+  top: 80px;
+  z-index: 100000;}
+}
 
 
 
