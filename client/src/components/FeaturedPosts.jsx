@@ -65,7 +65,7 @@ const FeaturedPosts = () => {
           >
             {window.innerWidth > 1024
               ? posts[0].title
-              : truncateText(posts[0].title, 150)}
+              : truncateText(posts[0].title, 130)}
           </Link>
         </div>
       </div>
@@ -96,7 +96,6 @@ const FeaturedPosts = () => {
                 >
                 {post.category}
               </Link>
-               <br />
               <br />
               <Link
                 to={`/${post.slug}`}
