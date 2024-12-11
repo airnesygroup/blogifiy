@@ -4,8 +4,8 @@ import { format } from "timeago.js";
 
 const PostListItem = ({ post }) => {
   // Truncate title if it's too long to keep text within image height
-  const truncatedTitle = post.title.length > 150 
-    ? `${post.title.substring(0, 150)}...` 
+  const truncatedTitle = post.title.length > 100 
+    ? `${post.title.substring(0, 100)}...` 
     : post.title;
 
   return (
@@ -28,7 +28,7 @@ const PostListItem = ({ post }) => {
       )}
       {/* Details */}
       <div className="flex flex-col justify-between">
-      <h3 className="text-[12px] sm:text-[12px] md-[14px] lg:text-[16px] font-semibold ">
+      <h3 className="text-[13px] sm:text-[13px] md-[14px] lg:text-[16px] font-semibold ">
       {truncatedTitle}
         </h3>
         <div className="flex flex-wrap items-center gap-1 sm:gap-2 text-gray-400 text-[10px] sm:text-[10px] md-[12px] lg:text-[14px]">
