@@ -34,7 +34,7 @@ const FeaturedPosts = () => {
 <div className=" lg:grid grid-cols-12 gap-6 mt-4">
 
 {/* First column: First post (takes half the width, spans 6 out of 12) */}
-<div className="col-span-6 flex flex-col gap-6 lg:gap-[3] lg:mb-[15px] mb-[25px] relative rounded-none sm:rounded-tl-lg sm:rounded-bl-lg">
+<div className="col-span-6 flex flex-col gap-6 lg:gap-[3] lg:mb-[15px] mb-[30px] relative rounded-none sm:rounded-tl-lg sm:rounded-bl-lg">
   {posts[0].img && (
     <Link to={`/${posts[0].slug}`} className="relative">
       <div className="relative w-full" style={{ paddingTop: '100%' }}> {/* Square container */}
@@ -71,16 +71,16 @@ const FeaturedPosts = () => {
 
           <br />
           <Link
-    className="text-md text-gray-300 font-base "
+    className="text-md text-gray-200 font-base "
     to={`/posts?author=${posts[0].user.username}`}
     onClick={(e) => e.stopPropagation()}
   >
     { posts[0].user.username}
   </Link>
-  <span     className="text-md p-1 text-gray-300 font-base "
+  <span     className="text-md p-1 text-gray-200 font-base "
   >-</span>
  
-  <span     className="text-md text-gray-300 font-base "
+  <span     className="text-md text-gray-200 font-base "
   >{format( posts[0].createdAt)}</span>
         </div>
       </div>
@@ -120,18 +120,18 @@ const FeaturedPosts = () => {
               >
                 {truncateText(post.title, 75)}
               </Link>
-<br className="mt-1" /> 
+<br className="mt-2" /> 
               <Link
-    className="text-md text-gray-300 font-base"
+    className="text-md text-gray-200 font-base"
     to={`/posts?author=${post.user.username}`}
     onClick={(e) => e.stopPropagation()}
   >
     { post.user.username}
   </Link>
-  <span     className="text-md p-1 text-gray-300 font-base "
+  <span     className="text-md p-1 text-gray-200 font-base "
   >-</span>
  
-  <span     className="text-md text-gray-300 font-base "
+  <span     className="text-md text-gray-200 font-base "
   >{format( post.createdAt)}</span>
              
             </div>
@@ -150,7 +150,7 @@ ext-xl font-semibold bg-gradient-to-r bg-gradient-to-r  from-white via-gray-500 
 rounded-none lg:rounded-tr-2xl lg:rounded-br-2xl p-4">
   {/* White Overlay */}
   <div
-    className="absolute bg-[#e6e6ff] lg:bg-black rounded-none  lg:rounded-tr-2xl lg:rounded-br-2xl"
+    className="absolute  lg:bg-black rounded-none  lg:rounded-tr-2xl lg:rounded-br-2xl"
     style={{
       top: '2px',
       right: '2px',
