@@ -17,7 +17,7 @@ const Homepage = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      setIsVisible(scrollY <=600);
+      setIsVisible(scrollY <= 600);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -52,7 +52,7 @@ const Homepage = () => {
   }, [showSearch, showShare]);
 
   return (
-    <div className="mb-9  flex flex-col gap-0">
+    <div className="mb-9 flex flex-col gap-0">
       {/* Floating Section */}
       <div
         className={`fixed top-[45px] left-0 w-screen z-[10000] flex items-center justify-between px-5 py-3 transition-opacity duration-300 ${
@@ -73,28 +73,44 @@ const Homepage = () => {
           />
           {showShare && (
             <div className="absolute top-10 left-0 flex-col gap-3 bg-transparent p-3 pl-5 pt-8 rounded-md">
-              <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://www.linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <img
                   src="/linkedin.png"
                   alt="LinkedIn"
                   className="w-6 h-6 mb-2 rounded-full"
                 />
               </a>
-              <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://www.youtube.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <img
                   src="/youtube.png"
                   alt="YouTube"
                   className="w-6 h-6 mb-2 rounded-full"
                 />
               </a>
-              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://www.instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <img
                   src="/instagram.png"
                   alt="Instagram"
                   className="w-6 h-6 mb-2 rounded-full"
                 />
               </a>
-              <a href="https://www.xr.com" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://www.xr.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <img
                   src="/x.com.png"
                   alt="Twitter"
@@ -153,66 +169,58 @@ const Homepage = () => {
           zIndex: 10000,
         }}
       >
-
-<Link to="/posts?search=">
-
-        <div className="flex items-center pl-[2%] relative">
-          {/* Titles */}
-
-          <h1 className="text-[#e6e6ff] mb-9 mt-9 text-xl md:text-4xl lg:text-5xl font-bold text-center relative z-10000">
-            <span className="mb-9 text-transparent bg-clip-text  bg-gradient-to-r from-white  to-[#1DA1F2] font-extrabold">
-              EXPLORE BY CATEGORY
-            </span>
-          </h1>
-          <div className="flex items-center justify-center pl-3 gap-4 relative">
-            {/* Arrow Image */}
-            <img
-              src="/arrow.png"
-              alt="Arrow"
-              className="w-25 h-5 sm:w-25 sm:h-5 md:w-28 md:h-10"
-            />
-
-            {/* White Line */}
-            <div
-              style={{
-                height: "0.3px",
-                width: "calc(100vw - 100px)",
-                position: "absolute",
-                top: "50%",
-              }}
-              className="left-[calc(100px-50px)] bg-white sm:left-[calc(100px+40px)]"
-            />
+        <Link to="/posts?search=">
+          <div className="flex items-center pl-[2%] relative">
+            {/* Titles */}
+            <h1 className="text-[#e6e6ff] mb-9 mt-9 text-xl md:text-4xl lg:text-5xl font-bold text-center relative z-10000">
+              <span className="mb-9 text-transparent bg-clip-text bg-gradient-to-r from-white to-[#1DA1F2] font-extrabold">
+                EXPLORE BY CATEGORY
+              </span>
+            </h1>
+            <div className="flex items-center justify-center pl-3 gap-4 relative">
+              {/* Arrow Image */}
+              <img
+                src="/arrow.png"
+                alt="Arrow"
+                className="w-25 h-5 sm:w-25 sm:h-5 md:w-28 md:h-10"
+              />
+              {/* White Line */}
+              <div
+                style={{
+                  height: "0.3px",
+                  width: "calc(100vw - 100px)",
+                  position: "absolute",
+                  top: "50%",
+                }}
+                className="left-[calc(100px-50px)] bg-white sm:left-[calc(100px+40px)]"
+              />
+            </div>
           </div>
-        </div>
         </Link>
-
       </div>
 
       {/* Featured Posts */}
-   
       <FeaturedPosts />
 
-      <div className="my-8 mb-12 mt-20 ">
-      <Maincategories />
-
+      <div className="my-8 mb-12 mt-20">
+        {/* Maincategories sticky */}
+        <div className="sticky top-[80px] z-[10000]">
+          <Maincategories />
+        </div>
       </div>
       {/* Recent Posts */}
       <div>
-      <h1 className="my-8 text-2xl ml-2 mb-12 mt-10 text-black font-bold">Recent Posts</h1>
-    
-      
-      <div className="flex flex-row justify-between">
-      <div className="w-full md:w-3/4 pr-0 md:pr-10">
-      <PostList />
-  </div>
-  <div className="hidden md:block w-1/4">
-    <SideMenu />
-  </div>
-</div>
-
-
-
-    
+        <h1 className="my-8 text-2xl ml-2 mb-12 mt-10 text-black font-bold">
+          Recent Posts
+        </h1>
+        <div className="flex flex-row justify-between">
+          <div className="w-full md:w-3/4 pr-0 md:pr-10">
+            <PostList />
+          </div>
+          <div className="hidden md:block w-1/4">
+            <SideMenu />
+          </div>
+        </div>
       </div>
     </div>
   );
