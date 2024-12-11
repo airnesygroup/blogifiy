@@ -105,7 +105,7 @@ const Homepage = () => {
           )}
         </div>
         <div>
-        <span className="text-black font-semibold text-[7px] sm:text-[10px] md:text-[12px] lg:text-[14px]">
+        <span className="text-black font-semibold text-[11px] sm:text-[12px] md:text-[12px] lg:text-[14px]">
         <Link to="/posts?sort=trending"> TOP TRENDING </Link>
           </span>
         </div>
@@ -123,7 +123,7 @@ const Homepage = () => {
         </Link>
 
         <div>
-        <span className="text-black font-semibold text-[7px] sm:text-[10px] md:text-[12px] lg:text-[14px]">
+        <span className="text-black font-semibold text-[11px] sm:text-[12px] md:text-[12px] lg:text-[14px]">
         <Link to="/posts?sort=popular"> MOST POPULAR </Link>
           </span>
         </div>
@@ -133,7 +133,7 @@ const Homepage = () => {
           <img
             src="/search.png"
             alt="Search Icon"
-            className="w-[18px] h-[18px]  mr-[24px] md:w-[20px] md:h-[20px] sm:w-[1px] sm:h-[1px] cursor-pointer"
+            className="w-[18px] h-[18px]    mr-[4px] md:mr-[24px] md:w-[20px] md:h-[20px] sm:w-[1px] sm:h-[1px] cursor-pointer"
             onClick={() => setShowSearch((prev) => !prev)}
           />
           {showSearch && (
@@ -157,10 +157,10 @@ const Homepage = () => {
 
 <Link to="/posts?search=">
 
-<div className="flex items-center pl-[2%] relative -mt-[40px] sm:-mt-[10px] md:-mt-[10px] lg:-mt-[0px]">
+<div className="hidden sm:flex items-center pl-[2%] relative sm:-mt-[10px] md:-mt-[10px] lg:-mt-[0px]">
           {/* Titles */}
 
-          <h1 className="text-[#e6e6ff] mb-9 mt-9 sm:text-[15px]  text-[20px] sm:text-[15px] md:text-[35px] lg:text-[45px] font-bold text-center relative z-10000">
+          <h1 className="text-[#e6e6ff]  mt-9 sm:text-[15px]  text-[20px] sm:text-[15px] md:text-[35px] lg:text-[45px] font-bold text-center relative z-10000">
             <span className="mb-9 text-transparent bg-clip-text  bg-gradient-to-r from-white  to-[#1DA1F2] font-extrabold">
               EXPLORE BY CATEGORY
             </span>

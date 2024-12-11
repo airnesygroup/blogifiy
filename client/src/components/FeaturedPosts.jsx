@@ -34,15 +34,15 @@ const FeaturedPosts = () => {
 <div className=" lg:grid grid-cols-12 gap-6 mt-4">
 
 {/* First column: First post (takes half the width, spans 6 out of 12) */}
-<div className="col-span-6 flex flex-col gap-3 relative rounded-tl-lg rounded-bl-lg">
+<div className="col-span-6 flex flex-col gap-3 sm:mb-[5px] relative sm:rounded-none md:rounded-none rounded-tl-lg rounded-bl-lg">
   {posts[0].img && (
     <Link to={`/${posts[0].slug}`} className="relative">
       <div className="relative w-full" style={{ paddingTop: '100%' }}> {/* Square container */}
         <Image
           src={posts[0].img}
-          className="absolute top-0 left-0 w-full h-full object-cover rounded-tl-2xl rounded-bl-2xl"
+          className="absolute top-0 left-0 w-full h-full object-cover sm:rounded-none md:rounded-none rounded-tl-2xl rounded-bl-2xl"
         />
-        <div className="absolute inset-0 bg-black opacity-30 rounded-tl-2xl rounded-bl-2xl"  /> {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black opacity-30 sm:rounded-none md:rounded-none rounded-tl-2xl rounded-bl-2xl"  /> {/* Dark overlay */}
         {/* Text content */}
         <div className="absolute bottom-0 left-0 p-4 sm:p-6 text-white">
           <div className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm">
@@ -73,7 +73,7 @@ const FeaturedPosts = () => {
 
 
 {/* Second column: Second and third post (stacked vertically, takes half the width, spans 3 out of 12) */}
-<div className="col-span-3 flex flex-col gap-3">
+<div className="col-span-3 flex sm:mb-[5px] flex-col gap-3">
   {[posts[1], posts[2]].map((post, index) => post && (
     <div key={index} className="w-full relative">
       <Link to={`/${post.slug}`} className="relative">
@@ -111,7 +111,7 @@ const FeaturedPosts = () => {
 </div>
 
 <div className="relative col-span-3 flex justify-end items-center t
-ext-xl font-semibold bg-gradient-to-r bg-gradient-to-r bg-gradient-to-r bg-gradient-to-r from-white via-gray-500 to-gray-700 rounded-tr-2xl rounded-br-2xl p-4">
+ext-xl font-semibold bg-gradient-to-r bg-gradient-to-r bg-gradient-to-r bg-gradient-to-r from-white via-gray-500 to-gray-700 sm:rounded-none md:rounded-none rounded-tr-2xl rounded-br-2xl p-4">
   {/* White Overlay */}
   <div
     className="absolute bg-black rounded-tr-2xl rounded-br-2xl"
