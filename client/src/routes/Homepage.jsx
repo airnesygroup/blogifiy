@@ -192,13 +192,13 @@ const Homepage = () => {
    
       <FeaturedPosts />
 
-      <div className="my-8 mb-12 mt-28 ">
+      <div className="my-8 mb-10 mt-20 ">
       <Maincategories />
 
       </div>
       {/* Recent Posts */}
       <div>
-      <h1 className="my-8 text-2xl ml-2 mb-12 mt-15 text-black font-bold">Recent Posts</h1>
+      <h1 className="my-8 text-2xl ml-2 mb-12 mt-10 text-black font-bold">Recent Posts</h1>
     
       
       <div className="flex flex-row justify-between">
