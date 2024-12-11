@@ -15,7 +15,7 @@ const MainCategories = () => {
 
 <div className="flex flex-wrap items-center justify-between mt-[120px] p-4 bg-gradient-to-b from-gray-500 to-white rounded-3xl xl:rounded-full shadow-lg sticky top-[80px] z-10">
   {/* Links */}
-  <div className="flex-1 flex items-center justify-between flex-nowrap overflow-x-auto overflow-y-hidden whitespace-nowrap">
+  <div className="flex-1 flex items-center justify-between flex-nowrap whitespace-nowrap">
     <Link
       to="/posts"
       className="bg-gradient-to-r from-[#484e4f] to-[#bbdaed] text-white rounded-full px-4 py-1"
@@ -65,7 +65,6 @@ const MainCategories = () => {
   @media (max-width: 768px) {
     .flex-1 {
       display: block;
-      overflow-y-auto;
     }
 
     .sticky {

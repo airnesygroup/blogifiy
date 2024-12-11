@@ -49,6 +49,7 @@ body::before {
     top: 80px;
     z-index: 100000;
     transform: translateZ(0);
+    will-change: position, top;
 
   }
 }

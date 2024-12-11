@@ -192,10 +192,12 @@ const Homepage = () => {
    
       <FeaturedPosts />
 
-      <div className=" sticki my-8 mb-12 mt-20 ">
-      <Maincategories />
+      <div style={{ position: 'relative' }}>
+  <div className="sticki my-8 mb-12 mt-20">
+    <Maincategories />
+  </div>
+</div>
 
-      </div>
       {/* Recent Posts */}
       <div>
       <h1 className="my-8 text-2xl ml-2 mb-12 mt-10 text-black font-bold">Recent Posts</h1>
