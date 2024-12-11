@@ -202,8 +202,12 @@ const Homepage = () => {
     
       
       <div className="flex flex-row gap-8 justify-between">
-    <PostList />
-    <SideMenu />
+    <div className="w-3/4">
+        <PostList />
+    </div>
+    <div className="w-1/4">
+        <SideMenu />
+    </div>
 </div>
 
 
