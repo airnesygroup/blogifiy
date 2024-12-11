@@ -54,11 +54,11 @@ const FeaturedPosts = () => {
 
           <Link
               to={`/posts?category=${posts[0].category}`}
-              className="text-md uppercase"
-                >
+              className="text-md font-semibold uppercase"
+              >
               {posts[0].category}
               </Link>
-
+          <br />
           <Link
             to={`/${posts[0].slug}`}
             className="text-2xl lg:text-4xl font-bold leading-snug mt-2 block"
@@ -92,15 +92,15 @@ const FeaturedPosts = () => {
             <div className="text-white text-left">
             <Link
                 to={`/posts?category=${post.category}`}
-                className="text-md uppercase"
+                className="text-md font-semibold uppercase"
                 >
                 {post.category}
               </Link>
-
+               <br />
               <br />
               <Link
                 to={`/${post.slug}`}
-                className=" text-xl lg:text-lg font-semibold leading-snug"
+                className=" text-lg lg:text-md font-bold leading-snug"
               >
                 {truncateText(post.title, 75)}
               </Link>
