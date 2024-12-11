@@ -11,7 +11,7 @@ const PostListItem = ({ post }) => {
   return (
     <Link
       to={`/${post.slug}`}
-      className="flex flex-col xl:flex-row gap-6 sm:gap-8 mb-8 sm:mb-12 group"
+      className="flex flex-col xl:flex-row  max-w-[500px] mx-auto gap-6 sm:gap-8 mb-8 sm:mb-12 group"
     >
       {/* Image */}
       {post.img && (
