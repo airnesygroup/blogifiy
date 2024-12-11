@@ -94,7 +94,7 @@ const FeaturedPosts = () => {
 
 
 {/* Second column: Second and third post (stacked vertically, takes half the width, spans 3 out of 12) */}
-<div className="col-span-3 flex mb-[25px] lg:mb-[0px] flex-col gap-3">
+<div className="col-span-3 flex mb-[25px] lg:mb-[0px] flex-col gap-6 lg-gap:[3]">
   {[posts[1], posts[2]].map((post, index) => post && (
     <div key={index} className="w-full relative">
       <Link to={`/${post.slug}`} className="relative">
@@ -120,7 +120,7 @@ const FeaturedPosts = () => {
               >
                 {truncateText(post.title, 75)}
               </Link>
-<br /> <br />
+<br /> 
               <Link
     className="text-md text-gray-300 font-base"
     to={`/posts?author=${post.user.username}`}
@@ -146,10 +146,11 @@ const FeaturedPosts = () => {
 </div>
 
 <div className="relative col-span-3 flex justify-end items-center t
-ext-xl font-semibold bg-gradient-to-r bg-gradient-to-r bg-gradient-to-r bg-gradient-to-r from-white via-gray-500 to-gray-700 rounded-tr-2xl rounded-br-2xl p-4">
+ext-xl font-semibold bg-gradient-to-r bg-gradient-to-r  from-white via-gray-500 to-gray-700 
+rounded-none lg:rounded-tr-2xl lg:rounded-br-2xl p-4">
   {/* White Overlay */}
   <div
-    className="absolute bg-black rounded-tr-2xl rounded-br-2xl"
+    className="absolute bg-[#e6e6ff ] lg:bg-black rounded-none  lg:rounded-tr-2xl lg:rounded-br-2xl"
     style={{
       top: '2px',
       right: '2px',
@@ -160,8 +161,8 @@ ext-xl font-semibold bg-gradient-to-r bg-gradient-to-r bg-gradient-to-r bg-gradi
   ></div>
 
   {/* Original Content */}
-  <div className="relative text-right" style={{ zIndex: 2 }}>
-    <p className="text-white" style={{ fontSize: '1rem' }}>
+  <div className="relative text-left lg:text-right" style={{ zIndex: 2 }}>
+  <p className="text-white" style={{ fontSize: '1rem' }}>
       BY THE <br />
       <span className="underline">NUMBERS</span>
     </p>
