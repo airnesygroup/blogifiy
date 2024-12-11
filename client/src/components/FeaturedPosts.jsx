@@ -51,19 +51,17 @@ const FeaturedPosts = () => {
 
 
         <div className="absolute bottom-0 left-0 p-4 sm:p-6 text-white">
-          <div className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm">
-            <h1 className="font-medium text-xs sm:text-sm">01.</h1>
-            <Link
+
+          <Link
               to={`/posts?category=${posts[0].category}`}
-              className="text-blue-300 underline"
-            >
+              className="text-md uppercase"
+                >
               {posts[0].category}
-            </Link>
-            <span className="text-xs sm:text-sm">{format(posts[0].createdAt)}</span>
-          </div>
+              </Link>
+
           <Link
             to={`/${posts[0].slug}`}
-            className="text-2xl lg:text-4xl font-semibold leading-snug mt-2 block"
+            className="text-2xl lg:text-4xl font-bold leading-snug mt-2 block"
           >
             {window.innerWidth > 1024
               ? posts[0].title
@@ -92,19 +90,21 @@ const FeaturedPosts = () => {
           {/* Post title on top of the image */}
           <div className="absolute bg-black bg-opacity-25 top-0 left-0 right-0 bottom-0 flex flex-col justify-end p-4"> {/* Align text at bottom */}
             <div className="text-white text-left">
+            <Link
+                to={`/posts?category=${post.category}`}
+                className="text-md uppercase"
+                >
+                {post.category}
+              </Link>
+
+              <br />
               <Link
                 to={`/${post.slug}`}
-                className=" text-2xl lg:text-xl font-semibold leading-snug"
+                className=" text-xl lg:text-lg font-semibold leading-snug"
               >
                 {truncateText(post.title, 75)}
               </Link>
-              <br />
-              <Link
-                to={`/posts?category=${post.category}`}
-                className="text-blue-700"
-              >
-                {post.category}
-              </Link>
+             
             </div>
           </div>
         </div>
