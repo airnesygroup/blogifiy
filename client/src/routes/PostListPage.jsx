@@ -28,11 +28,12 @@ const PostListPage = () => {
 
   return (
     <div className=" ">
-      <h1 style={{ paddingTop: "70px" }} className="mb-4 lg:mt-[30px] lg:mb-[8]  lg:text-xl text-md text-black font-bold">
+      <h1 style={{ paddingTop: "70px", zIndex: "10000"}} className="mb-4 lg:mt-[30px] lg:mb-[8] lg:text-xl text-md text-black font-bold">
         {`Blog - ${displayText}`}
       </h1>
       <button
         onClick={() => setOpen((prev) => !prev)}
+        style={{ zIndex: "10000"}}
         className="bg-[#1DA1F2] text-sm text-white px-4 py-2 rounded-2xl mb-4 md:hidden"
       >
         {open ? "Close" : "Filter or Search"}
