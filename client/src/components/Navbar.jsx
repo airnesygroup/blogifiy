@@ -84,7 +84,7 @@ const Navbar = () => {
 
           <SignedOut>
             <Link to="/login" onClick={() => setOpen(false)}>
-              <button className="py-2 px-4 rounded-3xl bg-gradient-to-r from-white to-[#FF4500] text-black">
+              <button className="py-2 px-4 rounded-3xl bg-[#FF4500] text-white">
                 Login 👋
               </button>
             </Link>
@@ -96,7 +96,7 @@ const Navbar = () => {
       <div className="hidden md:flex items-center gap-8 xl:gap-12 font-medium">
         <SignedOut>
           <Link to="/login">
-            <button className="py-2 px-4 rounded-3xl bg-gradient-to-r from-[#484e4f] to-[#bbdaed] text-white">
+            <button className="py-2 px-4 rounded-3xl bg-[#FF4500] text-white">
               Login 👋
             </button>
           </Link>
