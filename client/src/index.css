@@ -110,6 +110,14 @@ body {
 }
 
 
+/* Add this to your global styles or inline within a <style> tag */
+.gradient-border {
+  border: 5px solid transparent;
+  border-image: linear-gradient(to right, black, rgb(53, 53, 53), black);
+  border-image-slice: 1;
+}
+
+
 
 
 .animatedButton {
