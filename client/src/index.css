@@ -8,10 +8,22 @@ body {
   overflow-x: hidden;
   font-family: "Montserrat", sans-serif;
   margin: 0; /* Prevent any default margin from affecting layout */
-  background:   #e6e6ff; /* Reset background for other routes */
+  background: #e6e6ff; /* Default background for other routes */
 }
 
 /* Apply the black background to the first 1000px of the homepage */
+.homepage-bg {
+  background: linear-gradient(
+    to bottom,
+    black 0px,
+    black 940px, /* Solid black up to 1000px */
+    #e6e6ff 100vh /* Extend the #e6e6ff color all the way to the bottom of the viewport */
+  ); 
+  width: 100vw;
+  overflow-x: hidden;
+  font-family: "Montserrat", sans-serif;
+  margin: 0; /* Prevent any default margin from affecting layout */
+}
 
 
 body::before {
