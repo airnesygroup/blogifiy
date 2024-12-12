@@ -19,9 +19,11 @@ const Navbar = () => {
 
 
       {/* LOGO */}
-      <Link to="/" className="flex items-center gap-4   text-lg font-bold md:text-2xl">
-        <span className="bg-clip-text text-transparent  bg-gradient-to-r from-white  to-[#FF4500]" >HooliCon</span>
-      </Link>
+      <Link to="/" className="flex items-center gap-1 text-lg font-bold md:text-2xl">
+  <img src="/logo.png" alt="Logo" className="w-8 h-8" />
+  <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#FF4500] to-white ">HooliCon</span>
+</Link>
+
 
       {/* MOBILE MENU */}
       <div className="md:hidden">
