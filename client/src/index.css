@@ -1,4 +1,9 @@
 
+
+
+
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,19 +13,18 @@ body {
   overflow-x: hidden;
   font-family: "Montserrat", sans-serif;
   margin: 0; /* Prevent any default margin from affecting layout */
-  background: #e6e6ff; /* Reset background for other routes */
+  background: black; /* Reset background for other routes */
 }
 
 /* Apply the black background to the first 1000px of the homepage */
 /* Apply the default background to the homepage */
 .homepage-bg {
-  background: #e6e6ff; /* Default background color */
+  background: black; /* Default background color */
   background: linear-gradient(
     to bottom,
     black 10px, /* Solid black starts at 10px */
     black 940px, /* Solid black up to 940px */
-    #e6e6ff 1150px, /* Gradual transition from black to #e6e6ff between 940px and 1050px */
-    #e6e6ff 1400px /* Ensure the #e6e6ff color continues to 1400px */
+    black 1400px /* Ensure the #e6e6ff color continues to 1400px */
   ); 
   width: 100vw;
   overflow-x: hidden;
@@ -44,20 +48,20 @@ body {
 }
 @media (max-width: 768px) {
   .homepage-bg::before {
-    height: 80px; /* Reduced gradient height on small screens */
+    height: 100px; /* Reduced gradient height on small screens */
   }
 }
 
 
 @media (max-width: 768px) {
   .homepage-bg {
-    background: #fff; /* Default background color */
+    background:black; /* Default background color */
     background: linear-gradient(
       to bottom,
       black 10px, /* Solid black starts at 10px */
       black 940px, /* Solid black up to 940px */
-      #fff 1150px, /* Gradual transition from black to #e6e6ff between 940px and 1050px */
-      #fff 1400px /* Ensure the #e6e6ff color continues to 1400px */
+      black 1150px, /* Gradual transition from black to #e6e6ff between 940px and 1050px */
+      black 1400px /* Ensure the #e6e6ff color continues to 1400px */
     ); 
     width: 100vw;
     overflow-x: hidden;
