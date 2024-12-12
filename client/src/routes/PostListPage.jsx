@@ -1,9 +1,18 @@
+
+      <button
+        onClick={() => setOpen((prev) => !prev)}
+        style={{ zIndex: "10000"}}
+        className="bg-[#1DA1F2] text-sm text-white px-4 py-2 rounded-2xl mb-4 md:hidden"
+      >
+        {open ? "Close" : "Filter or Search"}
+      </button>
+
+
 import { useState } from "react";
 import { useLocation } from "react-router-dom"; // Import useLocation from react-router-dom
 import PostList from "../components/PostList";
 import SideMenu from "../components/SideMenu";
-import MainCategories from "../components/MainCategories";
-
+import Search from "../components/Search";
 const PostListPage = () => {
   const [open, setOpen] = useState(false);
   const location = useLocation(); // Get the current location object
@@ -37,8 +46,18 @@ const PostListPage = () => {
       <div className="flex flex-row  justify-between">
       <div className="w-full md:w-3/4 pr-0 md:pr-10">
 
-    <div style={{  zIndex: "10000"}} className="lg:hidden  sticky top-10">
-      <MainCategories />
+    <div style={{  zIndex: "10000"}} className="lg:hidden flex  justify-center flex-row sticky top-10">
+      <button
+        onClick={() => setOpen((prev) => !prev)}
+        style={{ zIndex: "10000"}}
+        className="bg-[#1DA1F2] text-sm text-white px-4 py-2 rounded-2xl mb-4 md:hidden"
+        
+      >
+        {open ? "Close" : "Filter"}
+
+      </button>
+      <Search/>
+
     </div>
 
     <h1 style={{  zIndex: "10000"}} className="mb-4 lg:mt-[25px] mt-4  lg:mb-[8] lg:text-xl text-md text-gray-700 font-bold">
