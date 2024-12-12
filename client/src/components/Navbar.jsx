@@ -13,7 +13,7 @@ const Navbar = () => {
 
 <div
   style={{ zIndex: 100004 }} // Modify or remove z-index here
-  className="w-full h-14 md:h-14 bg-black fixed pl-4 pr-6 top-0 left-0 text-[#e6e6ff] z-50 flex items-center justify-between 
+  className="w-full h-14 md:h-14 bg-black fixed lg:pl-4 lg:pr-6 top-0 left-0 text-[#e6e6ff] z-50 flex items-center justify-between 
     md:border-b md:border-gradient-to-r gradient-border"
 >
 
@@ -21,7 +21,7 @@ const Navbar = () => {
       {/* LOGO */}
       <Link to="/" className="flex items-center gap-1 text-lg font-bold md:text-2xl">
   <img src="/logo.png" alt="Logo" className="w-8 h-8" />
-  <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#FF4500] to-white ">HooliCon</span>
+  <span className="bg-clip-text text-[#FF4500]  ">HooliCon</span>
 </Link>
 
 
