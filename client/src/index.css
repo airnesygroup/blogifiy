@@ -19,13 +19,7 @@ body {
 /* Apply the black background to the first 1000px of the homepage */
 /* Apply the default background to the homepage */
 .homepage-bg {
-  background: black; /* Default background color */
-  background: linear-gradient(
-    to bottom,
-    black 10px, /* Solid black starts at 10px */
-    black 940px, /* Solid black up to 940px */
-    black 1400px /* Ensure the #e6e6ff color continues to 1400px */
-  ); 
+  background: black; /* Default background color */  
   width: 100vw;
   overflow-x: hidden;
   font-family: "Montserrat", sans-serif;
