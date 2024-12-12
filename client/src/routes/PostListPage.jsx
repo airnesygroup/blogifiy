@@ -28,7 +28,7 @@ const PostListPage = () => {
 
   return (
     <div className=" ">
-      <h1 style={{ paddingTop: "100px" }} className="mb-8  lg:text-xl text-md text-black font-bold">
+      <h1 style={{ paddingTop: "70px" }} className="mb-4 lg:mt-[30px] lg:mb-[8]  lg:text-xl text-md text-black font-bold">
         {`Blog - ${displayText}`}
       </h1>
       <button
