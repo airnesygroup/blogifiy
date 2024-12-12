@@ -8,7 +8,7 @@ body {
   overflow-x: hidden;
   font-family: "Montserrat", sans-serif;
   margin: 0; /* Prevent any default margin from affecting layout */
-  background: none; /* Reset background for other routes */
+  background:   #e6e6ff; /* Reset background for other routes */
 }
 
 /* Apply the black background to the first 1000px of the homepage */

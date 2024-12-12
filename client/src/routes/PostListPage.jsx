@@ -27,7 +27,7 @@ const PostListPage = () => {
     .join(" | ") || "All Posts"; // Default to "All Posts" if no filters are applied
 
   return (
-    <div className="">
+    <div className=" ">
       <h1 style={{ paddingTop: "100px" }} className="mb-8 font-bold text-2xl">
         {`Blog - ${displayText}`}
       </h1>

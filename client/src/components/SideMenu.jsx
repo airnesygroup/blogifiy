@@ -26,7 +26,7 @@ const SideMenu = () => {
   };
 
   return (
-    <div className="px-6 py-4 bg-[#eeeeff] rounded-lg text-gray-800 shadow-md sticky top-[150px]">
+    <div className="px-6 py-4 bg-[#eeeeff] rounded-lg text-gray-800 shadow-md sticky top-[75px]">
       <h1 className="mb-6 text-md font-semibold text-gray-700">Search</h1>
       <Search />
 
