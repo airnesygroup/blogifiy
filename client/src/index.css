@@ -8,19 +8,19 @@ body {
   overflow-x: hidden;
   font-family: "Montserrat", sans-serif;
   margin: 0; /* Prevent any default margin from affecting layout */
-  background: none; /* Reset background for other routes */
+  background: #ffffff; /* Reset background for other routes */
 }
 
 /* Apply the black background to the first 1000px of the homepage */
 /* Apply the default background to the homepage */
 .homepage-bg {
-  background: #e6e6ff; /* Default background color */
+  background: #ffffff; /* Default background color */
   background: linear-gradient(
     to bottom,
     black 10px, /* Solid black starts at 10px */
     black 940px, /* Solid black up to 940px */
-    #e6e6ff 1150px, /* Gradual transition from black to #e6e6ff between 940px and 1050px */
-    #e6e6ff 1400px /* Ensure the #e6e6ff color continues to 1400px */
+    #ffffff 1150px, /* Gradual transition from black to #e6e6ff between 940px and 1050px */
+    #ffffff 1400px /* Ensure the #e6e6ff color continues to 1400px */
   ); 
   width: 100vw;
   overflow-x: hidden;
