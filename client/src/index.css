@@ -29,7 +29,7 @@ body {
 }
 
 
-body::before {
+.homepage-bg::before {
   content: "";
   position: fixed; /* Gradient is fixed initially */
   top: 55px;
@@ -41,6 +41,11 @@ body::before {
   z-index: 9999; /* Stay above other elements */
   opacity: 1; /* Fully visible initially */
   transition: position 0.3s ease, opacity 0.3s ease; /* Smooth transition */
+}
+@media (max-width: 768px) {
+  .homepage-bg::before {
+    height: 80px; /* Reduced gradient height on small screens */
+  }
 }
 
 /* Default z-index behavior */
