@@ -40,7 +40,7 @@ const SideMenu = () => {
         ].map((filter) => (
           <label
             key={filter.value}
-            className="flex items-center gap-2 cursor-pointer hover:text-[#1DA1F2]"
+            className="flex items-center gap-2 cursor-pointer hover:text-[#FF4500]"
           >
             <input
               type="radio"
@@ -48,7 +48,7 @@ const SideMenu = () => {
               value={filter.value}
               onChange={handleFilterChange}
               className="appearance-none w-4 h-4 border-2 border-gray-300 cursor-pointer rounded-sm bg-white 
-              checked:bg-[#1DA1F2] checked:border-[#1DA1F2] focus:ring-2 focus:ring-[#1DA1F2]"
+              checked:bg-[#FF4500] checked:border-[#FF4500] focus:ring-2 focus:ring-[#FF4500]"
             />
             {filter.label}
           </label>
@@ -67,8 +67,8 @@ const SideMenu = () => {
         ].map((cat) => (
           <span
             key={cat.category}
-            className={`cursor-pointer hover:text-[#1DA1F2] ${
-              selectedCategory === cat.category ? "text-[#1DA1F2]" : "text-[#e6e6ff]"
+            className={`cursor-pointer hover:text-[#FF4500] ${
+              selectedCategory === cat.category ? "text-[#FF4500]" : "text-[#e6e6ff]"
             }`}
             onClick={() => handleCategoryChange(cat.category)}
           >

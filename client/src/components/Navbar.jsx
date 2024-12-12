@@ -20,7 +20,7 @@ const Navbar = () => {
 
       {/* LOGO */}
       <Link to="/" className="flex items-center gap-4   text-lg font-bold md:text-2xl">
-        <span className="bg-clip-text text-transparent  bg-gradient-to-r from-white  to-[#1DA1F2]" >HooliCon</span>
+        <span className="bg-clip-text text-transparent  bg-gradient-to-r from-white  to-[#FF4500]" >HooliCon</span>
       </Link>
 
       {/* MOBILE MENU */}
@@ -82,7 +82,7 @@ const Navbar = () => {
 
           <SignedOut>
             <Link to="/login" onClick={() => setOpen(false)}>
-              <button className="py-2 px-4 rounded-3xl bg-gradient-to-r from-white to-[#1DA1F2] text-black">
+              <button className="py-2 px-4 rounded-3xl bg-gradient-to-r from-white to-[#FF4500] text-black">
                 Login 👋
               </button>
             </Link>
