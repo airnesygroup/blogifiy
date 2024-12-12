@@ -1,8 +1,10 @@
 import { Link, useSearchParams } from "react-router-dom";
+import { useState } from "react";
 import Search from "./Search";
 
 const SideMenu = () => {
   const [searchParams, setSearchParams] = useSearchParams();
+  const [selectedCategory, setSelectedCategory] = useState(searchParams.get("cat") || "general");
 
   const handleFilterChange = (e) => {
     if (searchParams.get("sort") !== e.target.value) {
@@ -20,14 +22,15 @@ const SideMenu = () => {
         cat: category,
       });
     }
+    setSelectedCategory(category); // Update the selected category
   };
 
   return (
-    <div className="px-6 py-4 bg-gray-50 rounded-lg shadow-md sticky top-8">
-      <h1 className="mb-6 text-lg font-semibold text-gray-700">Search</h1>
+    <div className="px-6 py-4 bg-[#eeeeff] rounded-lg text-gray-800 shadow-md sticky top-15">
+      <h1 className="mb-6 text-md font-semibold text-gray-700">Search</h1>
       <Search />
 
-      <h1 className="mt-8 mb-4 text-lg font-semibold text-gray-700">Filter</h1>
+      <h1 className="mt-8 mb-4 text-md font-semibold text-gray-700">Filter</h1>
       <div className="flex flex-col gap-3 text-sm">
         {[
           { label: "Newest", value: "newest" },
@@ -37,21 +40,22 @@ const SideMenu = () => {
         ].map((filter) => (
           <label
             key={filter.value}
-            className="flex items-center gap-2 cursor-pointer hover:text-blue-800"
+            className="flex items-center gap-2 cursor-pointer hover:text-[#1DA1F2]"
           >
             <input
               type="radio"
               name="sort"
               value={filter.value}
               onChange={handleFilterChange}
-              className="appearance-none w-4 h-4 border-2 border-blue-500 cursor-pointer rounded-sm bg-white checked:bg-blue-500 checked:border-blue-500 focus:ring-2 focus:ring-blue-300"
+              className="appearance-none w-4 h-4 border-2 border-gray-300 cursor-pointer rounded-sm bg-white 
+              checked:bg-[#1DA1F2] checked:border-[#1DA1F2] focus:ring-2 focus:ring-[#1DA1F2]"
             />
             {filter.label}
           </label>
         ))}
       </div>
 
-      <h1 className="mt-8 mb-4 text-lg font-semibold text-gray-700">Categories</h1>
+      <h1 className="mt-8 mb-4 text-md font-semibold text-gray-700">Categories</h1>
       <div className="flex flex-col gap-3 text-sm">
         {[
           { label: "All Posts", category: "general" },
@@ -63,7 +67,9 @@ const SideMenu = () => {
         ].map((cat) => (
           <span
             key={cat.category}
-            className="underline cursor-pointer text-gray-600 hover:text-blue-800"
+            className={`cursor-pointer hover:text-[#1DA1F2] ${
+              selectedCategory === cat.category ? "text-[#1DA1F2]" : "text-gray-800"
+            }`}
             onClick={() => handleCategoryChange(cat.category)}
           >
             {cat.label}
