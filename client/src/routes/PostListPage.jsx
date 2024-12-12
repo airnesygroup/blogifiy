@@ -46,17 +46,27 @@ const PostListPage = () => {
       <div className="flex flex-row  justify-between">
       <div className="w-full md:w-3/4 pr-0 md:pr-10">
 
-    <div style={{  zIndex: "10000"}} className="lg:hidden flex  justify-center flex-row sticky top-10">
+    <div style={{  zIndex: "10000"}} className="lg:hidden flex  gap-1 justify-center flex-row ">
+     <div>
+      
+     </div>
+
+     <div>
+     <Search/>
+
+     </div>
+      <div>
       <button
         onClick={() => setOpen((prev) => !prev)}
         style={{ zIndex: "10000"}}
-        className="bg-[#1DA1F2] text-sm text-white px-4 py-2 rounded-2xl mb-4 md:hidden"
+        className="bg-[#1DA1F2] text-m text-white px-4 py-2 rounded-xl m mb-4 md:hidden"
         
       >
         {open ? "Close" : "Filter"}
 
       </button>
-      <Search/>
+      </div>
+    
 
     </div>
 
