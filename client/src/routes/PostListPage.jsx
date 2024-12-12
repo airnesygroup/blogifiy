@@ -33,7 +33,7 @@ const PostListPage = () => {
       </h1>
       <button
         onClick={() => setOpen((prev) => !prev)}
-        className="bg-blue-800 text-sm text-white px-4 py-2 rounded-2xl mb-4 md:hidden"
+        className="bg-[#1DA1F2] text-sm text-white px-4 py-2 rounded-2xl mb-4 md:hidden"
       >
         {open ? "Close" : "Filter or Search"}
       </button>
