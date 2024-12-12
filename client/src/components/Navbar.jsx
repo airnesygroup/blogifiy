@@ -10,6 +10,7 @@ const Navbar = () => {
 
   return (
 
+
 <div
   style={{ zIndex: 100004 }} // Modify or remove z-index here
   className="w-full h-14 md:h-14 bg-black fixed pl-4 pr-6 top-0 left-0 text-[#e6e6ff] z-50 flex items-center justify-between 
@@ -17,10 +18,9 @@ const Navbar = () => {
 >
 
 
-
       {/* LOGO */}
-      <Link to="/" className="flex items-center gap-4 text-lg font-bold md:text-2xl">
-        <span>HooliCon</span>
+      <Link to="/" className="flex items-center gap-4   text-lg font-bold md:text-2xl">
+        <span className="bg-clip-text text-transparent  bg-gradient-to-r from-white  to-[#1DA1F2]" >HooliCon</span>
       </Link>
 
       {/* MOBILE MENU */}

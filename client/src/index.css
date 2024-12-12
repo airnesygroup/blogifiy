@@ -48,7 +48,7 @@ body {
 }
 @media (max-width: 768px) {
   .homepage-bg::before {
-    height: 100px; /* Reduced gradient height on small screens */
+    height: 150px; /* Reduced gradient height on small screens */
   }
 }
 
