@@ -21,7 +21,7 @@ const Navbar = () => {
       {/* LOGO */}
       <Link to="/" className="flex items-center gap-1 text-lg font-bold md:text-2xl">
   <img src="/logo.png" alt="Logo" className="w-8 h-8" />
-  <span className="bg-clip-text text-[#FF4500]  ">HooliCon</span>
+  <span className="bg-clip-text text-[#1DA1F2]  ">HooliCon</span>
 </Link>
 
 
@@ -84,7 +84,7 @@ const Navbar = () => {
 
           <SignedOut>
             <Link to="/login" onClick={() => setOpen(false)}>
-              <button className="py-2 px-4 rounded-3xl bg-[#FF4500] text-white">
+              <button className="py-2 px-4 rounded-3xl bg-[#1DA1F2] text-white">
                 Login 👋
               </button>
             </Link>
@@ -96,7 +96,7 @@ const Navbar = () => {
       <div className="hidden md:flex items-center gap-8 xl:gap-12 font-medium">
         <SignedOut>
           <Link to="/login">
-            <button className="py-2 px-4 rounded-3xl bg-[#FF4500] text-white">
+            <button className="py-2 px-4 rounded-3xl bg-[#1DA1F2] text-white">
               Login 👋
             </button>
           </Link>
