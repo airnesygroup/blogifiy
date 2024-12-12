@@ -50,13 +50,7 @@ body {
 @media (max-width: 768px) {
   .homepage-bg {
     background:black; /* Default background color */
-    background: linear-gradient(
-      to bottom,
-      black 10px, /* Solid black starts at 10px */
-      black 940px, /* Solid black up to 940px */
-      black 1150px, /* Gradual transition from black to #e6e6ff between 940px and 1050px */
-      black 1400px /* Ensure the #e6e6ff color continues to 1400px */
-    ); 
+    background: black; 
     width: 100vw;
     overflow-x: hidden;
     font-family: "Montserrat", sans-serif;
