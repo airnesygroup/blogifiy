@@ -48,6 +48,7 @@ a {
 
   --softBg: rgb(42, 43, 43);
   --softBgMenu: rgb(9, 9, 10);
+  --softBgSearch: rgb(35, 35, 39);
 
   --softerBg: rgb(27, 27, 27);
 
@@ -75,6 +76,7 @@ a {
   --transparentBg: rgba(252, 254, 255, 0.7);
   --softBg: #EBECEE;
   --softBgMenu: #f5f5f5;
+  --softBgSearch: #ebebeb;
 
   --softerBg: #f5f6f8;
   --softTextColor2: #657786;
