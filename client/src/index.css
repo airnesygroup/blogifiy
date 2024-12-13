@@ -61,7 +61,7 @@ a {
 }
 
 .light {
-  --bg:#e6e6ff ;
+  --bg:#f0f0ff ;
   --textColor: #0F1419;
   --textColor2: #000000;
   --shadow-color: rgba(0, 0, 0, 0.1); /* Default for light mode */

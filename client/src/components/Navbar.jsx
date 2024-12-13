@@ -22,7 +22,9 @@ const Navbar = () => {
 
       {/* LOGO */}
       <Link to="/" className="flex items-center gap-1 text-lg font-bold md:text-2xl">
-  <span className="bg-clip-text text-[#e6e6ff]  ">Hoolicon</span>
+      <img src="/logo.png" alt="Logo" className="w-30 h-8" />
+
+  <span className="bg-clip-text text-[#e6e6ff]  "></span>
 </Link>
 
 <Search/>
