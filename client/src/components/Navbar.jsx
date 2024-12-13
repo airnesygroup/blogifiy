@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { SignedIn, SignedOut, UserButton } from "@clerk/clerk-react";
+import ThemeToggler from "./Theme";
 import "../index.css"; // Assuming styles are in App.css
 
 const Navbar = () => {
@@ -11,11 +12,11 @@ const Navbar = () => {
   return (
 
 
-<div
-  style={{ zIndex: 100004 }} // Modify or remove z-index here
-  className="w-full h-14 md:h-14 bg-black fixed lg:pl-4 lg:pr-6 top-0 left-0 text-[#e6e6ff] z-50 flex items-center justify-between 
-    md:border-b md:border-gradient-to-r gradient-border"
->
+    <div
+    style={{ zIndex: 100004 }} // Modify or remove z-index here
+    className="w-full h-14 md:h-14 bg-black fixed lg:pl-4 lg:pr-6 top-0 left-0 text-[#e6e6ff] z-50 flex items-center justify-between 
+      md:border-b md:border-gradient-to-r gradient-border"
+  >
 
 
       {/* LOGO */}
@@ -23,6 +24,7 @@ const Navbar = () => {
   <span className="bg-clip-text text-[#1DA1F2]  ">HooliCon</span>
 </Link>
 
+<ThemeToggler/>
 
       {/* MOBILE MENU */}
       <div className="md:hidden">

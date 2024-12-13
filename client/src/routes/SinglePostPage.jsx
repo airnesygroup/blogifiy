@@ -32,14 +32,14 @@ const SinglePostPage = () => {
           <h1 className="text-xl md:text-3xl xl:text-4xl 2xl:text-5xl font-semibold">
             {data.title}
           </h1>
-          <div className="flex items-center gap-2 text-gray-400 text-sm">
+          <div className="flex items-center gap-2  text-[var(--softTextColor)] text-sm">
             <span>Written by</span>
-            <Link className="text-blue-800">{data.user.username}</Link>
+            <Link className="text-[#1DA1F2]">{data.user.username}</Link>
             <span>on</span>
-            <Link className="text-blue-800">{data.category}</Link>
+            <Link className="text-[#1DA1F2]">{data.category}</Link>
             <span>{format(data.createdAt)}</span>
           </div>
-          <p className="text-gray-500 font-medium">{data.desc}</p>
+          <p className=" text-[var(--textColor)] font-medium">{data.desc}</p>
         </div>
         {data.img && (
           <div className="hidden lg:block w-2/5">
@@ -58,7 +58,7 @@ const SinglePostPage = () => {
         </div>
         {/* menu */}
         <div className="px-4 h-max sticky top-8">
-          <h1 className="mb-4 text-sm font-medium">Author</h1>
+          <h1 className="mb-4 text-sm  text-[var(--softTextColor)] font-medium">Author</h1>
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-8">
               {data.user.img && (
@@ -69,9 +69,9 @@ const SinglePostPage = () => {
                   h="48"
                 />
               )}
-              <Link className="text-blue-800">{data.user.username}</Link>
+              <Link className="text-[#iDA1F2]">{data.user.username}</Link>
             </div>
-            <p className="text-sm text-gray-500">
+            <p className="text-sm  text-[var(--textColor)]">
             </p>
             <div className="flex gap-2">
               <Link>
@@ -83,7 +83,7 @@ const SinglePostPage = () => {
             </div>
           </div>
           <PostMenuActions post={data}/>
-          <h1 className="mt-8 mb-4 text-sm font-medium">Categories</h1>
+          <h1 className="mt-8 mb-4 text-sm  text-[var(--textColor)]  font-medium">Categories</h1>
           <div className="flex flex-col gap-2 text-sm">
             <Link className="underline">All</Link>
             <Link className="underline" to="/">

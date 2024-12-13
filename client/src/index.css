@@ -8,17 +8,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
-
-
-
-
-
-
-
-@import url('https://fonts.googleapis.com/css2?family=Helvetica:wght@400&display=swap');
-
 :root {
   --bg: white;
   --textColor: black;
@@ -57,7 +46,7 @@ a {
   --softBg1: rgb(85, 86, 87);
 
   --softBg: rgb(42, 43, 43);
-  --softBgmenu: rgb(9, 9, 10);
+  --softBgMenu: rgb(9, 9, 10);
 
   --softerBg: rgb(27, 27, 27);
 
@@ -82,7 +71,7 @@ a {
   --softBg1: #c1c2c4;
   --transparentBg: rgba(252, 254, 255, 0.7);
   --softBg: #EBECEE;
-  --softBgmenu: #f5f5f5;
+  --softBgMenu: #f5f5f5;
 
   --softerBg: #f5f6f8;
   --softTextColor2: #657786;

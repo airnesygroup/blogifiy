@@ -105,7 +105,7 @@ const Homepage = () => {
           )}
         </div>
         <div>
-        <span className="text-black font-semibold text-[11px] sm:text-[12px] md:text-[12px] lg:text-[14px]">
+        <span className=" text-black font-semibold text-[11px] sm:text-[12px] md:text-[12px] lg:text-[14px]">
         <Link to="/posts?sort=trending"> TOP TRENDING </Link>
           </span>
         </div>
@@ -123,7 +123,7 @@ const Homepage = () => {
         </Link>
 
         <div>
-        <span className="text-black font-semibold text-[11px] sm:text-[12px] md:text-[12px] lg:text-[14px]">
+        <span className=" text-black font-semibold text-[11px] sm:text-[12px] md:text-[12px] lg:text-[14px]">
         <Link to="/posts?sort=popular"> MOST POPULAR </Link>
           </span>
         </div>
@@ -162,9 +162,9 @@ const Homepage = () => {
 <div className="hidden sm:flex items-center pl-[2%] relative sm:-mt-[10px] md:-mt-[10px] lg:mt-[40px]">
           {/* Titles */}
 
-          <h1 className="text-[#e6e6ff]   sm:text-[15px]  text-[20px] sm:text-[15px] md:text-[35px] lg:text-[45px] font-bold text-center relative z-10000">
-            <span className="mb-9 text-[#FFF] font-extrabold">
-              EXPLORE BY CATEGORY
+          <h1 className=" text-[var(--textColor)]  sm:text-[15px]  text-[20px] sm:text-[15px] md:text-[35px] lg:text-[45px] font-bold text-center relative z-10000">
+            <span className="mb-9  text-[var(--textColor)] font-extrabold">
+              EXPLORE BY CATEGORY 
             </span>
           </h1>
           <div className="flex items-center justify-center pl-3 gap-4 relative">
@@ -183,7 +183,7 @@ const Homepage = () => {
                 position: "absolute",
                 top: "50%",
               }}
-              className="left-[calc(100px-50px)] bg-white sm:left-[calc(100px+40px)]"
+              className="left-[calc(100px-50px)]  text-[var(--textColor)] sm:left-[calc(100px+40px)]"
             />
           </div>
         </div>
@@ -202,7 +202,7 @@ const Homepage = () => {
 
       {/* Recent Posts */}
       <div>
-      <h1 className="my-8 lg:text-2xl text-lg ml-2 mb-10 mt-5 text-[#e6e6ff] font-bold">Recent Posts</h1>
+      <h1 className="my-8 lg:text-2xl text-lg ml-2 mb-10 mt-5  text-[var(--textColor)] font-bold">Recent Posts</h1>
     
       
       <div className="flex flex-row justify-between">

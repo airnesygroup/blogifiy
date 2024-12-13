@@ -38,8 +38,8 @@ const PostListPage = () => {
 
 
 
-      <div className="flex flex-row  justify-between">
-      <div className="w-full md:w-3/4 pr-0 md:pr-10">
+      <div className="flex flex-row  text-[var(--textColor)] justify-between">
+      <div className="w-full md:w-3/4 pr-0  text-[var(--textColor)] md:pr-10">
 
 
 

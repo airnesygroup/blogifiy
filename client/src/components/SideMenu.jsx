@@ -26,11 +26,11 @@ const SideMenu = () => {
   };
 
   return (
-    <div  style={{  zIndex: "10000"}} className="px-6 py-4 bg-gray-800 rounded-lg text-[#e6e6ff] shadow-md sticky top-[100px]">
-      <h1 className="mb-6 text-md font-semibold text-gray-100">Search</h1>
+    <div  style={{  zIndex: "10000"}} className="px-6 py-4 bg-[var(--softBgMenu)] rounded-lg  text-[var(--textColor)] shadow-md sticky top-[100px]">
+      <h1 className="mb-6 text-md font-semibold  text-[var(--softTextColor)]">Search</h1>
       <Search />
 
-      <h1 className="mt-8 mb-4 text-md font-semibold text-gray-100">Filter</h1>
+      <h1 className="mt-8 mb-4 text-md font-semibold  text-[var(--softTextColor)]">Filter</h1>
       <div className="flex flex-col gap-3 text-sm">
         {[
           { label: "Newest", value: "newest" },
@@ -55,7 +55,7 @@ const SideMenu = () => {
         ))}
       </div>
 
-      <h1 className="mt-8 mb-4 text-md font-semibold text-gray-100">Categories</h1>
+      <h1 className="mt-8 mb-4 text-md font-semibold  text-[var(--softTextColor)]">Categories</h1>
       <div className="flex flex-col gap-3 text-sm">
         {[
           { label: "All Posts", category: "general" },
@@ -68,7 +68,7 @@ const SideMenu = () => {
           <span
             key={cat.category}
             className={`cursor-pointer hover:text-[#1DA1F2] ${
-              selectedCategory === cat.category ? "text-[#1DA1F2]" : "text-[#e6e6ff]"
+              selectedCategory === cat.category ? "text-[#1DA1F2]" : " text-[var(--textColor)]"
             }`}
             onClick={() => handleCategoryChange(cat.category)}
           >
