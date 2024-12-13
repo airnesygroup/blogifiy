@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Search from "../components/Search";
 import Maincategories from "../components/MainCategories";
 import SideMenu from "../components/SideMenu";
+import ThemeToggler from "../components/Theme";
 
 const Homepage = () => {
   const [isVisible, setIsVisible] = useState(true);
@@ -183,7 +184,7 @@ const Homepage = () => {
                 position: "absolute",
                 top: "50%",
               }}
-              className="left-[calc(100px-50px)]  text-[var(--textColor)] sm:left-[calc(100px+40px)]"
+              className="left-[calc(100px-50px)]  bg-[var(--textColor)] sm:left-[calc(100px+40px)]"
             />
           </div>
         </div>
@@ -195,9 +196,7 @@ const Homepage = () => {
    
       <FeaturedPosts />
 
-      <div className="s my-8 mb-6 hidden sm:block">
-  <Maincategories />
-</div>
+    
 
 
       {/* Recent Posts */}
@@ -211,6 +210,8 @@ const Homepage = () => {
   </div>
   <div className="hidden md:block w-1/4">
     <SideMenu />
+    <ThemeToggler />
+
   </div>
 </div>
 

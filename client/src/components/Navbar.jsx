@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { SignedIn, SignedOut, UserButton } from "@clerk/clerk-react";
 import ThemeToggler from "./Theme";
 import "../index.css"; // Assuming styles are in App.css
+import Search from "./Search2";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -14,17 +15,17 @@ const Navbar = () => {
 
     <div
     style={{ zIndex: 100004 }} // Modify or remove z-index here
-    className="w-full h-14 md:h-14 bg-black fixed lg:pl-4 lg:pr-6 top-0 left-0 text-[#e6e6ff] z-50 flex items-center justify-between 
+    className="w-full h-14 md:h-14 bg-black gap-5 fixed lg:pl-4 lg:pr-6 top-0 left-0 text-[#e6e6ff] z-50 flex items-center justify-between 
       md:border-b md:border-gradient-to-r gradient-border"
   >
 
 
       {/* LOGO */}
       <Link to="/" className="flex items-center gap-1 text-lg font-bold md:text-2xl">
-  <span className="bg-clip-text text-[#1DA1F2]  ">HooliCon</span>
+  <span className="bg-clip-text text-[#e6e6ff]  ">Hoolicon</span>
 </Link>
 
-<ThemeToggler/>
+<Search/>
 
       {/* MOBILE MENU */}
       <div className="md:hidden">
