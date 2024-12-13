@@ -26,9 +26,8 @@ const SideMenu = () => {
   };
 
   return (
-    <div  style={{  zIndex: "10000"}} className="px-6 py-4 bg-[var(--softBgMenu)] rounded-lg  text-[var(--textColor)] shadow-md sticky top-[100px]">
-      <h1 className="mb-6 text-md font-semibold  text-[var(--softTextColor)]">Search</h1>
-      <Search />
+    <div  style={{  zIndex: "10000"}} className="px-6 py-4 bg-[var(--softBgMenu)] rounded-lg  text-[var(--textColor)] shadow-md sticky
+     top-[90px]">
 
       <h1 className="mt-8 mb-4 text-md font-semibold  text-[var(--softTextColor)]">Filter</h1>
       <div className="flex flex-col gap-3 text-sm">
