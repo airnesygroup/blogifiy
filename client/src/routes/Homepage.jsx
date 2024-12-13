@@ -53,7 +53,7 @@ const Homepage = () => {
   }, [showSearch, showShare]);
 
   return (
-    <div className="mb-9  flex flex-col gap-0">
+    <div className="mb-9  flex flex-col ">
       {/* Floating Section */}
       <div
         className={`fixed top-[45px] left-0 w-screen z-[10000] flex items-center justify-between px-5 py-3 transition-opacity duration-300 ${

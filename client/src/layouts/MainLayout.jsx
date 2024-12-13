@@ -1,5 +1,5 @@
 import { Outlet, useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Navbar from "../components/Navbar";
 
 const MainLayout = () => {
@@ -14,8 +14,7 @@ const MainLayout = () => {
     }
 
     const handleScroll = () => {
-      const gradientElement = document.querySelector(".homepage-bg::before");
-      if (window.scrollY > 1000) {
+      if (window.scrollY > 100) {
         document.body.classList.add("hide-gradient");
       } else {
         document.body.classList.remove("hide-gradient");
@@ -27,6 +26,7 @@ const MainLayout = () => {
     // Cleanup on unmount to avoid side effects
     return () => {
       document.body.classList.remove("homepage-bg");
+      document.body.classList.remove("hide-gradient");
       window.removeEventListener("scroll", handleScroll);
     };
   }, [location]);

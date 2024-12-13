@@ -92,16 +92,13 @@ body {
 
 }
 
-
-
 /* Apply the black background to the first 1000px of the homepage */
-/* Apply the default background to the homepage */
 .homepage-bg {
   background-color: var(--bg);
   width: 100vw;
   overflow-x: hidden;
-  font-family: Arial, Helvetica, sans-serif;  
-  margin: 0; /* Prevent any default margin from affecting layout */
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
 }
 
 /* Base gradient */
@@ -122,8 +119,8 @@ body {
 /* Hide the gradient when scrolling past 1000px */
 .hide-gradient .homepage-bg::before {
   opacity: 0; /* Fully hidden */
+  
 }
-
 
 
 
