@@ -6,21 +6,34 @@ const MainLayout = () => {
   const location = useLocation();
 
   useEffect(() => {
-    // Add or remove the `homepage-bg` class based on the current route
+    const handleScroll = () => {
+      const body = document.body;
+      const homepageBg = document.querySelector(".homepage-bg");
+
+      if (window.scrollY > 1000) {
+        body.classList.add("hide-gradient");
+        if (homepageBg) {
+          homepageBg.style.setProperty("--gradient-background", "none");
+        }
+      } else {
+        body.classList.remove("hide-gradient");
+        if (homepageBg) {
+          homepageBg.style.setProperty(
+            "--gradient-background",
+            "linear-gradient(to top, transparent, rgb(230, 230, 255))"
+          );
+        }
+      }
+    };
+
+    // Add the homepage-bg class when on the homepage
     if (location.pathname === "/") {
       document.body.classList.add("homepage-bg");
     } else {
       document.body.classList.remove("homepage-bg");
     }
 
-    const handleScroll = () => {
-      if (window.scrollY > 100) {
-        document.body.classList.add("hide-gradient");
-      } else {
-        document.body.classList.remove("hide-gradient");
-      }
-    };
-
+    // Add scroll event listener
     window.addEventListener("scroll", handleScroll);
 
     // Cleanup on unmount to avoid side effects

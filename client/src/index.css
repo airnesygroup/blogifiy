@@ -104,24 +104,22 @@ body {
 /* Base gradient */
 .homepage-bg::before {
   content: "";
-  position: fixed; /* Gradient is fixed initially */
+  position: fixed;
   top: 55px;
   left: 0;
   width: 100%;
-  height: 180px; /* Gradient height */
-  background: linear-gradient(to top, transparent, rgb(230, 230, 255));
-  pointer-events: none; /* Ensure it doesn't interfere with clicks */
-  z-index: 9999; /* Stay above other elements */
-  opacity: 1; /* Fully visible initially */
-  transition: opacity 0.3s ease; /* Smooth transition for opacity */
+  height: 180px;
+  background: var(--gradient-background, linear-gradient(to top, transparent, rgb(230, 230, 255)));
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.3s ease, background 0.3s ease; /* Smooth transition */
 }
 
-/* Hide the gradient when scrolling past 1000px */
+/* Hide the gradient when scrolling past 10px */
 .hide-gradient .homepage-bg::before {
-  opacity: 0; /* Fully hidden */
-  
+  opacity: 0;
 }
-
 
 
 
