@@ -42,7 +42,7 @@ const PostListItem = ({ post }) => {
  md:text-[12px] lg:text-[14px] md:top-[-10px] lg:relative lg:top-[-35px]">
   <span> By</span>
   <Link
-    className="text-[#1DA1F2] text-[11px] sm:text-[11px] md:[12px] lg:text-[13px]"
+    className="text-[#00bfde] text-[11px] sm:text-[11px] md:[12px] lg:text-[13px]"
     to={`/posts?author=${post.user.username}`}
     onClick={(e) => e.stopPropagation()}
   >
@@ -50,7 +50,7 @@ const PostListItem = ({ post }) => {
   </Link>
   <span>on</span>
   <Link
-    className="text-[#1DA1F2] text-[11px] sm:text-[11px] md:[12px] lg:text-[13px]"
+    className="text-[#00bfde] text-[11px] sm:text-[11px] md:[12px] lg:text-[13px]"
     to={`/posts?category=${post.category}`}
     onClick={(e) => e.stopPropagation()}
   >
