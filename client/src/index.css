@@ -38,6 +38,7 @@ a {
   --bg: #020203;
   --textColor: #dfecf5;
   --textColor2: #ffffff;
+  --textColore: #0F1419;
 
   --bg2: #050505;
   --bd: #303030;
@@ -56,13 +57,15 @@ a {
   --softTextColor4: #3a4147;
   --shadow-color: rgba(94, 93, 93, 0.4); /* Darker shadow for dark mode */
 
-
+  --gradient-background: linear-gradient(to top, transparent, rgb(230, 230, 255));
 
 }
 
 .light {
   --bg:#f0f0ff ;
   --textColor: #0F1419;
+  --textColore: #dfecf5;
+
   --textColor2: #000000;
   --shadow-color: rgba(0, 0, 0, 0.1); /* Default for light mode */
 
@@ -79,6 +82,8 @@ a {
   --softTextColor4: #dfe9f1;
 
   --softTextColor: #3e3f3f;
+  --gradient-background: linear-gradient(to top, transparent, rgb(59, 59, 59));
+
 }
 
 
@@ -109,7 +114,7 @@ body {
   left: 0;
   width: 100%;
   height: 180px;
-  background: var(--gradient-background, linear-gradient(to top, transparent, rgb(230, 230, 255)));
+  background: var(--gradient-background,);
   pointer-events: none;
   z-index: 9999;
   opacity: 1;

@@ -20,7 +20,7 @@ const MainLayout = () => {
         if (homepageBg) {
           homepageBg.style.setProperty(
             "--gradient-background",
-            "linear-gradient(to top, transparent, rgb(230, 230, 255))"
+          
           );
         }
       }

@@ -106,7 +106,7 @@ const Homepage = () => {
           )}
         </div>
         <div>
-        <span className="  text-[var(--textColor)] font-semibold text-[11px] sm:text-[12px] md:text-[12px] lg:text-[14px]">
+        <span className="  text-[var(--textColore)] font-semibold text-[11px] sm:text-[12px] md:text-[12px] lg:text-[14px]">
         <Link to="/posts?sort=trending"> TOP TRENDING </Link>
           </span>
         </div>
@@ -124,7 +124,7 @@ const Homepage = () => {
         </Link>
 
         <div>
-        <span className="  text-[var(--textColor)] font-semibold text-[11px] sm:text-[12px] md:text-[12px] lg:text-[14px]">
+        <span className="  text-[var(--textColore)] font-semibold text-[11px] sm:text-[12px] md:text-[12px] lg:text-[14px]">
         <Link to="/posts?sort=popular"> MOST POPULAR </Link>
           </span>
         </div>
