@@ -126,22 +126,8 @@ body {
 
 
 
-@media (max-width: 768px) {
-  .homepage-bg::before {
-    height: 150px; /* Reduced gradient height on small screens */
-  }
-}
 
 
-@media (max-width: 768px) {
-  .homepage-bg {
-    background-color: var(--bg);
-    width: 100vw;
-    overflow-x: hidden;
-    font-family: Arial, Helvetica, sans-serif;  
-    margin: 0; /* Prevent any default margin from affecting layout */
-  }
-}
 
 
 /* Default z-index behavior */
