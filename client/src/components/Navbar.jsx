@@ -22,11 +22,13 @@ const Navbar = () => {
 
       {/* LOGO */}
       <Link to="/" className="flex items-center gap-1 text-lg font-bold md:text-2xl">
-      <img src="/logo.png" alt="Logo" className="w-30 h-8 hidden lg:block" />
-      <img src="/logo2.png" alt="Logo" className="w-8 h-8 lg:hidden md:hidden  " />
+      <img src="/logo2.png" alt="Logo" className="w-8 h-8   " />
+
+      <span className="bg-clip-text text-[#ff9a4b] font-impact "> HOOLI
+  <span className="bg-clip-text text-[#1ADAff] font-impact">CON</span>
+</span>
 
 
-  <span className="bg-clip-text text-[#e6e6ff]  "></span>
 </Link>
 
 <Search/>
