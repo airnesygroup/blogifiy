@@ -104,7 +104,7 @@ body {
   margin: 0; /* Prevent any default margin from affecting layout */
 }
 
-
+/* Base gradient */
 .homepage-bg::before {
   content: "";
   position: fixed; /* Gradient is fixed initially */
@@ -112,12 +112,20 @@ body {
   left: 0;
   width: 100%;
   height: 180px; /* Gradient height */
-  background: linear-gradient(to top, transparent, rgb(230, 230, 255)); /* Black gradient instead of whitish */
+  background: linear-gradient(to top, transparent, rgb(230, 230, 255));
   pointer-events: none; /* Ensure it doesn't interfere with clicks */
   z-index: 9999; /* Stay above other elements */
   opacity: 1; /* Fully visible initially */
-  transition: position 0.3s ease, opacity 0.3s ease; /* Smooth transition */
+  transition: opacity 0.3s ease; /* Smooth transition for opacity */
 }
+
+/* Hide the gradient when scrolling past 1000px */
+.hide-gradient .homepage-bg::before {
+  opacity: 0; /* Fully hidden */
+}
+
+
+
 @media (max-width: 768px) {
   .homepage-bg::before {
     height: 150px; /* Reduced gradient height on small screens */
