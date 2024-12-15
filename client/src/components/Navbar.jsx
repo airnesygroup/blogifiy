@@ -30,10 +30,8 @@ const Navbar = () => {
 
 
 </Link>
-<div  className=" pl-5 pr-5">
 <Search/>
 
-</div>
 
       {/* MOBILE MENU */}
       <div className="md:hidden">
