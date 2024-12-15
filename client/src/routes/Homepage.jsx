@@ -193,8 +193,10 @@ const Homepage = () => {
       </div>
 
       {/* Featured Posts */}
-   
-      <FeaturedPosts />
+   <div className="sm:-mt-[-50px] md:-mt-[-50px] lg:mt-[-80px]">
+   <FeaturedPosts />
+
+   </div>
 
     
 
