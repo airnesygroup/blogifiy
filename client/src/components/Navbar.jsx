@@ -15,7 +15,7 @@ const Navbar = () => {
 
     <div
     style={{ zIndex: 100004 }} // Modify or remove z-index here
-    className="w-full h-[55px] md:h-[55px] flex items-center text-[var(--TextColor)] sticky top-0 justify-between bg-[var(--bg)]">
+    className="w-full h-[55px] gap-4  md:h-[55px] flex items-center text-[var(--TextColor)] sticky top-0 justify-between bg-[var(--bg)]">
 
 
       {/* LOGO */}
@@ -30,8 +30,10 @@ const Navbar = () => {
 
 
 </Link>
-
+<div  className=" pl-5 pr-5">
 <Search/>
+
+</div>
 
       {/* MOBILE MENU */}
       <div className="md:hidden">
