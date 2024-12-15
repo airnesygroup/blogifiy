@@ -56,7 +56,7 @@ const Homepage = () => {
     <div className="mb-9  flex flex-col gap-0">
       {/* Floating Section */}
       <div
-        className={`fixed top-[45px] left-0 w-screen z-[10000] flex items-center justify-between px-5 py-3 transition-opacity duration-300 ${
+        className={`sticky top-[45px]  w-full  flex items-center justify-between px-5 py-3 transition-opacity duration-300 ${
           isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
         style={{
@@ -160,11 +160,11 @@ const Homepage = () => {
 
 <Link to="/posts?search=">
 
-<div className="hidden sm:flex items-center pl-[2%] relative sm:-mt-[10px] md:-mt-[10px] lg:mt-[40px]">
+<div className="hidden sm:flex items-center pl-[2%] pt relative sm:-mt-[-90px] md:-mt-[-90px] lg:mt-[-120px]">
           {/* Titles */}
 
           <h1 className=" text-[var(--textColor)]  sm:text-[15px]  text-[20px] sm:text-[15px] md:text-[35px] lg:text-[45px] font-bold text-center relative z-10000">
-            <span className="mb-9  text-[var(--textColor)] font-extrabold">
+            <span className="mb-9   bg-clip-text text-transparent  bg-gradient-to-r from-orange-500   to-[#1DA1F2] font-extrabold">
               EXPLORE BY CATEGORY 
             </span>
           </h1>
