@@ -30,7 +30,7 @@ const SideMenu = () => {
         maxHeight: "100vh",
         overflowY: "auto", // Make it scrollable if content overflows
       }}
-      className="px-6  py-4 bg-gradient-to-r from-[var(--bg)] to-[#1da1f2] rounded-sm  flex flex-col gap-4 text-[var(--textColor)] shadow-md"
+      className="px-6  py-4 bg-gradient-to-r from-[var(--bg)] to-[#1da1f2] rounded-sm  sticky top-0 flex flex-col gap-4 text-[var(--textColor)] shadow-md"
     >
       <div>
         <h1 className="mt-2 mb-4 text-md font-semibold text-[var(--textColor)]">Filter</h1>
