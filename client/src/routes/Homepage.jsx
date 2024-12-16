@@ -64,9 +64,9 @@ const Homepage = () => {
        
 
         <Link to="/" className="flex items-center gap-1 text-lg font-bold md:text-2xl">
-        <img src="/logo2.png" alt="Logo" className="w-10 h-10 lg:w-20 lg:h-20" />
+        <img src="/x.png" alt="Logo" className="w-10 h-10 lg:w-20 lg:h-20" />
 
-<span className="bg-clip-text text-[30px] lg:text-[75px] font-extrabold">HooliCon</span>
+<span className="bg-clip-text text-[30px] lg:text-[75px] font-extrabold">tech</span>
 
 
 

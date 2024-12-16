@@ -167,7 +167,7 @@ rounded-none lg:rounded-tr-2xl lg:rounded-br-2xl p-4">
       BY THE <br />
       <span className="underline">NUMBERS</span>
     </p>
-    <p className="text-5xl font-extrabold bg-clip-text text-transparent  bg-gradient-to-r from-orange-500  via-orange-500 to-[#1DA1F2] ">
+    <p className="text-5xl font-extrabold bg-clip-text text-transparent  bg-gradient-to-r from-[var(--TextColor)]  to-[#1DA1F2] ">
       <span style={{ fontSize: '1.2rem' }}>OVER</span> 100K+
     </p>
     <p className="text-[var(--TextColor)]" style={{ fontSize: '1rem' }}>
