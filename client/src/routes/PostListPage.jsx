@@ -45,6 +45,7 @@ const PostListPage = () => {
 
 
      
+<Filters/>
 
 
 

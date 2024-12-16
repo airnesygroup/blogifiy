@@ -6,6 +6,7 @@ import Search from "../components/Search";
 import Maincategories from "../components/MainCategories";
 import SideMenu from "../components/SideMenu";
 import ThemeToggler from "../components/Theme";
+import Filters from "../components/filters";
 
 const Homepage = () => {
   const [isVisible, setIsVisible] = useState(true);
