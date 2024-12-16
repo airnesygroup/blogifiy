@@ -31,7 +31,7 @@ const Sidebar = () => {
         maxHeight: "200px",
         overflowY: "auto", // Make it scrollable if content overflows
       }}
-      className="px-6 sm:hidden  py-4 bg-gradient-to-r from-orange-500 to-[#1da1f2]  rounded-sm right-0 flex flex-row gap-4 text-[var(--textColor)] shadow-md"
+      className="px-6 sm:hidden  py-4 bg-gradient-to-r from-[var(--bg)]  to-[#1da1f2]  rounded-sm right-0 flex flex-row gap-4 text-[var(--textColor)] shadow-md"
     >
       <div>
         <h1 className="mt-2 mb-4 text-md font-semibold text-[var(--textColor)]">Filter</h1>
