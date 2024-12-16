@@ -121,7 +121,7 @@ body {
   pointer-events: none;
   z-index: 9999;
   opacity: 1;
-  transition: opacity 0.6s ease; /* Smooth transition */
+  transition: opacity 4s ease; /* Smooth transition */
 }
 
 /* Smooth fade-out */

@@ -213,6 +213,7 @@ const Homepage = () => {
   <div className="hidden md:block w-1/4">
     <SideMenu />
     <ThemeToggler />
+    
 
   </div>
 </div>
