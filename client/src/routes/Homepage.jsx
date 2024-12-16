@@ -197,6 +197,7 @@ const Homepage = () => {
    <FeaturedPosts />
 
    </div>
+   <Filters/>
 
     
 
