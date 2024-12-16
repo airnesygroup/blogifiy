@@ -65,15 +65,15 @@ const MainCategories = () => {
         </div>
 
         {/* Right-side icons and controls */}
-        <div className="flex items-center py-[0.5px] space-x-4">
+        <div className="flex items-center py-[0.8px] space-x-4">
           {/* User and Sign In */}
           <div className="flex items-center space-x-2">
             <Link
               to="/signin"
-              className={`px-4 py-2 rounded-full border  flex flex-row border-white text-white ${
+              className={`px-4 py-2  flex flex-row border-white text-xs  md:text-sm text-white ${
                 isSearchOpen ? "hidden" : "block"
               }`}
-            >            <FaUserCircle className="text-white text-xl pr-1" />
+            >            <FaUserCircle className="text-white text-xl mx-auto pr-1" />
 
               Sign In
             </Link>
