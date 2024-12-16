@@ -4,7 +4,7 @@ import { format } from "timeago.js";
 
 const PostListItem = ({ post }) => {
   // Truncate title based on screen size
-  const truncatedTitle = post.title.length > 90
+  const truncatedTitle = post.title.length > 100
     ? `${post.title.substring(0, 90)}...` 
     : post.title;
 
@@ -39,7 +39,7 @@ const PostListItem = ({ post }) => {
 </h3>
 
 <div className="flex flex-wrap items-center gap-1 sm:gap-2 text-[var(--softTextColor)]  text-[11px] sm:text-[11px]
- md:text-[12px] lg:text-[14px] md:top-[-10px] lg:relative lg:top-[-35px]">
+ md:text-[12px] lg:text-[14px] ">
   <span> By</span>
   <Link
     className="text-[#00bfde] text-[11px] sm:text-[11px] md:[12px] lg:text-[14px]"
