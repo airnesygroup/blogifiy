@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { SignedIn, SignedOut, UserButton } from "@clerk/clerk-react";
@@ -37,22 +38,22 @@ const Navbar = () => {
       <div className="md:hidden">
         {/* MOBILE BUTTON */}
         <div
-          className="cursor-pointer text-[#e6e6ff] text-sm"
+          className="cursor-pointer text-[var(--textColor)] text-sm"
           onClick={() => setOpen((prev) => !prev)}
         >
           <div className="flex flex-col gap-1">
             <div
-              className={`h-[1px] rounded-md w-4 bg-[#e6e6ff] origin-left transition-all ease-in-out ${
+              className={`h-[1px] rounded-md w-4 bg-[var(--textColor)] origin-left transition-all ease-in-out ${
                 open && "rotate-45"
               }`}
             ></div>
             <div
-              className={`h-[1px] rounded-md w-4 bg-[#e6e6ff] transition-all ease-in-out ${
+              className={`h-[1px] rounded-md w-4  bg-[var(--textColor)] transition-all ease-in-out ${
                 open && "opacity-0"
               }`}
             ></div>
             <div
-              className={`h-[1px] rounded-md w-4 bg-[#e6e6ff] origin-left transition-all ease-in-out ${
+              className={`h-[1px] rounded-md w-4 bg-[var(--textColor)] origin-left transition-all ease-in-out ${
                 open && "-rotate-45"
               }`}
             ></div>
@@ -69,12 +70,12 @@ const Navbar = () => {
 
         {/* MOBILE LINK LIST */}
         <div
-          className={`w-[75%] h-screen bg-gradient-to-r from-black to-[#484e4f] flex flex-col p-5 pt-7 items-left justify-left text-[#e6e6ff] gap-8 font-sm text-md fixed top-0 right-0 transition-transform ease-in-out z-50 ${
+          className={`w-[75%] h-screen bg-[var(--bg)] flex flex-col p-5 pt-7 items-left justify-left text-[var(--TextColor)] gap-8 font-sm text-md fixed top-0 right-0 transition-transform ease-in-out z-50 ${
             open ? "translate-x-0" : "translate-x-full"
           }`}
         >
           <button
-            className="absolute top-4 right-4 text-md text-[#e6e6ff]"
+            className="absolute top-4 right-4 text-md text-[var(--TextColor)]"
             onClick={() => setOpen(false)}
           >
             ✕
