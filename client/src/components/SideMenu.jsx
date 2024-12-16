@@ -43,14 +43,14 @@ const SideMenu = () => {
           ].map((filter) => (
             <label
               key={filter.value}
-              className="flex items-center gap-2 cursor-pointer hover:text-[var(--textColore)]"
+              className="flex items-center gap-2 cursor-pointer hover:font-extrabold]"
             >
               <input
                 type="radio"
                 name="sort"
                 value={filter.value}
                 onChange={handleFilterChange}
-                className="appearance-none w-4 h-4 border-2 border-gray-300 cursor-pointer rounded-sm bg-white 
+                className="appearance-none w-4 h-4 border-2 font-extrabold border-gray-300 cursor-pointer rounded-sm bg-white 
                 checked:bg-[#1DA1F2] checked:border-[#1DA1F2] focus:ring-2 focus:ring-[#1DA1F2]"
               />
               {filter.label}
