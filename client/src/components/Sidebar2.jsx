@@ -1,27 +1,32 @@
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 const Sidebar = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [selectedCategory, setSelectedCategory] = useState(searchParams.get("cat") || "general");
+  const navigate = useNavigate(); // Add navigate to programmatically change the route
 
   const handleFilterChange = (e) => {
     if (searchParams.get("sort") !== e.target.value) {
-      setSearchParams({
-        ...Object.fromEntries(searchParams.entries()),
-        sort: e.target.value,
-      });
+      // Update searchParams with the selected sort filter and navigate to /posts
+      setSearchParams(
+        { ...Object.fromEntries(searchParams.entries()), sort: e.target.value },
+        { replace: true } // Use replace to avoid adding new history entry
+      );
+      navigate(`/posts?${new URLSearchParams(searchParams).toString()}`); // Navigate to /posts with new filter
     }
   };
 
   const handleCategoryChange = (category) => {
     if (searchParams.get("cat") !== category) {
-      setSearchParams({
-        ...Object.fromEntries(searchParams.entries()),
-        cat: category,
-      });
+      // Update searchParams with the selected category and navigate to /posts
+      setSearchParams(
+        { ...Object.fromEntries(searchParams.entries()), cat: category },
+        { replace: true } // Use replace to avoid adding new history entry
+      );
+      navigate(`/posts?${new URLSearchParams(searchParams).toString()}`); // Navigate to /posts with new category
     }
-    setSelectedCategory(category); // Update the selected category
+    setSelectedCategory(category); // Update the selected category state
   };
 
   return (
@@ -31,7 +36,7 @@ const Sidebar = () => {
         maxHeight: "200px",
         overflowY: "auto", // Make it scrollable if content overflows
       }}
-      className="px-6 sm:hidden  py-4 bg-gradient-to-r from-[var(--bg)]  to-[#1da1f2]  rounded-sm right-0 flex flex-row gap-4 text-[var(--textColor)] shadow-md"
+      className="px-6 sm:hidden py-4 bg-gradient-to-r from-[var(--bg)] to-[#1da1f2] rounded-sm right-0 flex flex-row gap-4 text-[var(--textColor)] shadow-md"
     >
       <div>
         <h1 className="mt-2 mb-4 text-md font-semibold text-[var(--textColor)]">Filter</h1>
@@ -61,7 +66,7 @@ const Sidebar = () => {
       </div>
 
       <div className="ml-auto"> {/* Align categories to the right */}
-        <h1 className="mt-2  mb-4 text-md font-semibold text-[var(--textColor)] text-right">Categories</h1>
+        <h1 className="mt-2 mb-4 text-md font-semibold text-[var(--textColor)] text-right">Categories</h1>
         <div className="flex pb-9 flex-col gap-3 text-sm text-right">
           {[
             { label: "All Posts", category: "general" },
