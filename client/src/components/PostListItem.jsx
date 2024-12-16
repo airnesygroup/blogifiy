@@ -33,7 +33,7 @@ const PostListItem = ({ post }) => {
       {/* Details */}
       <div className="flex flex-col"> {/* Removed justify-between */}
         {/* Title */}
-        <h3 className="text-[14px] sm:text-[19px] md:text-[19px] text-[var(--textColor)] leading-tight">
+        <h3 className="text-[15px] sm:text-[19px] md:text-[19px] text-[var(--textColor)] leading-tight">
           <span className="sm:hidden">{truncatedTitle}</span>
           <span className="hidden sm:inline md:hidden">{truncatedTitleLarge}</span>
           <span className="hidden md:inline">{post.title}</span>

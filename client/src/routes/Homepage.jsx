@@ -53,10 +53,10 @@ const Homepage = () => {
   }, [showSearch, showShare]);
 
   return (
-    <div className="mb-9  flex flex-col gap-0">
+    <div className="mb-9   flex flex-col gap-0">
       {/* Floating Section */}
       <div
-        className={`sticky top-[45px]  w-full  flex items-center justify-between px-5 py-3 transition-opacity duration-300 ${
+        className={`sticky top-0  w-full  flex items-center justify-between px-5 py-3 transition-opacity duration-300 ${
           isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
         style={{
@@ -111,17 +111,16 @@ const Homepage = () => {
           </span>
         </div>
 
-        <Link to="/">
-          {/* Center: Logo and Text */}
-          <div className="flex flex-col items-center">
-            <img
-              src="/under.png"
-              alt="Logo"
-              className="w-[60px] h-[40px] sm:w-[50px] sm:h-[30px] md:w-[80px] md:h-[60px] lg:w-[110px] lg:h-[90px]"
+        <Link to="/" className="flex items-center gap-1 text-lg font-bold md:text-2xl">
+      <img src="/logo2.png" alt="Logo" className="w-24 h-24 " />
 
-            />
-          </div>
-        </Link>
+
+     <span className="bg-clip-text text-[#000] text-[85px] font-impact">HooliCon</span>
+
+
+
+
+</Link>
 
         <div>
         <span className="  text-[var(--textColore)] font-semibold text-[11px] sm:text-[12px] md:text-[12px] lg:text-[14px]">
@@ -147,50 +146,7 @@ const Homepage = () => {
         </div>
       </div>
 
-      {/* Main Content */}
-      <div
-        className="text-white relative z-[10000]"
-        style={{
-          position: "relative",
-          paddingTop: "100px",
-          paddingBottom: "50px",
-          zIndex: 10000,
-        }}
-      >
-
-<Link to="/posts?search=">
-
-<div className="hidden sm:flex items-center pl-[2%] pt relative sm:-mt-[-90px] md:-mt-[-90px] lg:mt-[-120px]">
-          {/* Titles */}
-
-          <h1 className=" text-[var(--textColor)]  sm:text-[15px]  text-[20px] sm:text-[15px] md:text-[35px] lg:text-[45px] font-bold text-center relative z-10000">
-            <span className="mb-9   bg-clip-text text-transparent  bg-gradient-to-r from-orange-500   to-[#1DA1F2] font-extrabold">
-              EXPLORE BY CATEGORY 
-            </span>
-          </h1>
-          <div className="flex items-center justify-center pl-3 gap-4 relative">
-            {/* Arrow Image */}
-            <img
-              src="/arrow.png"
-              alt="Arrow"
-              className="w-25 h-5 sm:w-25 sm:h-5 md:w-28 md:h-10"
-            />
-
-            {/* White Line */}
-            <div
-              style={{
-                height: "0.3px",
-                width: "calc(100vw - 100px)",
-                position: "absolute",
-                top: "50%",
-              }}
-              className="left-[calc(100px-50px)]  bg-[var(--textColor)] sm:left-[calc(100px+40px)]"
-            />
-          </div>
-        </div>
-        </Link>
-
-      </div>
+  <Maincategories/>
 
       {/* Featured Posts */}
    <div className="mt-[-150px]  sm:-mt-[-150px] md:-mt-[-40px] lg:mt-[-70px]">

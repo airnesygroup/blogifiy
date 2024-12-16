@@ -38,7 +38,7 @@ const PostListPage = () => {
  
 <Sidebar/>
 
-    <h1 style={{  zIndex: "10000"}} className="mb-4 lg:mt-[25px] mt-4  lg:mb-[8] lg:text-xl text-md text-[#e6e6ff] font-bold">
+    <h1 style={{  zIndex: "10000"}} className="mb-4 lg:mt-[25px] mt-4  lg:mb-[8] lg:text-xl text-md text-[var(--textColor)] font-bold">
         {`Blog - ${displayText}`}
       </h1>
 
