@@ -7,7 +7,7 @@ const MainCategories = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false); // Toggle menu dropdown
 
   return (
-    <div className=" max-w-[1200px] mx-auto bg-[#1da1f2]/97 rounded-full  shadow-lg ">
+    <div className=" max-w-[1200px] mx-auto bg-[#1da1f2]/95 rounded-full  shadow-lg ">
       {/* Navigation container */}
       <div className="flex items-center text-[#e6e6ff] justify-between px-4 py-2">
         {/* Categories or Search Bar */}
