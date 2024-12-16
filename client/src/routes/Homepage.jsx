@@ -57,7 +57,7 @@ const Homepage = () => {
       {/* Floating Section */}
       <div
   className={` flex items-center mx-auto justify-between px-5 py-3 transition-opacity 
-    duration-300 ${isVisible ? "opacity-100" : "opacity-0 pointer-events-none"} sm:opacity-100 sm:pointer-events-auto  hidden sm:hidden md:block`}
+    duration-300 ${isVisible ? "opacity-100" : "opacity-0 pointer-events-none"} sm:opacity-100 sm:pointer-events-auto  `}
  
 >
 
@@ -77,7 +77,7 @@ const Homepage = () => {
  
       </div>
 
-      <div  style={{ zIndex: 100004 }} className="mb-[45px] md:mb-[50px] mt-[0px] md:mt-[20px] sticky top-3 md:top-5 ">
+      <div  style={{ zIndex: 100004 }} className="mb-[45px] md:mb-[50px] mt-[15px] md:mt-[20px] sticky top-3 md:top-5 ">
   <Maincategories />
 </div>
 
