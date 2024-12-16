@@ -1,7 +1,4 @@
 
-   
-
-
 import { useState } from "react";
 import { useLocation } from "react-router-dom"; // Import useLocation from react-router-dom
 import PostList from "../components/PostList";
@@ -11,8 +8,6 @@ import { Link } from "react-router-dom";
 import Sidebar from "../components/Sidebar2";
 
 const PostListPage = () => {
-
-
   const [open, setOpen] = useState(false);
   const location = useLocation(); // Get the current location object
 
@@ -37,23 +32,11 @@ const PostListPage = () => {
 
   return (
     <div style={{ paddingTop: "0"}} className="  ">
-      
-    
-
-
 
       <div className="flex flex-row  text-[var(--textColor)] justify-between">
       <div className="w-full md:w-3/4 pr-0  text-[var(--textColor)] md:pr-10">
-
-
-
-     
+ 
 <Sidebar/>
-
-
-
-
-
 
     <h1 style={{  zIndex: "10000"}} className="mb-4 lg:mt-[25px] mt-4  lg:mb-[8] lg:text-xl text-md text-[#e6e6ff] font-bold">
         {`Blog - ${displayText}`}
@@ -65,9 +48,6 @@ const PostListPage = () => {
         <SideMenu />
     </div>
 </div>
-
-
-
  </div>
   );
 };

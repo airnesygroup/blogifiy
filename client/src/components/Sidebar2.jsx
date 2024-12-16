@@ -6,29 +6,23 @@ const Sidebar = () => {
   const [selectedCategory, setSelectedCategory] = useState(searchParams.get("cat") || "general");
   const navigate = useNavigate(); // Add navigate to programmatically change the route
 
-  const handleFilterChange = (e) => {
-    if (searchParams.get("sort") !== e.target.value) {
-      // Update searchParams with the selected sort filter and navigate to /posts
-      setSearchParams(
-        { ...Object.fromEntries(searchParams.entries()), sort: e.target.value },
-        { replace: true } // Use replace to avoid adding new history entry
-      );
-      navigate(`/posts?${new URLSearchParams(searchParams).toString()}`); // Navigate to /posts with new filter
-    }
-  };
 
+  const handleFilterChange = (e) => {
+    const newSort = e.target.value;
+    const currentParams = new URLSearchParams(searchParams);
+    currentParams.set("sort", newSort); // Set the new sort filter
+    setSearchParams(currentParams, { replace: true }); // Update URL
+    navigate(`/posts?${currentParams.toString()}`); // Navigate to the new URL
+  };
+  
   const handleCategoryChange = (category) => {
-    if (searchParams.get("cat") !== category) {
-      // Update searchParams with the selected category and navigate to /posts
-      setSearchParams(
-        { ...Object.fromEntries(searchParams.entries()), cat: category },
-        { replace: true } // Use replace to avoid adding new history entry
-      );
-      navigate(`/posts?${new URLSearchParams(searchParams).toString()}`); // Navigate to /posts with new category
-    }
+    const currentParams = new URLSearchParams(searchParams);
+    currentParams.set("cat", category); // Set the new category
+    setSearchParams(currentParams, { replace: true }); // Update URL
+    navigate(`/posts?${currentParams.toString()}`); // Navigate to the new URL
     setSelectedCategory(category); // Update the selected category state
   };
-
+  
   return (
     <div
       style={{
@@ -79,7 +73,7 @@ const Sidebar = () => {
             <span
               key={cat.category}
               className={`cursor-pointer hover:text-text-[var(--textColore)] ${
-                selectedCategory === cat.category ? "text-[var(--textColore)]" : " text-[var(--textColor)]"
+                selectedCategory === cat.category ? "text-[var(--textColore)] text-extrabold" : " text-[var(--textColor)]"
               }`}
               onClick={() => handleCategoryChange(cat.category)}
             >
