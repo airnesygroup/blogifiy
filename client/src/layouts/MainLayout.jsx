@@ -7,19 +7,14 @@ const MainLayout = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const body = document.body;
       const homepageBg = document.querySelector(".homepage-bg");
 
       if (window.scrollY > 1000) {
-        body.classList.add("hide-gradient");
-        if (homepageBg) {
-          homepageBg.style.setProperty("--gradient-background", "none");
-        }
+        homepageBg?.classList.add("fade-out");
+        homepageBg?.classList.remove("fade-in");
       } else {
-        body.classList.remove("hide-gradient");
-        if (homepageBg) {
-          homepageBg.style.setProperty("--gradient-background", "");
-        }
+        homepageBg?.classList.add("fade-in");
+        homepageBg?.classList.remove("fade-out");
       }
     };
 
@@ -36,7 +31,8 @@ const MainLayout = () => {
     // Cleanup on unmount to avoid side effects
     return () => {
       document.body.classList.remove("homepage-bg");
-      document.body.classList.remove("hide-gradient");
+      document.body.classList.remove("fade-in");
+      document.body.classList.remove("fade-out");
       window.removeEventListener("scroll", handleScroll);
     };
   }, [location]);

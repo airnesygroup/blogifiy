@@ -121,12 +121,17 @@ body {
   pointer-events: none;
   z-index: 9999;
   opacity: 1;
-  transition: opacity 0.6s ease, background 0.6s ease; /* Smooth transition */
+  transition: opacity 0.6s ease; /* Smooth transition */
 }
 
-/* Hide the gradient when scrolling past 1000px */
-.hide-gradient .homepage-bg::before {
+/* Smooth fade-out */
+.homepage-bg.fade-out::before {
   opacity: 0;
+}
+
+/* Smooth fade-in */
+.homepage-bg.fade-in::before {
+  opacity: 1;
 }
 
 
