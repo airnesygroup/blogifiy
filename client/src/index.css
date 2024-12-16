@@ -27,7 +27,6 @@ body {
 
 
 .container {
-  max-width: 1800px; /* Adjust as needed */
   margin: 0 auto;    /* Center the content horizontally */
   padding: 0 20px;   /* Add some padding for small screens */
 }
