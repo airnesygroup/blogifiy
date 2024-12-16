@@ -4,6 +4,7 @@ import { SignedIn, SignedOut, UserButton } from "@clerk/clerk-react";
 import ThemeToggler from "./Theme";
 import "../index.css"; // Assuming styles are in App.css
 import Search from "./Search2";
+import ThemeToggler from "./Theme";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -97,6 +98,8 @@ const Navbar = () => {
               </button>
             </Link>
           </SignedOut>
+          <ThemeToggler />
+
         </div>
       </div>
 
