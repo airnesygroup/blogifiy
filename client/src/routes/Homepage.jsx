@@ -90,7 +90,7 @@ const Homepage = () => {
  
       </div>
 
-      <div className="mb-[50px] mt-[20px] ">
+      <div  style={{ zIndex: 100004 }} className="mb-[50px] mt-[20px] sticky top-9 ">
   <Maincategories />
 </div>
 
