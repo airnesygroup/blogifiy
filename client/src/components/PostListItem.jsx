@@ -32,7 +32,7 @@ const PostListItem = ({ post }) => {
       )}
       {/* Details */}
       <div className="flex flex-col justify-between">
-      <h3 className="text-[14px] sm:text-[20px] md:[20px]  text-[var(--textColor)]  ">
+      <h3 className="text-[14px] sm:text-[19px] md:[19px]  text-[var(--textColor)]  ">
   <span className="  sm:hidden">{truncatedTitle}</span>
   <span className=" hidden sm:inline md:hidden">{truncatedTitleLarge}</span>
   <span className="hidden md:inline">{post.title}</span>
@@ -42,7 +42,7 @@ const PostListItem = ({ post }) => {
  md:text-[12px] lg:text-[14px] md:top-[-10px] lg:relative lg:top-[-35px]">
   <span> By</span>
   <Link
-    className="text-[#00bfde] text-[11px] sm:text-[11px] md:[12px] lg:text-[13px]"
+    className="text-[#00bfde] text-[11px] sm:text-[11px] md:[12px] lg:text-[14px]"
     to={`/posts?author=${post.user.username}`}
     onClick={(e) => e.stopPropagation()}
   >
@@ -50,7 +50,7 @@ const PostListItem = ({ post }) => {
   </Link>
   <span>on</span>
   <Link
-    className="text-[#00bfde] text-[11px] sm:text-[11px] md:[12px] lg:text-[13px]"
+    className="text-[#00bfde] text-[11px] sm:text-[11px] md:[12px] lg:text-[14px]"
     to={`/posts?category=${post.category}`}
     onClick={(e) => e.stopPropagation()}
   >
