@@ -147,8 +147,10 @@ const Homepage = () => {
       </div>
 
       
-    
-  <Maincategories/>
+    <div className="mb-[30px] mt-[45px]">
+    <Maincategories/>
+
+    </div>
 
       {/* Featured Posts */}
    <div className="">
