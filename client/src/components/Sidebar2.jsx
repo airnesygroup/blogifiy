@@ -71,12 +71,14 @@ const Sidebar = () => {
             { label: "Marketing", category: "marketing" },
           ].map((cat) => (
             <span
-              key={cat.category}
-              className={`cursor-pointer hover:text-text-[var(--textColore)] ${
-                selectedCategory === cat.category ? "text-[var(--textColore)] text-extrabold" : " text-[var(--textColor)]"
-              }`}
-              onClick={() => handleCategoryChange(cat.category)}
-            >
+            key={cat.category}
+            className={`cursor-pointer hover:text-text-[var(--textColore)] ${
+              selectedCategory === cat.category
+                ? "text-[var(--textColor)] font-extrabold"
+                : "text-[var(--textColor)]"
+            }`}
+            onClick={() => handleCategoryChange(cat.category)}
+          >
               {cat.label}
             </span>
           ))}

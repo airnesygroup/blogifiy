@@ -30,7 +30,7 @@ const SideMenu = () => {
         maxHeight: "100vh",
         overflowY: "auto", // Make it scrollable if content overflows
       }}
-      className="px-6  py-4 bg-gradient-to-r from-[var(--bg)] to-[#1da1f2] rounded-sm  sticky top-0 flex flex-col gap-4 text-[var(--textColor)] shadow-md"
+      className="px-6  py-4 bg-gradient-to-r from-[var(--bg)] to-[#1da1f2] rounded-sm  sticky top-[80px] flex flex-col gap-4 text-[var(--textColor)] shadow-md"
     >
       <div>
         <h1 className="mt-2 mb-4 text-md font-semibold text-[var(--textColor)]">Filter</h1>
@@ -71,12 +71,15 @@ const SideMenu = () => {
             { label: "Marketing", category: "marketing" },
           ].map((cat) => (
             <span
-              key={cat.category}
-              className={`cursor-pointer hover:text-text-[var(--textColore)] ${
-                selectedCategory === cat.category ? "text-[var(--textColore)] text-bold" : " text-[var(--textColor)]"
-              }`}
-              onClick={() => handleCategoryChange(cat.category)}
-            >
+            key={cat.category}
+            className={`cursor-pointer hover:text-text-[var(--textColore)] ${
+              selectedCategory === cat.category
+                ? "text-[var(--textColor)] font-extrabold"
+                : "text-[var(--textColor)]"
+            }`}
+            onClick={() => handleCategoryChange(cat.category)}
+          >
+          
               {cat.label}
             </span>
           ))}
