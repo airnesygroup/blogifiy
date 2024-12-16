@@ -1,7 +1,7 @@
 import { useSearchParams } from "react-router-dom";
 import { useState } from "react";
 
-const Filters = () => {
+const filters = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [selectedCategory, setSelectedCategory] = useState(searchParams.get("cat") || "general");
 
@@ -87,4 +87,4 @@ const Filters = () => {
   );
 };
 
-export default Filters;
+export default filters;
