@@ -56,7 +56,7 @@ const Homepage = () => {
     <div className="mb-9   flex flex-col gap-0">
       {/* Floating Section */}
       <div
-        className={`sticky top-0  w-full  flex items-center justify-between px-5 py-3 transition-opacity duration-300 ${
+        className={`sticky top-0  flex items-center justify-between px-5 py-3 transition-opacity duration-300 ${
           isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
         style={{
@@ -146,11 +146,10 @@ const Homepage = () => {
         </div>
       </div>
 
-      
-    <div className="mb-[55px] mt-[20px]">
-    <Maincategories/>
+      <div className="mb-[55px] mt-[20px] max-w-[1700px] flex justify-center items-center">
+  <Maincategories />
+</div>
 
-    </div>
 
    <FeaturedPosts />
 
