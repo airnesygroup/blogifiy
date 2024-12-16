@@ -15,7 +15,7 @@ const PostListItem = ({ post }) => {
   return (
     <Link
       to={`/${post.slug}`}
-      className="flex flex-row gap-6 sm:gap-8 mb-8 sm:mb-12 group"
+      className="flex flex-row gap-6 mb-8 sm:mb-12 group"
     >
       {/* Image */}
       {post.img && (
@@ -31,7 +31,7 @@ const PostListItem = ({ post }) => {
         </div>
       )}
       {/* Details */}
-      <div className="flex flex-col justify-between">
+      <div className="flex flex-col gap-2"> {/* Removed justify-between */}
         {/* Title */}
         <h3 className="text-[14px] sm:text-[19px] md:text-[19px] text-[var(--textColor)] leading-tight">
           <span className="sm:hidden">{truncatedTitle}</span>
@@ -39,7 +39,7 @@ const PostListItem = ({ post }) => {
           <span className="hidden md:inline">{post.title}</span>
         </h3>
         {/* Metadata */}
-        <div className="flex flex-wrap items-center gap-1 sm:gap-2 text-[var(--softTextColor)] text-[11px] sm:text-[11px] md:text-[12px] lg:text-[14px] mt-1">
+        <div className="flex flex-wrap items-center gap-1 sm:gap-2 text-[var(--softTextColor)] text-[11px] sm:text-[11px] md:text-[12px] lg:text-[14px]">
           <span>By</span>
           <Link
             className="text-[var(--textColor)] text-[11px] sm:text-[11px] md:text-[12px] lg:text-[14px]"
