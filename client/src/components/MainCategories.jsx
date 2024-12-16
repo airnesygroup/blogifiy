@@ -20,7 +20,7 @@ const MainCategories = () => {
             >
               <Link
                 to="/posts"
-                className="bg-gradient-to-r from-[#484e4f] to-[#bbdaed] text-white rounded-full px-4 py-3"
+                className="bg-black  text-white rounded-full px-4 py-3"
               >
                 Latest
               </Link>
@@ -28,31 +28,31 @@ const MainCategories = () => {
                 to="/posts?cat=web-design"
                 className="hover:bg-blue-50 rounded-full px-4 py-1"
               >
-                Web Design
+                Most Popular
               </Link>
               <Link
                 to="/posts?cat=development"
                 className="hover:bg-blue-50 rounded-full px-4 py-1"
               >
-                Development
+                Top Trending
               </Link>
               <Link
                 to="/posts?cat=databases"
                 className="hover:bg-blue-50 rounded-full px-4 py-1"
               >
-                Databases
+                Oldest
               </Link>
               <Link
                 to="/posts?cat=seo"
                 className="hover:bg-blue-50 rounded-full px-4 py-1"
               >
-                Search Engines
+              Newsletter            
               </Link>
               <Link
                 to="/posts?cat=marketing"
                 className="hover:bg-blue-50 rounded-full px-4 py-1"
               >
-                Marketing
+                About Us
               </Link>
             </div>
           ) : (
