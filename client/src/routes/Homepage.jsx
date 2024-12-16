@@ -147,7 +147,7 @@ const Homepage = () => {
       </div>
 
       
-    <div className="mb-[30px] mt-[45px]">
+    <div className="mb-[35px] mt-[55px]">
     <Maincategories/>
 
     </div>
