@@ -37,11 +37,16 @@ const MainLayout = () => {
     };
   }, [location]);
 
-  return (
-    <div className="px-4 md:px-8 lg:px-16 lx:px-32 2xl:px-64">
-      {/*  <Navbar /> */}
-      <Outlet />
-    </div>
+  
+
+
+return (
+  <div className="container max-w-[1800px] mx-auto px-4 md:px-8 lg:px-16 2xl:px-32">
+    {/* <Navbar /> */}
+    <Outlet />
+  </div>
+
+
   );
 };
 

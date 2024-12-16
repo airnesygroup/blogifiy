@@ -115,7 +115,7 @@ const Homepage = () => {
       <img src="/logo2.png" alt="Logo" className="w-24 h-24 " />
 
 
-     <span className="bg-clip-text text-[#000] text-[85px] font-impact">HooliCon</span>
+     <span className="bg-clip-text text-[#000] text-[85px] font-bold">HooliCon</span>
 
 
 
@@ -152,11 +152,8 @@ const Homepage = () => {
 
     </div>
 
-      {/* Featured Posts */}
-   <div className="">
    <FeaturedPosts />
 
-   </div>
 
     <Sidebar/>
 
