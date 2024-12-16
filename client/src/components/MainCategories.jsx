@@ -7,8 +7,8 @@ const MainCategories = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false); // Toggle menu dropdown
 
   return (
-    <div className=" max-w-[1200px] mx-auto bg-[#1da1f2] rounded-full  shadow-lg ">
-      {/* Navigation container */}
+<div className="max-w-[1200px] mx-auto rounded-full shadow-lg bg-black/40">
+{/* Navigation container */}
       <div className="flex items-center text-[#e6e6ff] justify-between px-4 py-2">
         {/* Categories or Search Bar */}
         <div className="flex flex-1 items-center">
@@ -70,7 +70,7 @@ const MainCategories = () => {
           <div className="flex items-center space-x-2">
             <Link
               to="/signin"
-              className={`px-4 py-2  flex flex-row border-white text-xs  md:text-sm text-white ${
+              className={`px-4 py-3  md:py-2 flex flex-row border-white text-xs  md:text-sm text-white ${
                 isSearchOpen ? "hidden" : "block"
               }`}
             >            <FaUserCircle className="text-white text-xl mx-auto pr-1" />
