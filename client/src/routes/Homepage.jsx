@@ -112,10 +112,10 @@ const Homepage = () => {
         </div>
 
         <Link to="/" className="flex items-center gap-1 text-lg font-bold md:text-2xl">
-      <img src="/logo2.png" alt="Logo" className="w-24 h-24 " />
+      <img src="/logo2.png" alt="Logo" className="w-20 h-20 " />
 
 
-     <span className="bg-clip-text text-[#000] text-[85px] font-bold">HooliCon</span>
+     <span className="bg-clip-text text-[#000] text-[75px] font-extrabold">HooliCon</span>
 
 
 
@@ -146,7 +146,7 @@ const Homepage = () => {
         </div>
       </div>
 
-      <div className="mb-[45px] mt-[30px] ">
+      <div className="mb-[50px] mt-[20px] ">
   <Maincategories />
 </div>
 
