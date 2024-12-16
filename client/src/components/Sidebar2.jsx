@@ -31,10 +31,10 @@ const Sidebar = () => {
         maxHeight: "200px",
         overflowY: "auto", // Make it scrollable if content overflows
       }}
-      className="px-6 py-4 bg-[var(--softBgMenu)] rounded-sm right-0 flex flex-row gap-4 text-[var(--textColor)] shadow-md"
+      className="px-6 sm:hidden  py-4 bg-gradient-to-r from-orange-500 to-[#1da1f2]  rounded-sm right-0 flex flex-row gap-4 text-[var(--textColor)] shadow-md"
     >
       <div>
-        <h1 className="mt-4 mb-4 text-md font-semibold text-orange-500">Filter</h1>
+        <h1 className="mt-2 mb-4 text-md font-semibold text-[var(--textColor)]">Filter</h1>
         <div className="flex flex-col gap-3 text-sm">
           {[
             { label: "Newest", value: "newest" },
@@ -44,7 +44,7 @@ const Sidebar = () => {
           ].map((filter) => (
             <label
               key={filter.value}
-              className="flex items-center gap-2 cursor-pointer hover:text-[#1DA1F2]"
+              className="flex items-center gap-2 cursor-pointer hover:text-[var(--textColore)]"
             >
               <input
                 type="radio"
@@ -61,8 +61,8 @@ const Sidebar = () => {
       </div>
 
       <div className="ml-auto"> {/* Align categories to the right */}
-        <h1 className="mt-4 mb-4 text-md font-semibold text-[#1da1f2] text-right">Categories</h1>
-        <div className="flex flex-col gap-3 text-sm text-right">
+        <h1 className="mt-2  mb-4 text-md font-semibold text-[var(--textColor)] text-right">Categories</h1>
+        <div className="flex pb-9 flex-col gap-3 text-sm text-right">
           {[
             { label: "All Posts", category: "general" },
             { label: "Web Design", category: "web-design" },
@@ -73,8 +73,8 @@ const Sidebar = () => {
           ].map((cat) => (
             <span
               key={cat.category}
-              className={`cursor-pointer hover:text-[#1DA1F2] ${
-                selectedCategory === cat.category ? "text-[#1DA1F2]" : " text-[var(--textColor)]"
+              className={`cursor-pointer hover:text-text-[var(--textColore)] ${
+                selectedCategory === cat.category ? "text-[var(--textColore)]" : " text-[var(--textColor)]"
               }`}
               onClick={() => handleCategoryChange(cat.category)}
             >
