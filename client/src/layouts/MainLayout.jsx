@@ -18,9 +18,7 @@ const MainLayout = () => {
       } else {
         body.classList.remove("hide-gradient");
         if (homepageBg) {
-          homepageBg.style.setProperty(
-            "--gradient-background",
-          );
+          homepageBg.style.setProperty("--gradient-background", "");
         }
       }
     };
