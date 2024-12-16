@@ -7,7 +7,7 @@ const MainCategories = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false); // Toggle menu dropdown
 
   return (
-    <div className="bg-gradient-to-b max-w-[1200px] mx-auto from-gray-500 to-gray-900 rounded-full  shadow-lg ">
+    <div className=" max-w-[1200px] mx-auto bg-[#1da1f2] rounded-full  shadow-lg ">
       {/* Navigation container */}
       <div className="flex items-center text-[#e6e6ff] justify-between px-4 py-2">
         {/* Categories or Search Bar */}
@@ -15,12 +15,12 @@ const MainCategories = () => {
           {!isSearchOpen ? (
             <div
               className={`${
-                isMenuOpen ? "block" : "hidden"
+                isMenuOpen ? "hidden" : "hidden"
               } lg:flex items-center flex-wrap overflow-x-auto whitespace-nowrap`}
             >
               <Link
                 to="/posts"
-                className="bg-gradient-to-r from-[#484e4f] to-[#bbdaed] text-white rounded-full px-4 py-2"
+                className="bg-gradient-to-r from-[#484e4f] to-[#bbdaed] text-white rounded-full px-4 py-3"
               >
                 Latest
               </Link>
@@ -68,13 +68,13 @@ const MainCategories = () => {
         <div className="flex items-center space-x-4">
           {/* User and Sign In */}
           <div className="flex items-center space-x-2">
-            <FaUserCircle className="text-white text-xl" />
             <Link
               to="/signin"
-              className={`px-4 py-1 rounded-full border border-white text-white ${
+              className={`px-4 py-2 rounded-full border  flex flex-row border-white text-white ${
                 isSearchOpen ? "hidden" : "block"
               }`}
-            >
+            >            <FaUserCircle className="text-white text-xl pr-1" />
+
               Sign In
             </Link>
           </div>
@@ -82,7 +82,7 @@ const MainCategories = () => {
           {/* Search icon */}
           <button
             onClick={() => setIsSearchOpen(!isSearchOpen)}
-            className="p-2 rounded-full border border-white text-white"
+            className="p-2  text-white"
           >
             {isSearchOpen ? <FaTimes /> : <FaSearch />}
           </button>
@@ -90,7 +90,7 @@ const MainCategories = () => {
           {/* Menu icon */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="p-2 rounded-full border border-white text-white"
+            className="p-2  text-white"
           >
             <FaBars />
           </button>
