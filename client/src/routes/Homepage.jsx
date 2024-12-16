@@ -106,7 +106,7 @@ const Homepage = () => {
           )}
         </div>
         <div>
-        <span className="  text-[var(--textColore)] font-semibold text-[11px] sm:text-[12px] md:text-[12px] lg:text-[14px]">
+        <span className="  text-[var(--textColor)] font-semibold text-[11px] sm:text-[12px] md:text-[12px] lg:text-[14px]">
         <Link to="/posts?sort=trending"> TOP TRENDING </Link>
           </span>
         </div>
@@ -115,7 +115,7 @@ const Homepage = () => {
       <img src="/logo2.png" alt="Logo" className="w-20 h-20 " />
 
 
-     <span className="bg-clip-text text-[#000] text-[75px] font-extrabold">HooliCon</span>
+     <span className="bg-clip-text text-[var(--textColor)] text-[75px] font-extrabold">HooliCon</span>
 
 
 
@@ -123,7 +123,7 @@ const Homepage = () => {
 </Link>
 
         <div>
-        <span className="  text-[var(--textColore)] font-semibold text-[11px] sm:text-[12px] md:text-[12px] lg:text-[14px]">
+        <span className="  text-[var(--textColor)] font-semibold text-[11px] sm:text-[12px] md:text-[12px] lg:text-[14px]">
         <Link to="/posts?sort=popular"> MOST POPULAR </Link>
           </span>
         </div>
