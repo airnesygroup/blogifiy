@@ -15,7 +15,7 @@ const MainCategories = () => {
   
    
 
-<div className="flex flex-wrap items-center text-[#e6e6ff]  justify-between p-4 bg-gradient-to-b from-gray-500 to-gray-900 rounded-3xl 
+<div className="flex flex-wrap items-center text-[#e6e6ff] max-w-[1200px] mx-auto justify-between p-4 bg-gradient-to-b from-gray-500 to-gray-900 rounded-3xl 
 xl:rounded-full shadow-lg ">
   {/* links */}
   <div className="flex-1 flex items-center justify-between flex-nowrap overflow-x-auto overflow-y-hidden whitespace-nowrap ">

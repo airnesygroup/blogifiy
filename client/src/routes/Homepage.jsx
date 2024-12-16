@@ -146,9 +146,7 @@ const Homepage = () => {
         </div>
       </div>
 
-      <div className="mb-[55px] mt-[20px] max-w-[1700px] flex justify-center items-center">
   <Maincategories />
-</div>
 
 
    <FeaturedPosts />
