@@ -56,21 +56,15 @@ const Homepage = () => {
     <div className="mb-9   flex flex-col gap-0">
       {/* Floating Section */}
       <div
-        className={`sticky top-0  flex items-center justify-between px-5 py-3 transition-opacity duration-300 ${
-          isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
-        }`}
-        style={{
-          zIndex: 100001,
-          background: "transparent",
-        }}
-      >
-        {/* Left: Share Icon and Text */}
- 
-        <div>
-        <span className=" hidden sm:block text-[var(--textColor)] font-semibold text-[11px] sm:text-[12px] md:text-[12px] lg:text-[14px]">
-        <Link to="/posts?sort=trending"> TOP TRENDING </Link>
-          </span>
-        </div>
+  className={`sticky top-0 flex items-center mx-auto justify-between px-5 py-3 transition-opacity 
+    duration-300 ${isVisible ? "opacity-100" : "opacity-0 pointer-events-none"} sm:opacity-100 sm:pointer-events-auto  hidden sm:hidden md:block`}
+  style={{
+    zIndex: 100001,
+    background: "transparent",
+  }}
+>
+
+       
 
         <Link to="/" className="flex items-center gap-1 text-lg font-bold md:text-2xl">
         <img src="/logo2.png" alt="Logo" className="w-10 h-10 lg:w-20 lg:h-20" />
@@ -81,16 +75,12 @@ const Homepage = () => {
 
 </Link>
 
-        <div>
-        <span className="hidden sm:block text-[var(--textColor)] font-semibold text-[11px] sm:text-[12px] md:text-[12px] lg:text-[14px]">
-        <Link to="/posts?sort=popular"> MOST POPULAR </Link>
-          </span>
-        </div>
+      
 
  
       </div>
 
-      <div  style={{ zIndex: 100004 }} className="mb-[50px] mt-[20px] sticky top-9 ">
+      <div  style={{ zIndex: 100004 }} className="mb-[50px] mt-[0px] md:mt-[20px] sticky top-3 md:top-5 ">
   <Maincategories />
 </div>
 
