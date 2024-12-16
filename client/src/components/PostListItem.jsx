@@ -31,7 +31,7 @@ const PostListItem = ({ post }) => {
         </div>
       )}
       {/* Details */}
-      <div className="flex flex-col gap-2"> {/* Removed justify-between */}
+      <div className="flex flex-col"> {/* Removed justify-between */}
         {/* Title */}
         <h3 className="text-[14px] sm:text-[19px] md:text-[19px] text-[var(--textColor)] leading-tight">
           <span className="sm:hidden">{truncatedTitle}</span>
@@ -40,17 +40,9 @@ const PostListItem = ({ post }) => {
         </h3>
         {/* Metadata */}
         <div className="flex flex-wrap items-center gap-1 sm:gap-2 text-[var(--softTextColor)] text-[11px] sm:text-[11px] md:text-[12px] lg:text-[14px]">
-          <span>By</span>
+       
           <Link
-            className="text-[var(--textColor)] text-[11px] sm:text-[11px] md:text-[12px] lg:text-[14px]"
-            to={`/posts?author=${post.user.username}`}
-            onClick={(e) => e.stopPropagation()}
-          >
-            {post.user.username}
-          </Link>
-          <span>on</span>
-          <Link
-            className="text-[var(--textColor)] text-[11px] sm:text-[11px] md:text-[12px] lg:text-[14px]"
+            className="text-[var(--textColor)] text-[12px] sm:text-[12px] md:text-[14px] lg:text-[15px]"
             to={`/posts?category=${post.category}`}
             onClick={(e) => e.stopPropagation()}
           >
