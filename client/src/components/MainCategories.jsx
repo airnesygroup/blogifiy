@@ -65,7 +65,7 @@ const MainCategories = () => {
         </div>
 
         {/* Right-side icons and controls */}
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center py-1 space-x-4">
           {/* User and Sign In */}
           <div className="flex items-center space-x-2">
             <Link
