@@ -146,7 +146,9 @@ const Homepage = () => {
         </div>
       </div>
 
+      <div className="mb-[45px] mt-[20px] ">
   <Maincategories />
+</div>
 
 
    <FeaturedPosts />
