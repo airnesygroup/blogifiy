@@ -1,7 +1,7 @@
 import { useSearchParams } from "react-router-dom";
 import { useState } from "react";
 
-const filters = () => {
+const Sidebar = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [selectedCategory, setSelectedCategory] = useState(searchParams.get("cat") || "general");
 
@@ -87,4 +87,4 @@ const filters = () => {
   );
 };
 
-export default filters;
+export default Sidebar;

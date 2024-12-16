@@ -6,8 +6,7 @@ import Search from "../components/Search";
 import Maincategories from "../components/MainCategories";
 import SideMenu from "../components/SideMenu";
 import ThemeToggler from "../components/Theme";
-import Filters from "../components/filters";
-
+import Sidebar from "../components/Sidebar2";
 const Homepage = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [showSearch, setShowSearch] = useState(false);
@@ -198,9 +197,8 @@ const Homepage = () => {
    <FeaturedPosts />
 
    </div>
-   <Filters/>
 
-    
+    <Sidebar/>
 
 
       {/* Recent Posts */}

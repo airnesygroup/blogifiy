@@ -8,8 +8,11 @@ import PostList from "../components/PostList";
 import SideMenu from "../components/SideMenu";
 import Search from "../components/Search";
 import { Link } from "react-router-dom";
-import Filters from "../components/filters";
+import Sidebar from "../components/Sidebar2";
+
 const PostListPage = () => {
+
+
   const [open, setOpen] = useState(false);
   const location = useLocation(); // Get the current location object
 
@@ -45,7 +48,7 @@ const PostListPage = () => {
 
 
      
-<Filters/>
+<Sidebar/>
 
 
 
