@@ -65,46 +65,7 @@ const Homepage = () => {
         }}
       >
         {/* Left: Share Icon and Text */}
-        <div className="flex items-center gap-3" ref={shareRef}>
-          <img
-            src="/share.png"
-            alt="Share Icon"
-            className="w-[18px] h-[18px]  mr-0 lg:mr[24px] md:w-[20px] md:h-[20px] sm:w-[1px] sm:h-[1px] cursor-pointer"
-            onClick={() => setShowShare((prev) => !prev)}
-          />
-          {showShare && (
-            <div className="absolute top-4 lg:top-[10px] left-0 flex-col gap-3 bg-transparent p-3 pl-5 pt-8 rounded-md">
-              <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-                <img
-                  src="/linkedin.png"
-                  alt="LinkedIn"
-                  className="w-6 h-6 mb-2 rounded-full"
-                />
-              </a>
-              <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
-                <img
-                  src="/youtube.png"
-                  alt="YouTube"
-                  className="w-6 h-6 mb-2 rounded-full"
-                />
-              </a>
-              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-                <img
-                  src="/instagram.png"
-                  alt="Instagram"
-                  className="w-6 h-6 mb-2 rounded-full"
-                />
-              </a>
-              <a href="https://www.xr.com" target="_blank" rel="noopener noreferrer">
-                <img
-                  src="/x.com.png"
-                  alt="Twitter"
-                  className="w-6 h-6 mb-2 rounded-full"
-                />
-              </a>
-            </div>
-          )}
-        </div>
+ 
         <div>
         <span className=" hidden sm:block text-[var(--textColor)] font-semibold text-[11px] sm:text-[12px] md:text-[12px] lg:text-[14px]">
         <Link to="/posts?sort=trending"> TOP TRENDING </Link>
@@ -126,22 +87,7 @@ const Homepage = () => {
           </span>
         </div>
 
-        {/* Right: Search Icon */}
-        <div className="flex items-center gap-2" ref={searchRef}>
-        <Link to="/posts">
-          <img
-            src="/search.png"
-            alt="Search Icon"
-            
-            className="w-[18px] h-[18px]  ml-2   md:mr-[24px] md:w-[20px] md:h-[20px] sm:w-[1px] sm:h-[1px] cursor-pointer"
-          />
-          </Link>
-          {showSearch && (
-            <div className="absolute top-10 right-0 mr-12 bg-gradient-to-r from-white via-gray-500 to-gray-700 p-5 shadow-md rounded-lg z-[20000]">
-              <Search />
-            </div>
-          )}
-        </div>
+ 
       </div>
 
       <div className="mb-[50px] mt-[20px] ">
