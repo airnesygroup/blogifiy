@@ -12,6 +12,7 @@
   "dependencies": {
     "@clerk/clerk-react": "^5.15.1",
     "@emotion/react": "^11.14.0",
+    "@esbuild/linux-x64": "^0.19.2",
     "@emotion/styled": "^11.14.0",
     "@fortawesome/free-brands-svg-icons": "^6.7.2",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
