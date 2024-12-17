@@ -3,10 +3,9 @@ import { FaSearch, FaBars, FaTimes, FaUserCircle } from "react-icons/fa";
 import { useState } from "react";
 import { MdSearch } from 'react-icons/md'; // Material Design style
 import { SignIn } from "@clerk/clerk-react";
-import { SignInButton } from "@clerk/clerk-react";
-import { SignOutButton } from "@clerk/clerk-react";
 import { SignedOut } from "@clerk/clerk-react";
 import { SignedIn } from "@clerk/clerk-react";
+import { UserButton } from "@clerk/clerk-react";
 
 const MainCategories = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false); // Toggle search bar
