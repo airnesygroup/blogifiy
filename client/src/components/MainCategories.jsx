@@ -8,7 +8,7 @@ import { UserButton } from "@clerk/clerk-react";
 
 const MainCategories = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false); // Toggle search bar
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // Toggle menu dropdown
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // Toggle menu dropdo]wn
 
   return (
     <div className=" max-w-[1200px] mx-auto bg-[#1da1f2]/95 rounded-full  shadow-lg ">
