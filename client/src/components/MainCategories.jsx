@@ -1,6 +1,12 @@
 import { Link } from "react-router-dom";
 import { FaSearch, FaBars, FaTimes, FaUserCircle } from "react-icons/fa";
 import { useState } from "react";
+import { MdSearch } from 'react-icons/md'; // Material Design style
+import { SignIn } from "@clerk/clerk-react";
+import { SignInButton } from "@clerk/clerk-react";
+import { SignOutButton } from "@clerk/clerk-react";
+import { SignedOut } from "@clerk/clerk-react";
+import { SignedIn } from "@clerk/clerk-react";
 
 const MainCategories = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false); // Toggle search bar
@@ -77,8 +83,9 @@ const MainCategories = () => {
                 Newsletter
               </Link> 
 
-            <Link
-              to="/signin"
+              <SignedOut>
+            <Link to="/login" 
+             
               className={`px-4 py-3  md:py-2 flex flex-row border-white text-xs  md:text-sm text-white ${
                 isSearchOpen ? "hidden" : "block"
               }`}
@@ -86,23 +93,47 @@ const MainCategories = () => {
 
               Sign In
             </Link>
+          </SignedOut>
           </div>
-
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
           {/* Search icon */}
           <button
-            onClick={() => setIsSearchOpen(!isSearchOpen)}
-            className="p-2  text-white"
-          >
-            {isSearchOpen ? <FaTimes /> : <FaSearch />}
-          </button>
+  onClick={() => setIsSearchOpen(!isSearchOpen)}
+  className="p-2 text-white"
+>
+  {isSearchOpen ? <FaTimes/> : <MdSearch size={24}/>}
+</button>
+
 
           {/* Menu icon */}
           <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="p-2  text-white"
-          >
-            <FaBars />
-          </button>
+  onClick={() => setIsMenuOpen(!isMenuOpen)}
+  className="p-2 text-white"
+>
+  <div
+    className="cursor-pointer text-[var(--textColor)] text-sm"
+    onClick={() => setOpen((prev) => !prev)}
+  >
+    <div className="flex flex-col ">
+      <div
+        className={`h-[1px] mb-[3px] rounded-md w-4 bg-[var(--textColor)] origin-left transition-all ease-in-out`}
+      ></div>
+      <div
+        className={`h-[1px] mb-[3px] rounded-md w-4 bg-[var(--textColor)] transition-all ease-in-out`}
+      ></div>
+      <div
+        className={`h-[1px] mb-[3px] rounded-md w-4 bg-[var(--textColor)] transition-all ease-in-out`}
+      ></div>
+      <div
+        className={`h-[1px] rounded-md w-4 bg-[var(--textColor)] origin-left transition-all ease-in-out`}
+      ></div>
+    </div>
+  </div>
+</button>
+
+         
         </div>
       </div>
 
