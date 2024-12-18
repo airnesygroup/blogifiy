@@ -34,7 +34,7 @@ const PostListItem = ({ post }) => {
       <div className="flex flex-col"> {/* Removed justify-between */}
 
 
-      <div className="flex flex-wrap items-center gap-1 pt-2 text-[var(--softTextColor)] text-[11px] sm:text-[11px] md:text-[12px] lg:text-[14px]">
+      <div className="flex flex-wrap items-center gap-1 pt-1 md:pt-2 text-[var(--softTextColor)] text-[11px] sm:text-[11px] md:text-[12px] lg:text-[14px]">
        
        <Link
          className="text-[#1da1f2] uppercase text-[12px] sm:text-[12px] md:text-[14px] lg:text-[15px]"
@@ -63,6 +63,7 @@ const PostListItem = ({ post }) => {
       >
     { post.user.username}
   </Link>
+         <span>-</span>
           <span>{format(post.createdAt)}</span>
         </div>
       </div>
