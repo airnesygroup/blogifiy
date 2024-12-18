@@ -95,7 +95,7 @@ const Homepage = () => {
 
       {/* Recent Posts */}
       <div>
-      <h1 className="my-8 lg:text-10xl text-2xl ml-2 mb-10 mt-10 lg:mb-20 lg:mt-20  text-[#1daf2] font-bold">Recent Posts</h1>
+      <h1 className="my-8 lg:text-10xl text-2xl ml-2 mb-10 mt-10 lg:mb-20 lg:mt-20  text-[#1da1f2] font-bold">Recent Posts</h1>
     
       
       <div className="flex flex-row justify-between">
