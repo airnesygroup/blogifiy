@@ -93,8 +93,15 @@ const MainCategories = () => {
   </div>
 
   <SignedIn>
-    <UserButton />
-  </SignedIn>
+  <Link 
+        to="/profile" 
+        className={`px-1 py-3 md:py-2 flex flex-row items-center border-white text-xs md:text-sm text-white ${isSearchOpen ? "hidden" : "block"}`}
+      >         
+        <img src="/user.png" alt="search toggle" width={24} height={24} />
+   </Link> 
+   </SignedIn>
+
+
 
   <button
     onClick={() => setIsSearchOpen(!isSearchOpen)}
