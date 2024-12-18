@@ -36,7 +36,6 @@ const PostListPage = () => {
       <div className="flex flex-row  text-[var(--textColor)] justify-between">
       <div className="w-full md:w-3/4 pr-0  text-[var(--textColor)] md:pr-10">
  
-<Sidebar/>
 
     <h1 style={{  zIndex: "10000"}} className="mb-4 lg:mt-[25px] mt-4  lg:mb-[8] lg:text-xl text-md text-[var(--textColor)] font-bold">
         {`Blog - ${displayText}`}
