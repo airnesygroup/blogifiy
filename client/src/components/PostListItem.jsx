@@ -34,10 +34,10 @@ const PostListItem = ({ post }) => {
       <div className="flex flex-col"> {/* Removed justify-between */}
 
 
-      <div className="flex flex-wrap items-center gap-1  text-[var(--softTextColor)] text-[11px] sm:text-[11px] md:text-[12px] lg:text-[14px]">
+      <div className="flex flex-wrap items-center gap-1 pt-2 text-[var(--softTextColor)] text-[11px] sm:text-[11px] md:text-[12px] lg:text-[14px]">
        
        <Link
-         className="text-[var(--textColor)] uppercase hidden md:block sm:hidden text-[12px] sm:text-[12px] md:text-[14px] lg:text-[15px]"
+         className="text-[#1da1f2] uppercase hidden md:block sm:hidden text-[12px] sm:text-[12px] md:text-[14px] lg:text-[15px]"
          to={`/posts?category=${post.category}`}
          onClick={(e) => e.stopPropagation()}
        >
@@ -55,12 +55,21 @@ const PostListItem = ({ post }) => {
         <div className="flex flex-wrap items-center gap-1 sm:gap-2 text-[var(--softTextColor)] text-[11px] sm:text-[11px] md:text-[12px] lg:text-[14px]">
        
           <Link
-            className="text-[var(--textColor)] uppercase hidden lg:hidden sm:block text-[12px] sm:text-[12px] md:text-[14px] lg:text-[15px]"
+            className="text-[var(--textColor)] uppercase hidden md:hidden sm:block text-[12px] sm:text-[12px] md:text-[14px] lg:text-[15px]"
             to={`/posts?category=${post.category}`}
             onClick={(e) => e.stopPropagation()}
           >
             {post.category}
           </Link>
+          <span>
+          <Link
+    className="text-md  hidden md:block sm:hidden text-gray-300 font-base"
+    to={`/posts?author=${post.user.username}`}
+    onClick={(e) => e.stopPropagation()}
+  >
+    { post.user.username}
+  </Link>
+          </span>
           <span>{format(post.createdAt)}</span>
         </div>
       </div>
