@@ -32,6 +32,19 @@ const PostListItem = ({ post }) => {
       )}
       {/* Details */}
       <div className="flex flex-col"> {/* Removed justify-between */}
+
+
+      <div className="flex flex-wrap items-center gap-1  text-[var(--softTextColor)] text-[11px] sm:text-[11px] md:text-[12px] lg:text-[14px]">
+       
+       <Link
+         className="text-[var(--textColor)] uppercase hidden md:block sm:hidden text-[12px] sm:text-[12px] md:text-[14px] lg:text-[15px]"
+         to={`/posts?category=${post.category}`}
+         onClick={(e) => e.stopPropagation()}
+       >
+         {post.category}
+       </Link>
+     </div>
+
         {/* Title */}
         <h3 className="text-[15px] sm:text-[19px] md:text-[19px] text-[var(--textColor)] leading-tight">
           <span className="sm:hidden">{truncatedTitle}</span>
@@ -42,7 +55,7 @@ const PostListItem = ({ post }) => {
         <div className="flex flex-wrap items-center gap-1 sm:gap-2 text-[var(--softTextColor)] text-[11px] sm:text-[11px] md:text-[12px] lg:text-[14px]">
        
           <Link
-            className="text-[var(--textColor)] text-[12px] sm:text-[12px] md:text-[14px] lg:text-[15px]"
+            className="text-[var(--textColor)] uppercase hidden lg:hidden sm:block text-[12px] sm:text-[12px] md:text-[14px] lg:text-[15px]"
             to={`/posts?category=${post.category}`}
             onClick={(e) => e.stopPropagation()}
           >
