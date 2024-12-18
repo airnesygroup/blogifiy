@@ -80,7 +80,7 @@ const Homepage = () => {
  
       </div>
 
-      <div  style={{ zIndex: 100004 }} className="mb-[45px] md:mb-[50px] mt-[15px] md:mt-[20px] sticky top-3 md:top-5 ">
+      <div  style={{ zIndex: 100004 }} className="mb-[45px] md:mb-[50px] mt-[15px] md:mt-[20px] sticky top-0 md:top-2 ">
   <Maincategories />
 
   
