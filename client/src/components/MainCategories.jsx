@@ -73,7 +73,9 @@ const MainCategories = () => {
         {/* Right-side icons and controls */}
         <div className="flex items-center py-[0.8px] space-x-2 w-full sm:w-auto">
   {/* User and Sign In */}
-  <div className="flex items-center space-x-2 w-full justify-between sm:justify-start sm:w-auto">
+  <div className="flex items-center space-x-1 w-full justify-between sm:justify-start sm:w-auto">
+
+  <div className="flex items-center space-x-2 ">
     <Link
       to="/newsletter"
       className={`bg-black text-white sm:block md:hidden rounded-full px-4 py-3 ${isSearchOpen ? "hidden" : "block"}`}
@@ -136,6 +138,7 @@ const MainCategories = () => {
       </div>
     </div>
   </button>
+</div>
 </div>
 
       </div>
