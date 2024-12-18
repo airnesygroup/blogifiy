@@ -84,11 +84,11 @@ const MainCategories = () => {
     <SignedOut>
       <Link 
         to="/login" 
-        className={`px-4 py-3 md:py-2 flex flex-row items-center border-white text-xs md:text-sm text-white ${isSearchOpen ? "hidden" : "block"}`}
+        className={`px-1 py-3 md:py-2 flex flex-row items-center border-white text-xs md:text-sm text-white ${isSearchOpen ? "hidden" : "block"}`}
       >         
         <img src="/user.png" alt="search toggle" width={24} height={24} />
-        <span>Sign In</span>
-      </Link>
+        <span className="whitespace-nowrap">Sign In</span>
+        </Link>
     </SignedOut>
   </div>
 
@@ -98,7 +98,7 @@ const MainCategories = () => {
 
   <button
     onClick={() => setIsSearchOpen(!isSearchOpen)}
-    className="p-2 text-white"
+    className=" text-white"
   >
     {isSearchOpen ? <FaTimes/> : 
       <img
