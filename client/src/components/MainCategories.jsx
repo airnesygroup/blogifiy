@@ -1,3 +1,5 @@
+
+        
 import { Link } from "react-router-dom";
 import { FaSearch, FaBars, FaTimes, FaUserCircle } from "react-icons/fa";
 import { useState } from "react";
@@ -11,7 +13,7 @@ const MainCategories = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false); // Toggle menu dropdo]wn
 
   return (
-    <div className=" max-w-[1200px] mx-auto bg-[#1da1f2]/95 rounded-full  shadow-lg ">
+    <div className=" max-w-[1100px] mx-auto bg-[#1da1f2]/95 rounded-full  shadow-lg ">
       {/* Navigation container */}
       <div className="flex items-center text-[#e6e6ff] justify-between px-4 py-2">
         {/* Categories or Search Bar */}
@@ -69,70 +71,64 @@ const MainCategories = () => {
         </div>
 
         {/* Right-side icons and controls */}
-        <div className="flex items-center py-[0.8px] space-x-2">
-          {/* User and Sign In */}
-          <div className="flex items-center space-x-2">
-              <Link
-              to="/newsletter"
-              className={`bg-black  text-white  sm:block md:hidden  rounded-full px-4 py-3 ${
-                isSearchOpen ? "hidden" : "block"
-              }`}
-            >  
-                Newsletter
-              </Link> 
+        <div className="flex items-center py-[0.8px] space-x-2 w-full sm:w-auto">
+  {/* User and Sign In */}
+  <div className="flex items-center space-x-2 w-full justify-between sm:justify-start sm:w-auto">
+    <Link
+      to="/newsletter"
+      className={`bg-black text-white sm:block md:hidden rounded-full px-4 py-3 ${isSearchOpen ? "hidden" : "block"}`}
+    >
+      Newsletter
+    </Link>
 
-              <SignedOut>
-            <Link to="/login" 
-             
-              className={`px-4 py-3  md:py-2 flex flex-row border-white text-xs  md:text-sm text-white ${
-                isSearchOpen ? "hidden" : "block"
-              }`}
-            >            <FaUserCircle className="text-white text-xl mx-auto pr-1" />
-
-              Sign In
-            </Link>
-          </SignedOut>
-          </div>
-          <SignedIn>
-            <UserButton />
-          </SignedIn>
-          {/* Search icon */}
-          <button
-  onClick={() => setIsSearchOpen(!isSearchOpen)}
-  className="p-2 text-white"
->
-  {isSearchOpen ? <FaTimes/> : <MdSearch size={24}/>}
-</button>
-
-
-          {/* Menu icon */}
-          <button
-  onClick={() => setIsMenuOpen(!isMenuOpen)}
-  className="p-2 text-white"
->
-  <div
-    className="cursor-pointer text-[var(--textColor)] text-sm"
-    onClick={() => setOpen((prev) => !prev)}
-  >
-    <div className="flex flex-col ">
-      <div
-        className={`h-[1px] mb-[3px] rounded-md w-4 bg-[var(--textColor)] origin-left transition-all ease-in-out`}
-      ></div>
-      <div
-        className={`h-[1px] mb-[3px] rounded-md w-4 bg-[var(--textColor)] transition-all ease-in-out`}
-      ></div>
-      <div
-        className={`h-[1px] mb-[3px] rounded-md w-4 bg-[var(--textColor)] transition-all ease-in-out`}
-      ></div>
-      <div
-        className={`h-[1px] rounded-md w-4 bg-[var(--textColor)] origin-left transition-all ease-in-out`}
-      ></div>
-    </div>
+    <SignedOut>
+      <Link 
+        to="/login" 
+        className={`px-4 py-3 md:py-2 flex flex-row items-center border-white text-xs md:text-sm text-white ${isSearchOpen ? "hidden" : "block"}`}
+      >         
+        <img src="/user.png" alt="search toggle" width={24} height={24} />
+        <span>Sign In</span>
+      </Link>
+    </SignedOut>
   </div>
-</button>
 
-         
-        </div>
+  <SignedIn>
+    <UserButton />
+  </SignedIn>
+
+  <button
+    onClick={() => setIsSearchOpen(!isSearchOpen)}
+    className="p-2 text-white"
+  >
+    {isSearchOpen ? <FaTimes/> : 
+      <img
+        src="/search.png"
+        alt="search toggle"
+        width={24}
+        height={24}
+      />
+    }
+  </button>
+
+  {/* Menu icon */}
+  <button
+    onClick={() => setIsMenuOpen(!isMenuOpen)}
+    className="p-2 text-white"
+  >
+    <div
+      className="cursor-pointer text-[var(--textColor)] text-sm"
+      onClick={() => setOpen((prev) => !prev)}
+    >
+      <div className="flex flex-col">
+        <div className={`h-[1px] mb-[3px] rounded-md w-4 bg-[#dfecf5] origin-left transition-all ease-in-out`}></div>
+        <div className={`h-[1px] mb-[3px] rounded-md w-4 bg-[#dfecf5] transition-all ease-in-out`}></div>
+        <div className={`h-[1px] mb-[3px] rounded-md w-4 bg-[#dfecf5] transition-all ease-in-out`}></div>
+        <div className={`h-[1px] rounded-md w-4 bg-[#dfecf5] origin-left transition-all ease-in-out`}></div>
+      </div>
+    </div>
+  </button>
+</div>
+
       </div>
 
       {/* Categories dropdown for menu */}

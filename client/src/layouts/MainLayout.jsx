@@ -1,6 +1,7 @@
 import { Outlet, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Navbar from "../components/Navbar";
+import { ThemeProvider } from "../../themecontext";
 
 const MainLayout = () => {
   const location = useLocation();
@@ -41,10 +42,13 @@ const MainLayout = () => {
 
 
 return (
-  <div className="container max-w-[1600px] mx-auto px-4 md:px-8 lg:px-16 2xl:px-32">
+  <ThemeProvider>
+
+  <div className="container max-w-[1500px] mx-auto px-4 md:px-8 lg:px-16 2xl:px-32">
     {/* <Navbar /> */}
     <Outlet />
   </div>
+  </ThemeProvider>
 
 
   );

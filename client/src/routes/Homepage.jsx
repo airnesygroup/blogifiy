@@ -7,6 +7,9 @@ import Maincategories from "../components/MainCategories";
 import SideMenu from "../components/SideMenu";
 import ThemeToggler from "../components/Theme";
 import Sidebar from "../components/Sidebar2";
+import { ThemeProvider } from "../../themecontext";
+
+
 const Homepage = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [showSearch, setShowSearch] = useState(false);
@@ -79,6 +82,8 @@ const Homepage = () => {
 
       <div  style={{ zIndex: 100004 }} className="mb-[45px] md:mb-[50px] mt-[15px] md:mt-[20px] sticky top-3 md:top-5 ">
   <Maincategories />
+
+  
 </div>
 
 
