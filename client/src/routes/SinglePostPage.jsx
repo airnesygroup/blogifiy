@@ -33,8 +33,8 @@ const SinglePostPage = () => {
 
       {/* Image */}
       {data.img && (
-        <div className="w-full max-w-[1000px]">
-          <Image src={data.img} w="1000" className="rounded-xl" />
+        <div className="w-full max-h-[200px] max-w-[1000px]">
+          <Image src={data.img} w="1000"  />
         </div>
       )}
 
@@ -44,9 +44,9 @@ const SinglePostPage = () => {
           {data.user.img && (
             <Image
               src={data.user.img}
-              className="w-10 h-5 object-cover"
+              className="w-10 h-10 object-cover rounded-full"
               w="40"
-              h="20"
+              h="40"
             />
           )}
           <div className="flex flex-col">
