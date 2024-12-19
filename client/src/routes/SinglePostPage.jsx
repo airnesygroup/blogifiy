@@ -25,18 +25,12 @@ const SinglePostPage = () => {
   if (!data) return "Post not found!";
 
   return (
+    <div className="mx-auto p-0 md:p-4 flex flex-col items-center gap-2 md:gap-4">
 
-    <div>
 
-<div  style={{ zIndex: 100004 }} className="mb-[6px] md:mb-[8px] mt-[15px] md:mt-[20px] sticky top-0.5 md:top-2 ">
+<div  style={{ zIndex: 100004 }} className=" mt-[15px] sticky top-0.5 md:top-2 ">
  <MainCategories/>
 </div>
-
-
-    <div className="mx-auto p-0 md:p-4 flex flex-col items-center gap-8">
-
-
-
       {/* Content container */}
       <div className="w-full  max-w-[700px]">
         {/* Title */}
@@ -86,8 +80,6 @@ const SinglePostPage = () => {
         <Comments postId={data._id} />
       </div>
     </div>
-    </div>
-
   );
 };
 
