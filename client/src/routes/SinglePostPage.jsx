@@ -24,7 +24,9 @@ const SinglePostPage = () => {
   if (!data) return "Post not found!";
 
   return (
-    <div className="max-w-[800px] mx-auto p-4 flex flex-col gap-8">
+    <div className="max-w-[1000px] mx-auto p-4 flex flex-col gap-8">
+     <h1 className="text-lg md:text-xl font-semibold">{data.title}</h1>
+
       {/* Image */}
       {data.img && (
         <div className="w-full">
@@ -33,7 +35,6 @@ const SinglePostPage = () => {
       )}
       
       {/* Title */}
-      <h1 className="text-lg md:text-xl font-semibold">{data.title}</h1>
       
       {/* Author Info */}
       <div className="flex items-center gap-4 text-sm text-[var(--softTextColor)]">
