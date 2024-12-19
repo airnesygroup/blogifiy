@@ -29,7 +29,16 @@ const SinglePostPage = () => {
 
       {/* Image */}
       {data.img && (
-        <div className="w-full mx-auto" style={{ maxWidth: "1000px" }}>
+        <div
+          className="mx-auto"
+          style={{
+            maxWidth: "1000px",
+            width: "100%",
+            position: "relative",
+            left: "50%",
+            transform: "translateX(-50%)",
+          }}
+        >
           <Image src={data.img} w="1200" className="rounded-xl" />
         </div>
       )}

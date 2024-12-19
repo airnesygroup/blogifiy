@@ -41,7 +41,7 @@ const PostListPage = () => {
       <div className="w-full md:w-3/4 pr-0  text-[var(--textColor)] md:pr-10">
      
 
-    <h1 style={{  zIndex: "10000"}} className="mb-4   lg:mb-[8] lg:text-[40px] text-2xl ml-2   text-[#1da1f2] font-bold">
+    <h1 style={{  zIndex: "10000"}} className="mb-10   lg:mb-[20px] lg:text-[40px] text-2xl ml-2   text-[#1da1f2] font-bold">
         {`Blog - ${displayText}`}
       </h1>
 
