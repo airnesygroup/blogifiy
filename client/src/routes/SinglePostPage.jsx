@@ -24,24 +24,22 @@ const SinglePostPage = () => {
   if (!data) return "Post not found!";
 
   return (
-    <div className="max-w-[1000px] mx-auto p-4 flex flex-col gap-8">
-     <h1 className="text-lg md:text-xl font-semibold">{data.title}</h1>
+    <div className="flex flex-col gap-8 p-4 mx-auto" style={{ maxWidth: "800px" }}>
+      <h1 className="text-lg md:text-2xl font-semibold">{data.title}</h1>
 
       {/* Image */}
       {data.img && (
-        <div className="w-full">
+        <div className="w-full mx-auto" style={{ maxWidth: "1000px" }}>
           <Image src={data.img} w="1200" className="rounded-xl" />
         </div>
       )}
-      
-      {/* Title */}
-      
+
       {/* Author Info */}
       <div className="flex items-center gap-4 text-sm text-[var(--softTextColor)]">
         {data.user.img && (
           <Image
             src={data.user.img}
-            className="w-10 h-10 rounded-full object-cover"
+            className="w-10 h-10 object-cover"
             w="40"
             h="40"
           />
