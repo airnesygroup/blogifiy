@@ -26,20 +26,20 @@ const SinglePostPage = () => {
   return (
     <div className="mx-auto p-4 flex flex-col items-center gap-8">
       {/* Content container */}
-      <div className="w-full max-w-[600px]">
+      <div className="w-full max-w-[700px]">
         {/* Title */}
         <h1 className="text-lg md:text-2xl font-semibold">{data.title}</h1>
       </div>
 
       {/* Image */}
       {data.img && (
-        <div className="w-full max-h-[450px] max-w-[900px]">
-          <Image src={data.img} w="900"  h={"450"} />
+        <div className="w-full max-h-[500px] max-w-[900px]">
+          <Image src={data.img} w="900"  h={"500"} />
         </div>
       )}
 
       {/* Author Info and Other Content */}
-      <div className="w-full max-w-[600px]">
+      <div className="w-full max-w-[700px]">
         <div className="flex items-center gap-4 text-sm text-[var(--softTextColor)] mt-4">
           {data.user.img && (
             <Image
@@ -70,7 +70,7 @@ const SinglePostPage = () => {
       </div>
 
       {/* Comments */}
-      <div className="w-full max-w-[600px]">
+      <div className="w-full max-w-[700px]">
         <Comments postId={data._id} />
       </div>
     </div>
