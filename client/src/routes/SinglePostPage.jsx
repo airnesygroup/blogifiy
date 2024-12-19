@@ -27,9 +27,19 @@ const SinglePostPage = () => {
     <div className="mx-auto p-4 flex flex-col items-center gap-8">
       {/* Content container */}
       <div className="w-full max-w-[800px]">
+        {/* Title */}
         <h1 className="text-lg md:text-2xl font-semibold">{data.title}</h1>
+      </div>
 
-        {/* Author Info */}
+      {/* Image */}
+      {data.img && (
+        <div className="w-full max-w-[1000px]">
+          <Image src={data.img} w="1000" className="rounded-xl" />
+        </div>
+      )}
+
+      {/* Author Info and Other Content */}
+      <div className="w-full max-w-[800px]">
         <div className="flex items-center gap-4 text-sm text-[var(--softTextColor)] mt-4">
           {data.user.img && (
             <Image
@@ -41,7 +51,7 @@ const SinglePostPage = () => {
           )}
           <div className="flex flex-col">
             <span>
-              Written jjjj  by <Link className="text-[#1DA1F2]">{data.user.username}</Link>
+              Written by <Link className="text-[#1DA1F2]">{data.user.username}</Link>
             </span>
             <span>
               <Link className="text-[#1DA1F2]">{data.category}</Link> -{" "}
@@ -58,13 +68,6 @@ const SinglePostPage = () => {
           {data.desc}
         </p>
       </div>
-
-      {/* Image */}
-      {data.img && (
-        <div className="w-full max-w-[1000px]">
-          <Image src={data.img} w="1000" className="rounded-xl" />
-        </div>
-      )}
 
       {/* Comments */}
       <div className="w-full max-w-[800px]">
