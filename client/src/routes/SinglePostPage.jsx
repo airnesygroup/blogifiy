@@ -41,7 +41,7 @@ const SinglePostPage = () => {
           )}
           <div className="flex flex-col">
             <span>
-              Written by <Link className="text-[#1DA1F2]">{data.user.username}</Link>
+              Written jjjj  by <Link className="text-[#1DA1F2]">{data.user.username}</Link>
             </span>
             <span>
               <Link className="text-[#1DA1F2]">{data.category}</Link> -{" "}
