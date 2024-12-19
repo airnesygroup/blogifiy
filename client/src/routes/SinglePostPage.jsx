@@ -25,7 +25,7 @@ const SinglePostPage = () => {
   if (!data) return "Post not found!";
 
   return (
-    <div className="mx-auto p-4 flex flex-col items-center ">
+    <div className="mx-auto p-1 md:p-4flex flex-col items-center gap-8">
 
 
 <div  style={{ zIndex: 100004 }} className="mb-[45px] md:mb-[50px] mt-[15px] md:mt-[20px] sticky top-0.5 md:top-2 ">
