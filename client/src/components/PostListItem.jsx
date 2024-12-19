@@ -61,10 +61,10 @@ const PostListItem = ({ post }) => {
     to={`/posts?author=${post.user.username}`}
     onClick={(e) => e.stopPropagation()}
       >
-    { post.user.username}
+    { post.user.username}    <span>- </span>
+    <span>{format(post.createdAt)}</span>
   </Link>
-         <span>- </span>
-          <span>{format(post.createdAt)}</span>
+      
         </div>
       </div>
     </Link>
