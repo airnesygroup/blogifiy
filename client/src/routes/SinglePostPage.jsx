@@ -32,7 +32,7 @@ const SinglePostPage = () => {
       {/* Content container */}
       <div className="w-full  max-w-[700px]">
         {/* Title */}
-        <h1 className="text-lg md:text-2xl font-semibold">{data.title}</h1>
+        <h1 className="text-lg md:text-2xl mt-5 md:mt-[10] font-semibold">{data.title}</h1>
       </div>
 
       {/* Image */}

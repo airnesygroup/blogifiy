@@ -23,17 +23,12 @@ const Navbar = () => {
 
       {/* LOGO */}
       <Link to="/" className="flex items-center gap-1 text-lg font-bold md:text-2xl">
-      <img src="/x.png" alt="Logo" className="w-8 h-8 hidden md:block lg:block" />
+      <img src="/x.png" alt="Logo" className="w-4 h-4 md:w-8 md:h-8" />
       <span className="bg-clip-text text-[var(--TextColor)] hidden md:block lg:block font-impact">tech</span>
 
 
 
-<div className=" sm:block  md:hidden lg:hidden" >
 
-<SignedIn>
-    <UserButton />
-     </SignedIn>
-</div>
       {/*   <span className="bg-clip-text text-[#1ADAff] font-impact"></span> */}
 
 
