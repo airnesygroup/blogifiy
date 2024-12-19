@@ -1,4 +1,6 @@
 
+
+      
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { SignedIn, SignedOut, UserButton } from "@clerk/clerk-react";
@@ -15,22 +17,29 @@ const Navbar = () => {
 
 
     <div
-    style={{ zIndex: 100004 }} // Modify or remove z-index here
-    className="w-full h-[55px] gap-4  md:h-[55px] flex items-center text-[var(--TextColor)] sticky top-0 justify-between bg-[var(--bg)]">
+     // Modify or remove z-index here
+    className="w-full h-[55px] gap-4  md:h-[55px] flex items-center text-[var(--TextColor)]  top-0 justify-between bg-[var(--bg)]">
 
 
       {/* LOGO */}
       <Link to="/" className="flex items-center gap-1 text-lg font-bold md:text-2xl">
       <img src="/x.png" alt="Logo" className="w-8 h-8 hidden md:block lg:block" />
-      <span className="bg-clip-text text-[#1DA1f2] font-impact">tech</span>
+      <span className="bg-clip-text text-[#1DA1f2] hidden md:block lg:block font-impact">tech</span>
 
+
+
+<div className=" sm:block  md:hidden lg:hidden" >
+
+<SignedIn>
+    <UserButton />
+     </SignedIn>
+</div>
       {/*   <span className="bg-clip-text text-[#1ADAff] font-impact"></span> */}
 
 
 
 
 </Link>
-<Search/>
 
 
       {/* MOBILE MENU */}
@@ -42,17 +51,17 @@ const Navbar = () => {
         >
           <div className="flex flex-col gap-1">
             <div
-              className={`h-[1px] rounded-md w-4 bg-[var(--textColor)] origin-left transition-all ease-in-out ${
+              className={`h-[1px] rounded-md w-0.5 bg-[var(--textColor)] origin-left transition-all ease-in-out ${
                 open && "rotate-45"
               }`}
             ></div>
             <div
-              className={`h-[1px] rounded-md w-4  bg-[var(--textColor)] transition-all ease-in-out ${
+              className={`h-[1px] rounded-md w-0.5  bg-[var(--textColor)] transition-all ease-in-out ${
                 open && "opacity-0"
               }`}
             ></div>
             <div
-              className={`h-[1px] rounded-md w-4 bg-[var(--textColor)] origin-left transition-all ease-in-out ${
+              className={`h-[1px] rounded-md w-0.5 bg-[var(--textColor)] origin-left transition-all ease-in-out ${
                 open && "-rotate-45"
               }`}
             ></div>
@@ -80,9 +89,7 @@ const Navbar = () => {
             ✕
           </button>
 
-          <SignedIn>
-            <UserButton />
-          </SignedIn>
+        
 
           <Link to="/" onClick={() => setOpen(false)}>Home</Link>
           <Link to="/posts?sort=trending" onClick={() => setOpen(false)}>Trending</Link>
