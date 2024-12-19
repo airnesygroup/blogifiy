@@ -24,7 +24,7 @@ const SinglePostPage = () => {
   if (!data) return "Post not found!";
 
   return (
-    <div className="mx-auto max-w-[1000px] p-4 flex flex-col gap-8">
+    <div className="max-w-[800px] mx-auto p-4 flex flex-col gap-8">
       {/* Image */}
       {data.img && (
         <div className="w-full">
