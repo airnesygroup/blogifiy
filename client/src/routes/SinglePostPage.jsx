@@ -28,9 +28,7 @@ const SinglePostPage = () => {
     <div className="mx-auto p-0 md:p-4 flex flex-col items-center gap-4 md:gap-8">
 
 
-<div  style={{ zIndex: 100004 }} className=" mt-[15px] sticky top-0.5 md:top-2 ">
- <MainCategories/>
-</div>
+
       {/* Content container */}
       <div className="w-full  max-w-[700px]">
         {/* Title */}
