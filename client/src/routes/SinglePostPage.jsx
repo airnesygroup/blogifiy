@@ -28,11 +28,11 @@ const SinglePostPage = () => {
     <div className="mx-auto p-0 md:p-4 flex flex-col items-center gap-8">
 
 
-<div  style={{ zIndex: 100004 }} className="mb-[22px] md:mb-[25px] mt-[15px] md:mt-[20px] sticky top-0.5 md:top-2 ">
+<div  style={{ zIndex: 100004 }} className="mb-[6px] md:mb-[8px] mt-[15px] md:mt-[20px] sticky top-0.5 md:top-2 ">
  <MainCategories/>
 </div>
       {/* Content container */}
-      <div className="w-full mb-2 md:mb-[5] max-w-[700px]">
+      <div className="w-full  max-w-[700px]">
         {/* Title */}
         <h1 className="text-lg md:text-2xl font-semibold">{data.title}</h1>
       </div>
