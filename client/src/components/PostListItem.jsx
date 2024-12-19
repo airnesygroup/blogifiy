@@ -57,13 +57,13 @@ const PostListItem = ({ post }) => {
        
           
    <Link
-    className="    text-[11px] sm:text-[11px] md:text-[12px] lg:text-[14px] text-[var(--softTextColor)] font-base"
+    className=" pt-0 md:pt-1  text-[11px] sm:text-[11px] md:text-[12px] lg:text-[14px] text-[var(--softTextColor)] font-base"
     to={`/posts?author=${post.user.username}`}
     onClick={(e) => e.stopPropagation()}
       >
     { post.user.username}
   </Link>
-         <span>-</span>
+         <span>- </span>
           <span>{format(post.createdAt)}</span>
         </div>
       </div>

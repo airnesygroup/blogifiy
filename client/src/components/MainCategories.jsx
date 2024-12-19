@@ -71,9 +71,9 @@ const MainCategories = () => {
         </div>
 
         {/* Right-side icons and controls */}
-        <div className="flex items-center py-[0.8px] space-x-2 w-full sm:w-auto">
+        <div className="flex items-center py-[0.8px] space-x-2  w-full sm:w-auto">
   {/* User and Sign In */}
-  <div className="flex items-center space-x-1 w-full justify-between sm:justify-start sm:w-auto">
+  <div className="flex items-center space-x-1 lg:space-x-5 w-full justify-between sm:justify-start sm:w-auto">
 
   <div className="flex items-center space-x-2 ">
     <Link
