@@ -44,9 +44,9 @@ const SinglePostPage = () => {
           {data.user.img && (
             <Image
               src={data.user.img}
-              className="w-10 h-10 object-cover rounded-full"
+              className="w-10 h-5 object-cover"
               w="40"
-              h="40"
+              h="20"
             />
           )}
           <div className="flex flex-col">
