@@ -6,6 +6,7 @@ import SideMenu from "../components/SideMenu";
 import Search from "../components/Search";
 import { Link } from "react-router-dom";
 import Sidebar from "../components/Sidebar2";
+import MainCategories from "../components/MainCategories";
 
 const PostListPage = () => {
   const [open, setOpen] = useState(false);
@@ -31,13 +32,16 @@ const PostListPage = () => {
     .join(" | ") || "All Posts"; // Default to "All Posts" if no filters are applied
 
   return (
-    <div style={{ paddingTop: "0"}} className="  ">
+    <div  className="  ">
+<div  style={{ zIndex: 100004 }} className="mb-[45px] md:mb-[50px] mt-[15px] md:mt-[20px] sticky top-0.5 md:top-2 ">
+ <MainCategories/>
 
+</div>
       <div className="flex flex-row  text-[var(--textColor)] justify-between">
       <div className="w-full md:w-3/4 pr-0  text-[var(--textColor)] md:pr-10">
- 
+     
 
-    <h1 style={{  zIndex: "10000"}} className="mb-4 lg:mt-[25px] mt-4  lg:mb-[8] lg:text-xl text-md text-[var(--textColor)] font-bold">
+    <h1 style={{  zIndex: "10000"}} className="mb-4   lg:mb-[8] lg:text-[40px] text-2xl ml-2   text-[#1da1f2] font-bold">
         {`Blog - ${displayText}`}
       </h1>
 
@@ -45,6 +49,7 @@ const PostListPage = () => {
     </div>
     <div className={`${open ? "block" : "hidden"} lg:mt-[30px] md:block w-1/4`}>
         <SideMenu />
+
     </div>
 </div>
  </div>
