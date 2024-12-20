@@ -25,8 +25,8 @@ const SinglePostPage = () => {
   if (!data) return "Post not found!";
 
   return (
-<div className="mx-auto p-0 md:p-4 flex flex-col items-center gap-4 
-md:gap-8 border-t border-t-gradient-to-r from-[var(--bg)]  via-[var(--TextColor)] to-[var(--bg)]    ">
+<div className="relative mx-auto p-0 md:p-4 flex flex-col items-center gap-4 md:gap-8">
+  <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-[var(--bg)] via-[var(--TextColor)] to-[var(--bg)]"></div>
 
 
 
