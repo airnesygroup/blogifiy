@@ -41,7 +41,7 @@ const SinglePostPage = () => {
 
       {/* Image */}
       {data.img && (
-        <div className="w-full max-h-[700px] md:max-h-[500px] max-w-[900px]">
+        <div className="w-full max-h-[900px] md:max-h-[500px] max-w-[900px]">
      <Image src={data.img}style={{ width: "900px",   height: data.img.width < 900 ? "900px" : "900px", }} />
         </div>
       )}
