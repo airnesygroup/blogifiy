@@ -41,10 +41,18 @@ const SinglePostPage = () => {
 
       {/* Image */}
       {data.img && (
-        <div className="w-full max-h-[900px]  max-w-[900px]">
-          <Image src={data.img} w="900"  h={"900"} />
+        <div className="w-full max-h-[700px] hidden sm:block md:hidden   max-w-[900px]">
+          <Image src={data.img} w="900"  h={"700"} />
         </div>
       )}
+
+      {/* Image */}
+      {data.img && (
+        <div className="w-full max-h-[500px] hidden sm:hidden md:block   max-w-[900px]">
+          <Image src={data.img} w="900"  h={"500"} />
+        </div>
+      )}
+
 
       {/* Author Info and Other Content */}
       <div className="w-full max-w-[700px]">
