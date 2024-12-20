@@ -80,14 +80,14 @@ const Navbar = () => {
 
         {/* DARK OVERLAY */}
         {open && (
-          <div style={{ zIndex: 100007 }}
+          <div style={{ zIndex: 100006 }}
             className="fixed inset-0 bg-black bg-opacity-50 "
             onClick={handleOverlayClick}
           ></div>
         )}
 
         {/* MOBILE LINK LIST */}
-        <div style={{ zIndex: 100006 }}
+        <div style={{ zIndex: 100007 }}
           className={`w-[75%] h-screen bg-[var(--bg)] flex flex-col p-5 pt-7 items-left justify-left text-[var(--TextColor)]
              gap-8 font-sm text-md fixed top-0 right-0 transition-transform ease-in-out  ${
             open ? "translate-x-0" : "translate-x-full"
