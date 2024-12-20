@@ -6,6 +6,7 @@ import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import { format } from "timeago.js";
 import MainCategories from "../components/MainCategories";
+import Navbar from "../components/Navbar";
 
 const fetchPost = async (slug) => {
   const res = await axios.get(`${import.meta.env.VITE_API_URL}/posts/${slug}`);
@@ -25,6 +26,8 @@ const SinglePostPage = () => {
   if (!data) return "Post not found!";
 
   return (
+<div>
+  <Navbar/>   
 <div className="relative mx-auto p-0 md:p-4 flex flex-col items-center gap-4 md:gap-8">
   <div className="absolute top-0 left-0 mb-4 md:mb-0 w-full h-[1px] bg-gradient-to-r from-[var(--bg)] via-[var(--softTextColor7)]  via-[var(--softTextColor7)] to-[var(--bg)]"></div>
 
@@ -77,6 +80,7 @@ const SinglePostPage = () => {
       {/* Comments */}
       <div className="w-full max-w-[700px]">
         <Comments postId={data._id} />
+      </div>
       </div>
     </div>
   );

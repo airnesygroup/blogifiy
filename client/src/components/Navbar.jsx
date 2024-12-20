@@ -16,10 +16,12 @@ const Navbar = () => {
   return (
 
 
-    <div
+    
      // Modify or remove z-index here
-    className="w-full h-[55px] gap-4  md:h-[55px] flex items-center text-[var(--TextColor)]  top-0 justify-between bg-[var(--bg)]">
-
+     <div className="relative w-full h-[55px] gap-4 md:h-[55px] flex items-center text-[var(--TextColor)] top-0 justify-between bg-[var(--bg)]">
+     <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-[var(--bg)] via-[var(--softTextColor7)] to-[var(--bg)]"></div>
+   
+   
 
       {/* LOGO */}
       <Link to="/" className="flex items-center gap-1 text-lg font-bold md:text-2xl">
