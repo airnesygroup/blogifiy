@@ -33,7 +33,7 @@ const PostListPage = () => {
 
   return (
     <div  className="  ">
-<div  style={{ zIndex: 100004 }} className="mb-[45px] md:mb-[50px] mt-[15px] md:mt-[20px] sticky top-0.5 md:top-2 ">
+<div  style={{ zIndex: 100004 }} className="mb-[22px] md:mb-[25px] mt-[15px] md:mt-[20px] sticky top-0.5 md:top-2 ">
  <MainCategories/>
 
 </div>
@@ -41,7 +41,7 @@ const PostListPage = () => {
       <div className="w-full md:w-3/4 pr-0  text-[var(--textColor)] md:pr-10">
      
 
-    <h1 style={{  zIndex: "10000"}} className="mb-10   md:mb-[20] lg:text-[40px] text-2xl ml-2   text-[#1da1f2] font-bold">
+    <h1 style={{  zIndex: "10000"}} className="mb-5  md:mb-[10] lg:text-[40px] text-2xl ml-2   text-[#1da1f2] font-bold">
         {`Blog - ${displayText}`}
       </h1>
 
