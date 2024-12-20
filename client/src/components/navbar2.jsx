@@ -16,7 +16,7 @@ const Navbar = () => {
   return (
 
 
-    <div
+    <div  style={{ zIndex: 100008 }}
      // Modify or remove z-index here
     className="w-full h-[55px] gap-4  md:h-[55px] flex items-center text-[var(--TextColor)]  top-0 justify-between bg-[var(--bg)]">
 
@@ -80,15 +80,16 @@ const Navbar = () => {
 
         {/* DARK OVERLAY */}
         {open && (
-          <div
-            className="fixed inset-0 bg-black bg-opacity-50 z-40"
+          <div style={{ zIndex: 100007 }}
+            className="fixed inset-0 bg-black bg-opacity-50 "
             onClick={handleOverlayClick}
           ></div>
         )}
 
         {/* MOBILE LINK LIST */}
-        <div
-          className={`w-[75%] h-screen bg-[var(--bg)] flex flex-col p-5 pt-7 items-left justify-left text-[var(--TextColor)] gap-8 font-sm text-md fixed top-0 right-0 transition-transform ease-in-out z-50 ${
+        <div style={{ zIndex: 100006 }}
+          className={`w-[75%] h-screen bg-[var(--bg)] flex flex-col p-5 pt-7 items-left justify-left text-[var(--TextColor)]
+             gap-8 font-sm text-md fixed top-0 right-0 transition-transform ease-in-out  ${
             open ? "translate-x-0" : "translate-x-full"
           }`}
         >
