@@ -36,13 +36,13 @@ const SinglePostPage = () => {
       {/* Content container */}
       <div className="w-full  max-w-[700px]">
         {/* Title */}
-        <h1 className="text-lg md:text-2xl mt-3 md:mt-[6] font-semibold">{data.title}</h1>
+        <h1 className="text-[15px] md:text-2xl mt-3 md:mt-[6] font-semibold">{data.title}</h1>
       </div>
 
       {/* Image */}
       {data.img && (
-        <div className="w-full max-h-[500px] max-w-[900px]">
-          <Image src={data.img} w="900"  h={"500"} />
+        <div className="w-full max-h-[700px] md:max-h-[500px] max-w-[900px]">
+<Image src={data.img}style={{ width: "900px",   height: data.img.width < 900 ? "700px" : "500px", }} />
         </div>
       )}
 
@@ -60,19 +60,19 @@ const SinglePostPage = () => {
           <div className="flex flex-col">
             <span>
               Written by <Link className="text-[#1DA1F2]">{data.user.username}</Link>
-            </span>
-            <span>
+           
               <Link className="text-[#1DA1F2]">{data.category}</Link> -{" "}
               {format(data.createdAt)}
             </span>
+
+            <PostMenuActions post={data} />
+
           </div>
         </div>
 
-        {/* Actions */}
-        <PostMenuActions post={data} />
 
         {/* Description */}
-        <p className="text-[var(--textColor)] font-medium text-justify mt-4">
+        <p className="text-[var(--textColor)] text-[14px] md:text-[16px] text-justify mt-4">
           {data.desc}
         </p>
       </div>
