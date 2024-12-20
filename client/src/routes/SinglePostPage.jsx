@@ -39,19 +39,19 @@ const SinglePostPage = () => {
         <h1 className="text-[15px] md:text-2xl mt-3 md:mt-[6] font-semibold">{data.title}</h1>
       </div>
 
-      {/* Image */}
       {data.img && (
-        <div className="w-full max-h-[700px] hidden sm:block md:hidden   max-w-[900px]">
-          <Image src={data.img} w="900"  h={"700"} />
-        </div>
-      )}
+  <>
+    {/* For sm screens */}
+    <div className="w-full max-h-[700px] hidden sm:block md:hidden max-w-[900px]">
+      <Image src={data.img} width={900} height={700} alt="Responsive Image" />
+    </div>
+    {/* For md and larger screens */}
+    <div className="w-full max-h-[500px] hidden sm:hidden md:block max-w-[900px]">
+      <Image src={data.img} width={900} height={500} alt="Responsive Image" />
+    </div>
+  </>
+)}
 
-      {/* Image */}
-      {data.img && (
-        <div className="w-full max-h-[500px] hidden sm:hidden md:block   max-w-[900px]">
-          <Image src={data.img} w="900"  h={"500"} />
-        </div>
-      )}
 
 
       {/* Author Info and Other Content */}
