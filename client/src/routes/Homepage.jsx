@@ -8,6 +8,7 @@ import SideMenu from "../components/SideMenu";
 import ThemeToggler from "../components/Theme";
 import Sidebar from "../components/Sidebar2";
 import { ThemeProvider } from "../../themecontext";
+import Navbar from "../components/navbar2";
 
 
 const Homepage = () => {
@@ -56,7 +57,10 @@ const Homepage = () => {
   }, [showSearch, showShare]);
 
   return (
+      <div>
+        <Navbar/>
     <div className="mb-9   flex flex-col gap-0">
+
       {/* Floating Section */}
       <div
   className={` flex items-center mx-auto justify-between px-5 py-3 transition-opacity 
@@ -116,6 +120,8 @@ const Homepage = () => {
     
       </div>
     </div>
+    </div>
+
   );
 };
 
