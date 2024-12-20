@@ -25,14 +25,14 @@ const SinglePostPage = () => {
   if (!data) return "Post not found!";
 
   return (
-    <div className="mx-auto p-0 md:p-4 flex flex-col items-center gap-4 md:gap-8">
+<div className="mx-auto p-0 md:p-4 flex flex-col items-center gap-4 md:gap-8 border-t border-t-white">
 
 
 
       {/* Content container */}
       <div className="w-full  max-w-[700px]">
         {/* Title */}
-        <h1 className="text-lg md:text-2xl mt-5 md:mt-[10] font-semibold">{data.title}</h1>
+        <h1 className="text-lg md:text-2xl mt-3 md:mt-[6] font-semibold">{data.title}</h1>
       </div>
 
       {/* Image */}
